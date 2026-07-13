@@ -184,19 +184,18 @@
     },
     {
       "date": "2026-07-13",
-      "seats": 187,
-      "flights": 31,
-      "mappedFlights": 31,
-      "itineraries": 108,
+      "seats": 4304,
+      "flights": 184,
+      "mappedFlights": 35,
+      "itineraries": 1200,
       "byOrigin": {
         "LAX": {
-          "seats": 187,
-          "flights": 31,
-          "mappedFlights": 31,
-          "itineraries": 108
+          "seats": 4304,
+          "flights": 184,
+          "mappedFlights": 35,
+          "itineraries": 1200
         }
-      },
-      "mock": true
+      }
     }
   ],
   "meta": {
@@ -217,7 +216,7 @@
       "end": "2026-10-27"
     },
     "arriveBy": "2026-10-27T23:59",
-    "source": "mock",
-    "updatedAt": "2026-07-13T22:27:36.775Z"
+    "source": "duffel",
+    "updatedAt": "2026-07-13T22:30:29.057Z"
   }
 }
