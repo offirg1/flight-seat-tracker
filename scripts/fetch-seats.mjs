@@ -159,7 +159,10 @@ function mergeSeats(a, b) {
 
 const DUFFEL_BASE = "https://api.duffel.com";
 const DUFFEL_SEATMAP_BUDGET = 80; // max seat-map lookups per whole run
+const DUFFEL_SEATMAP_CONCURRENCY = 4;
+const DUFFEL_SEATMAP_MISS_LIMIT = 8; // consecutive misses before giving up
 const FETCH_TIMEOUT_MS = 30_000;
+const SEATMAP_TIMEOUT_MS = 15_000;
 
 function duffelHeaders(token) {
   return {
@@ -212,29 +215,39 @@ async function duffelLegs(ctx, origin, depDate) {
     finals.set(key, f);
   }
 
-  const legs = [];
-  for (const [key, f] of finals) {
-    let seats = ctx.seatCache.has(key) ? ctx.seatCache.get(key) : null;
-    if (!ctx.seatCache.has(key) && ctx.seatMapBudget > 0) {
-      ctx.seatMapBudget -= 1;
-      try {
-        seats = await duffelSeatCount(ctx, f.offerId, f.segmentId);
-      } catch {
-        seats = null; // seat map unavailable for this airline/flight
-      }
-      ctx.seatCache.set(key, seats);
-      await sleep(200);
-    }
-    legs.push({ key, seats, itineraries: f.itineraries });
+  // Look up seat maps in small parallel batches, stopping early when the
+  // budget runs out or lookups keep failing (seat maps aren't served for
+  // every airline or mode — no point asking 80 times).
+  const pending = [...finals.entries()].filter(([key]) => !ctx.seatCache.has(key));
+  let consecutiveMisses = 0;
+  for (let i = 0; i < pending.length; i += DUFFEL_SEATMAP_CONCURRENCY) {
+    if (consecutiveMisses >= DUFFEL_SEATMAP_MISS_LIMIT || ctx.seatMapBudget <= 0) break;
+    const batch = pending.slice(i, i + DUFFEL_SEATMAP_CONCURRENCY).slice(0, ctx.seatMapBudget);
+    ctx.seatMapBudget -= batch.length;
+    const counts = await Promise.all(
+      batch.map(([, f]) => duffelSeatCount(ctx, f.offerId, f.segmentId).catch(() => null))
+    );
+    batch.forEach(([key], j) => {
+      ctx.seatCache.set(key, counts[j]);
+      consecutiveMisses = counts[j] == null ? consecutiveMisses + 1 : 0;
+    });
   }
-  return legs;
+
+  return [...finals.entries()].map(([key, f]) => ({
+    key,
+    seats: ctx.seatCache.get(key) ?? null,
+    itineraries: f.itineraries,
+  }));
 }
 
 async function duffelSeatCount(ctx, offerId, segmentId) {
-  const res = await withRetry(() =>
-    timedFetch(`${DUFFEL_BASE}/air/seat_maps?offer_id=${encodeURIComponent(offerId)}`, {
-      headers: duffelHeaders(ctx.token),
-    })
+  const res = await withRetry(
+    () =>
+      fetch(`${DUFFEL_BASE}/air/seat_maps?offer_id=${encodeURIComponent(offerId)}`, {
+        headers: duffelHeaders(ctx.token),
+        signal: AbortSignal.timeout(SEATMAP_TIMEOUT_MS),
+      }),
+    2
   );
   if (!res.ok) return null;
   const json = await res.json();
