@@ -109,12 +109,15 @@ async function realSnapshot(date) {
 
     for (const depDate of dates) {
       try {
-        for (const leg of await provider.legs(ctx, origin, depDate)) {
+        const legs = await provider.legs(ctx, origin, depDate);
+        for (const leg of legs) {
           itineraries += leg.itineraries;
           flights.set(leg.key, mergeSeats(flights.get(leg.key), leg.seats));
         }
+        console.log(`  ${origin} ${depDate}: ${legs.length} ${CONFIG.destination}-bound flights`);
       } catch (err) {
         errors.push(`${origin} ${depDate}: ${err.message}`);
+        console.log(`  ${origin} ${depDate}: FAILED — ${err.message}`);
       }
       await sleep(400); // rate-limit headroom
     }
@@ -155,7 +158,8 @@ function mergeSeats(a, b) {
 // ----------------------------------------------------------------- Duffel
 
 const DUFFEL_BASE = "https://api.duffel.com";
-const DUFFEL_SEATMAP_LIMIT = 40; // max seat-map lookups per origin/date query
+const DUFFEL_SEATMAP_BUDGET = 80; // max seat-map lookups per whole run
+const FETCH_TIMEOUT_MS = 30_000;
 
 function duffelHeaders(token) {
   return {
@@ -166,15 +170,19 @@ function duffelHeaders(token) {
   };
 }
 
+function timedFetch(url, options = {}) {
+  return fetch(url, { ...options, signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) });
+}
+
 async function duffelInit() {
   const token = process.env.DUFFEL_API_TOKEN;
   if (!token) throw new Error("Set DUFFEL_API_TOKEN (or run with MOCK=1 for sample data).");
-  return { token, seatCache: new Map() };
+  return { token, seatCache: new Map(), seatMapBudget: DUFFEL_SEATMAP_BUDGET };
 }
 
 async function duffelLegs(ctx, origin, depDate) {
   const res = await withRetry(() =>
-    fetch(`${DUFFEL_BASE}/air/offer_requests?return_offers=true`, {
+    timedFetch(`${DUFFEL_BASE}/air/offer_requests?return_offers=true`, {
       method: "POST",
       headers: duffelHeaders(ctx.token),
       body: JSON.stringify({
@@ -205,11 +213,10 @@ async function duffelLegs(ctx, origin, depDate) {
   }
 
   const legs = [];
-  let lookups = 0;
   for (const [key, f] of finals) {
     let seats = ctx.seatCache.has(key) ? ctx.seatCache.get(key) : null;
-    if (!ctx.seatCache.has(key) && lookups < DUFFEL_SEATMAP_LIMIT) {
-      lookups += 1;
+    if (!ctx.seatCache.has(key) && ctx.seatMapBudget > 0) {
+      ctx.seatMapBudget -= 1;
       try {
         seats = await duffelSeatCount(ctx, f.offerId, f.segmentId);
       } catch {
@@ -225,7 +232,7 @@ async function duffelLegs(ctx, origin, depDate) {
 
 async function duffelSeatCount(ctx, offerId, segmentId) {
   const res = await withRetry(() =>
-    fetch(`${DUFFEL_BASE}/air/seat_maps?offer_id=${encodeURIComponent(offerId)}`, {
+    timedFetch(`${DUFFEL_BASE}/air/seat_maps?offer_id=${encodeURIComponent(offerId)}`, {
       headers: duffelHeaders(ctx.token),
     })
   );
@@ -254,7 +261,7 @@ async function amadeusInit() {
   }
   const env = (process.env.AMADEUS_ENV || "test").toLowerCase();
   const base = env === "production" ? "https://api.amadeus.com" : "https://test.api.amadeus.com";
-  const res = await fetch(`${base}/v1/security/oauth2/token`, {
+  const res = await timedFetch(`${base}/v1/security/oauth2/token`, {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams({ grant_type: "client_credentials", client_id: key, client_secret: secret }),
@@ -266,7 +273,7 @@ async function amadeusInit() {
 
 async function amadeusLegs(ctx, origin, depDate) {
   const res = await withRetry(() =>
-    fetch(`${ctx.base}/v1/shopping/availability/flight-availabilities`, {
+    timedFetch(`${ctx.base}/v1/shopping/availability/flight-availabilities`, {
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${ctx.token}` },
       body: JSON.stringify({
@@ -347,9 +354,13 @@ function mulberry32(seed) {
 
 async function withRetry(fn, attempts = 4) {
   for (let i = 0; ; i++) {
-    const res = await fn();
-    if (res.status !== 429 && res.status < 500) return res;
-    if (i >= attempts - 1) return res;
+    try {
+      const res = await fn();
+      if (res.status !== 429 && res.status < 500) return res;
+      if (i >= attempts - 1) return res;
+    } catch (err) {
+      if (i >= attempts - 1) throw new Error(`network error: ${err.message}`);
+    }
     await sleep(1000 * 2 ** i);
   }
 }
