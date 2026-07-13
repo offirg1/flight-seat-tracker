@@ -2,18 +2,20 @@
 
 A static dashboard that tracks, once a day, the total available seats on flights
 from Los Angeles to Tel Aviv (TLV) departing **Oct 20–27, 2026** and arriving
-**no later than Oct 27**. Data comes from the Amadeus Flight Availabilities API,
-a GitHub Action takes a daily snapshot, and GitHub Pages serves the dashboard.
+**no later than Oct 27**. Data comes from the [Duffel](https://duffel.com) flight
+API, a GitHub Action takes a daily snapshot, and GitHub Pages serves the
+dashboard.
 
-> **What the number means:** airlines cap published availability at 9 seats per
-> booking class per flight, so the headline is a **floor estimate**. The
-> day-over-day trend is the reliable signal.
+> **What the number means:** the tracker counts open seats on each flight's
+> published seat map. Not every airline publishes seat maps, and blocked ≠ sold,
+> so the headline is a **floor estimate** — the day-over-day trend is the
+> reliable signal. The dashboard's methodology note has details.
 
 ## Architecture
 
 ```
 GitHub Actions (daily 6am PT)
-  └─ scripts/fetch-seats.mjs  ── Amadeus Flight Availabilities API
+  └─ scripts/fetch-seats.mjs  ── Duffel offer search + seat maps
        └─ appends snapshot to docs/data.json (committed to the repo)
 GitHub Pages serves docs/  ── index.html renders counter + trend chart
 ```
@@ -22,11 +24,13 @@ No servers, no database — the repo itself is the time-series store.
 
 ## Setup
 
-1. **Amadeus credentials** (free): create an account at
-   [developers.amadeus.com](https://developers.amadeus.com), create an app, and
-   copy its API Key and API Secret. The free `test` environment works but has
-   limited airline coverage; request **production** keys (also free for this
-   volume) for real coverage.
+1. **Duffel account** (free to create): sign up at
+   [app.duffel.com](https://app.duffel.com), then create an access token under
+   **Developers → Access tokens**. A **test-mode** token works immediately and
+   validates the whole pipeline with synthetic flights; switch to a **live**
+   token once your account is activated for real data. Duffel charges per
+   *booking* — this tracker never books, and at ~8 searches/day any excess
+   search fees are pennies per month.
 
 2. **Create a GitHub repo** and push this folder:
    ```sh
@@ -34,10 +38,8 @@ No servers, no database — the repo itself is the time-series store.
    git push -u origin main
    ```
 
-3. **Add repo secrets** (Settings → Secrets and variables → Actions):
-   - `AMADEUS_API_KEY`
-   - `AMADEUS_API_SECRET`
-   - Optional repo *variable* `AMADEUS_ENV` = `production` (defaults to `test`).
+3. **Add a repo secret** (Settings → Secrets and variables → Actions):
+   - `DUFFEL_API_TOKEN`
 
 4. **Enable GitHub Pages**: Settings → Pages → Deploy from a branch →
    `main` / `docs` folder.
@@ -69,6 +71,13 @@ npm run mock                        # one fake snapshot, no API needed
 npm run mock:backfill               # 14 days of fake history for the chart
 python3 -m http.server 4173 -d docs # then open http://localhost:4173
 ```
+
+## Provider notes
+
+The data source is pluggable (`provider` in `config.json`, or a `PROVIDER` env
+override). `duffel` is the default. An `amadeus` provider is kept for
+reference, but the Amadeus self-service portal was decommissioned on
+**July 17, 2026** and no longer accepts new registrations.
 
 Snapshots generated with `MOCK=1` are flagged and the dashboard shows a
 "sample data" chip; the first real run replaces the same-day entry.

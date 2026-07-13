@@ -123,7 +123,7 @@
 
   <section class="card">
     <h2>Seat availability trend</h2>
-    <p class="cardsub">One snapshot per day — total capped seat availability across all qualifying flights</p>
+    <p class="cardsub">One snapshot per day — total counted seat availability across all qualifying flights</p>
     <div id="chartwrap"><div id="tooltip"></div></div>
   </section>
 
@@ -140,14 +140,15 @@
 
   <details class="method">
     <summary>How this number is computed</summary>
-    <p>Airlines never publish exact remaining-seat counts: availability systems cap what
-    they expose at <strong>9 seats per booking class per flight</strong>. This tracker queries the
-    Amadeus Flight Availabilities API once a day for every departure date in the window,
-    keeps itineraries that arrive at the destination by the deadline, and sums the capped
-    per-class availability on each unique destination-bound flight. The headline is therefore
-    a <strong>floor estimate</strong> — real availability is at least this, and the day-over-day
-    trend (flights filling up or opening) is the reliable signal. Flights reachable from more
-    than one origin airport are counted once in the total.</p>
+    <p>Airlines never publish exact remaining-seat counts. This tracker searches the Duffel
+    flight API once a day for every departure date in the window, keeps itineraries that
+    arrive at the destination by the deadline, and counts <strong>open seats on each unique
+    destination-bound flight's seat map</strong>. Not every airline publishes seat maps
+    (unmapped flights appear in the flight and itinerary counts but add no seats), and a
+    blocked seat isn't necessarily sold. The headline is therefore a <strong>floor
+    estimate</strong> — real availability is at least this, and the day-over-day trend
+    (flights filling up or opening) is the reliable signal. Flights reachable from more than
+    one origin airport are counted once in the total.</p>
   </details>
 </main>
 

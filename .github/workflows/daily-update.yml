@@ -25,9 +25,7 @@ jobs:
       - name: Fetch seat availability
         run: node scripts/fetch-seats.mjs
         env:
-          AMADEUS_API_KEY: ${{ secrets.AMADEUS_API_KEY }}
-          AMADEUS_API_SECRET: ${{ secrets.AMADEUS_API_SECRET }}
-          AMADEUS_ENV: ${{ vars.AMADEUS_ENV || 'test' }}
+          DUFFEL_API_TOKEN: ${{ secrets.DUFFEL_API_TOKEN }}
 
       - name: Commit snapshot
         run: |

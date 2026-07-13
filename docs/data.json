@@ -186,11 +186,13 @@
       "date": "2026-07-13",
       "seats": 187,
       "flights": 31,
+      "mappedFlights": 31,
       "itineraries": 108,
       "byOrigin": {
         "LAX": {
           "seats": 187,
           "flights": 31,
+          "mappedFlights": 31,
           "itineraries": 108
         }
       },
@@ -215,8 +217,7 @@
       "end": "2026-10-27"
     },
     "arriveBy": "2026-10-27T23:59",
-    "maxSeatsPerClass": 9,
     "source": "mock",
-    "updatedAt": "2026-07-13T20:30:44.590Z"
+    "updatedAt": "2026-07-13T21:09:55.363Z"
   }
 }

@@ -2,15 +2,24 @@
 // Daily seat-availability snapshot.
 //
 // For every configured origin airport and every departure date in the window,
-// queries the Amadeus Flight Availabilities Search API, keeps itineraries that
-// end at the destination and arrive by the deadline, and counts available
-// seats on each unique destination-bound flight (per booking class, capped —
-// airlines never expose more than 9 per class, so this is a floor, not an
-// exact count). Appends the day's snapshot to docs/data.json.
+// queries a flight API (provider set in config.json), keeps itineraries that
+// end at the destination and arrive by the deadline, and records available
+// seats on each unique destination-bound flight. Appends the day's snapshot
+// to docs/data.json.
+//
+// Providers:
+//   duffel  (default) — counts open seats on the flight's seat map where the
+//           airline publishes one; flights without a seat map are counted in
+//           the flight/itinerary totals but contribute no seats (the headline
+//           stays a floor estimate).
+//   amadeus (legacy) — capped booking-class availability. The Amadeus
+//           self-service portal shuts down on 2026-07-17; kept for reference.
 //
 // Env:
-//   AMADEUS_API_KEY / AMADEUS_API_SECRET  Amadeus Self-Service credentials
+//   DUFFEL_API_TOKEN                      Duffel access token (test or live)
+//   AMADEUS_API_KEY / AMADEUS_API_SECRET  legacy Amadeus credentials
 //   AMADEUS_ENV                           "test" (default) or "production"
+//   PROVIDER                              override config.json provider
 //   MOCK=1                                generate sample data, no API calls
 //   MOCK_BACKFILL=<n>                     with MOCK=1, seed n days of history
 
@@ -26,14 +35,8 @@ loadDotEnv(path.join(ROOT, ".env"));
 
 const MOCK = process.env.MOCK === "1";
 const BACKFILL_DAYS = Number(process.env.MOCK_BACKFILL || 0);
-const ENV = (process.env.AMADEUS_ENV || "test").toLowerCase();
-const BASE = ENV === "production" ? "https://api.amadeus.com" : "https://test.api.amadeus.com";
+const PROVIDER = (process.env.PROVIDER || CONFIG.provider || "duffel").toLowerCase();
 const SEAT_CAP = CONFIG.maxSeatsPerClass ?? 9;
-
-main().catch((err) => {
-  console.error(err.message ?? err);
-  process.exit(1);
-});
 
 async function main() {
   const db = loadDb();
@@ -55,8 +58,7 @@ async function main() {
     originLabels: CONFIG.originLabels,
     departureWindow: CONFIG.departureWindow,
     arriveBy: CONFIG.arriveBy,
-    maxSeatsPerClass: SEAT_CAP,
-    source: MOCK ? "mock" : `amadeus-${ENV}`,
+    source: MOCK ? "mock" : PROVIDER,
     updatedAt: new Date().toISOString(),
   };
   db.history.sort((a, b) => a.date.localeCompare(b.date));
@@ -66,14 +68,29 @@ async function main() {
   console.log(
     `Snapshot ${latest.date}: ${latest.seats} seats on ${latest.flights} ` +
       `${CONFIG.destination}-bound flights (${latest.itineraries} itineraries)` +
+      (latest.mappedFlights != null && latest.mappedFlights < latest.flights
+        ? ` — seat data for ${latest.mappedFlights}/${latest.flights} flights`
+        : "") +
       (latest.errors ? ` — ${latest.errors.length} query error(s)` : "")
   );
 }
 
-// ---------------------------------------------------------------- real data
+// ------------------------------------------------------------- core pipeline
+
+// Each provider exposes: init() -> ctx, and legs(ctx, origin, depDate) ->
+// [{ key, seats, itineraries }] where `key` identifies a unique
+// destination-bound flight, `seats` is a count or null (unknown), and
+// `itineraries` is how many qualifying itineraries end on that flight.
+const PROVIDERS = {
+  duffel: { init: duffelInit, legs: duffelLegs },
+  amadeus: { init: amadeusInit, legs: amadeusLegs },
+};
 
 async function realSnapshot(date) {
-  const token = await getToken();
+  const provider = PROVIDERS[PROVIDER];
+  if (!provider) throw new Error(`Unknown provider "${PROVIDER}" — use "duffel" or "amadeus".`);
+  const ctx = await provider.init();
+
   const dates = dateRange(CONFIG.departureWindow.start, CONFIG.departureWindow.end);
   const byOrigin = {};
   const globalFlights = new Map();
@@ -81,36 +98,26 @@ async function realSnapshot(date) {
   let totalItineraries = 0;
 
   for (const origin of CONFIG.origins) {
-    const flights = new Map(); // "LY6@2026-10-20" -> seats on that leg
+    const flights = new Map();
     let itineraries = 0;
 
     for (const depDate of dates) {
       try {
-        for (const option of await searchAvailability(token, origin, depDate)) {
-          const segments = option.segments ?? [];
-          const last = segments[segments.length - 1];
-          if (!last || last.arrival?.iataCode !== CONFIG.destination) continue;
-          if (CONFIG.arriveBy && last.arrival?.at > CONFIG.arriveBy) continue;
-
-          itineraries += 1;
-          const key = `${last.carrierCode}${last.number}@${(last.departure?.at ?? "").slice(0, 10)}`;
-          const seats = (last.availabilityClasses ?? []).reduce(
-            (sum, c) => sum + Math.min(c.numberOfBookableSeats ?? 0, SEAT_CAP),
-            0
-          );
-          flights.set(key, Math.max(flights.get(key) ?? 0, seats));
+        for (const leg of await provider.legs(ctx, origin, depDate)) {
+          itineraries += leg.itineraries;
+          flights.set(leg.key, mergeSeats(flights.get(leg.key), leg.seats));
         }
       } catch (err) {
         errors.push(`${origin} ${depDate}: ${err.message}`);
       }
-      await sleep(300); // free-tier rate limit headroom
+      await sleep(400); // rate-limit headroom
     }
 
     byOrigin[origin] = summarize(flights, itineraries);
     totalItineraries += itineraries;
     // The same destination-bound leg can be reachable from several origins;
     // the grand total counts each physical flight once.
-    for (const [k, v] of flights) globalFlights.set(k, Math.max(globalFlights.get(k) ?? 0, v));
+    for (const [k, v] of flights) globalFlights.set(k, mergeSeats(globalFlights.get(k), v));
   }
 
   return {
@@ -123,22 +130,146 @@ async function realSnapshot(date) {
 
 function summarize(flights, itineraries) {
   let seats = 0;
-  for (const v of flights.values()) seats += v;
-  return { seats, flights: flights.size, itineraries };
+  let mapped = 0;
+  for (const v of flights.values()) {
+    if (v != null) {
+      seats += v;
+      mapped += 1;
+    }
+  }
+  return { seats, flights: flights.size, mappedFlights: mapped, itineraries };
 }
 
-async function searchAvailability(token, origin, date) {
+function mergeSeats(a, b) {
+  if (a == null) return b ?? null;
+  if (b == null) return a;
+  return Math.max(a, b);
+}
+
+// ----------------------------------------------------------------- Duffel
+
+const DUFFEL_BASE = "https://api.duffel.com";
+const DUFFEL_SEATMAP_LIMIT = 40; // max seat-map lookups per origin/date query
+
+function duffelHeaders(token) {
+  return {
+    Authorization: `Bearer ${token}`,
+    "Duffel-Version": "v2",
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  };
+}
+
+async function duffelInit() {
+  const token = process.env.DUFFEL_API_TOKEN;
+  if (!token) throw new Error("Set DUFFEL_API_TOKEN (or run with MOCK=1 for sample data).");
+  return { token, seatCache: new Map() };
+}
+
+async function duffelLegs(ctx, origin, depDate) {
   const res = await withRetry(() =>
-    fetch(`${BASE}/v1/shopping/availability/flight-availabilities`, {
+    fetch(`${DUFFEL_BASE}/air/offer_requests?return_offers=true`, {
       method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+      headers: duffelHeaders(ctx.token),
+      body: JSON.stringify({
+        data: {
+          slices: [{ origin, destination: CONFIG.destination, departure_date: depDate }],
+          passengers: [{ type: "adult" }],
+        },
+      }),
+    })
+  );
+  const json = await res.json();
+  if (!res.ok) throw new Error(json.errors?.[0]?.message ?? json.errors?.[0]?.title ?? `HTTP ${res.status}`);
+
+  // Group qualifying offers by their final destination-bound flight.
+  const finals = new Map();
+  for (const offer of json.data?.offers ?? []) {
+    const segments = offer.slices?.[0]?.segments ?? [];
+    const last = segments[segments.length - 1];
+    if (!last || last.destination?.iata_code !== CONFIG.destination) continue;
+    if (CONFIG.arriveBy && (last.arriving_at ?? "") > CONFIG.arriveBy) continue;
+
+    const carrier = last.marketing_carrier?.iata_code ?? last.operating_carrier?.iata_code ?? "??";
+    const number = last.marketing_carrier_flight_number ?? last.operating_carrier_flight_number ?? "?";
+    const key = `${carrier}${number}@${(last.departing_at ?? "").slice(0, 10)}`;
+    const f = finals.get(key) ?? { offerId: offer.id, segmentId: last.id, itineraries: 0 };
+    f.itineraries += 1;
+    finals.set(key, f);
+  }
+
+  const legs = [];
+  let lookups = 0;
+  for (const [key, f] of finals) {
+    let seats = ctx.seatCache.has(key) ? ctx.seatCache.get(key) : null;
+    if (!ctx.seatCache.has(key) && lookups < DUFFEL_SEATMAP_LIMIT) {
+      lookups += 1;
+      try {
+        seats = await duffelSeatCount(ctx, f.offerId, f.segmentId);
+      } catch {
+        seats = null; // seat map unavailable for this airline/flight
+      }
+      ctx.seatCache.set(key, seats);
+      await sleep(200);
+    }
+    legs.push({ key, seats, itineraries: f.itineraries });
+  }
+  return legs;
+}
+
+async function duffelSeatCount(ctx, offerId, segmentId) {
+  const res = await withRetry(() =>
+    fetch(`${DUFFEL_BASE}/air/seat_maps?offer_id=${encodeURIComponent(offerId)}`, {
+      headers: duffelHeaders(ctx.token),
+    })
+  );
+  if (!res.ok) return null;
+  const json = await res.json();
+  const maps = json.data ?? [];
+  const map = maps.find((m) => m.segment_id === segmentId) ?? maps[0];
+  if (!map) return null;
+
+  let open = 0;
+  for (const cabin of map.cabins ?? [])
+    for (const row of cabin.rows ?? [])
+      for (const section of row.sections ?? [])
+        for (const el of section.elements ?? [])
+          if (el.type === "seat" && (el.available_services?.length ?? 0) > 0) open += 1;
+  return open;
+}
+
+// ------------------------------------------------- Amadeus (legacy provider)
+
+async function amadeusInit() {
+  const key = process.env.AMADEUS_API_KEY;
+  const secret = process.env.AMADEUS_API_SECRET;
+  if (!key || !secret) {
+    throw new Error("Set AMADEUS_API_KEY and AMADEUS_API_SECRET (or run with MOCK=1 for sample data).");
+  }
+  const env = (process.env.AMADEUS_ENV || "test").toLowerCase();
+  const base = env === "production" ? "https://api.amadeus.com" : "https://test.api.amadeus.com";
+  const res = await fetch(`${base}/v1/security/oauth2/token`, {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({ grant_type: "client_credentials", client_id: key, client_secret: secret }),
+  });
+  const json = await res.json();
+  if (!res.ok) throw new Error(json.error_description ?? "Amadeus authentication failed");
+  return { base, token: json.access_token };
+}
+
+async function amadeusLegs(ctx, origin, depDate) {
+  const res = await withRetry(() =>
+    fetch(`${ctx.base}/v1/shopping/availability/flight-availabilities`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${ctx.token}` },
       body: JSON.stringify({
         originDestinations: [
           {
             id: "1",
             originLocationCode: origin,
             destinationLocationCode: CONFIG.destination,
-            departureDateTime: { date },
+            departureDateTime: { date: depDate },
           },
         ],
         travelers: [{ id: "1", travelerType: "ADULT" }],
@@ -148,47 +279,41 @@ async function searchAvailability(token, origin, date) {
   );
   const json = await res.json();
   if (!res.ok) throw new Error(json.errors?.[0]?.detail ?? json.errors?.[0]?.title ?? `HTTP ${res.status}`);
-  return json.data ?? [];
-}
 
-async function getToken() {
-  const key = process.env.AMADEUS_API_KEY;
-  const secret = process.env.AMADEUS_API_SECRET;
-  if (!key || !secret) {
-    throw new Error("Set AMADEUS_API_KEY and AMADEUS_API_SECRET (or run with MOCK=1 for sample data).");
-  }
-  const res = await fetch(`${BASE}/v1/security/oauth2/token`, {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({ grant_type: "client_credentials", client_id: key, client_secret: secret }),
-  });
-  const json = await res.json();
-  if (!res.ok) throw new Error(json.error_description ?? "Amadeus authentication failed");
-  return json.access_token;
-}
+  const finals = new Map();
+  for (const option of json.data ?? []) {
+    const segments = option.segments ?? [];
+    const last = segments[segments.length - 1];
+    if (!last || last.arrival?.iataCode !== CONFIG.destination) continue;
+    if (CONFIG.arriveBy && last.arrival?.at > CONFIG.arriveBy) continue;
 
-async function withRetry(fn, attempts = 4) {
-  for (let i = 0; ; i++) {
-    const res = await fn();
-    if (res.status !== 429 && res.status < 500) return res;
-    if (i >= attempts - 1) return res;
-    await sleep(1000 * 2 ** i);
+    const key = `${last.carrierCode}${last.number}@${(last.departure?.at ?? "").slice(0, 10)}`;
+    const seats = (last.availabilityClasses ?? []).reduce(
+      (sum, c) => sum + Math.min(c.numberOfBookableSeats ?? 0, SEAT_CAP),
+      0
+    );
+    const f = finals.get(key) ?? { seats: 0, itineraries: 0 };
+    f.seats = Math.max(f.seats, seats);
+    f.itineraries += 1;
+    finals.set(key, f);
   }
+  return [...finals].map(([key, f]) => ({ key, seats: f.seats, itineraries: f.itineraries }));
 }
 
 // ---------------------------------------------------------------- mock data
 
 function mockSnapshot(date) {
   const byOrigin = {};
-  const totals = { seats: 0, flights: 0, itineraries: 0 };
+  const totals = { seats: 0, flights: 0, mappedFlights: 0, itineraries: 0 };
   for (const origin of CONFIG.origins) {
     const rand = mulberry32(hash(origin + date));
     const flights = 24 + Math.floor(rand() * 8);
     const seats = Math.round(flights * (4.5 + rand() * 3.5));
     const itineraries = flights * 3 + Math.floor(rand() * 20);
-    byOrigin[origin] = { seats, flights, itineraries };
+    byOrigin[origin] = { seats, flights, mappedFlights: flights, itineraries };
     totals.seats += seats;
     totals.flights += flights;
+    totals.mappedFlights += flights;
     totals.itineraries += itineraries;
   }
   return { date, ...totals, byOrigin, mock: true };
@@ -213,6 +338,15 @@ function mulberry32(seed) {
 }
 
 // ------------------------------------------------------------------ helpers
+
+async function withRetry(fn, attempts = 4) {
+  for (let i = 0; ; i++) {
+    const res = await fn();
+    if (res.status !== 429 && res.status < 500) return res;
+    if (i >= attempts - 1) return res;
+    await sleep(1000 * 2 ** i);
+  }
+}
 
 function loadDb() {
   if (!existsSync(DATA_PATH)) return { history: [] };
@@ -253,3 +387,8 @@ function loadDotEnv(file) {
     if (m && process.env[m[1]] === undefined) process.env[m[1]] = m[2].replace(/^["']|["']$/g, "");
   }
 }
+
+main().catch((err) => {
+  console.error(err.message ?? err);
+  process.exit(1);
+});

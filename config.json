@@ -1,4 +1,5 @@
 {
+  "provider": "duffel",
   "destination": "TLV",
   "destinationLabel": "Tel Aviv (TLV)",
   "origins": ["LAX"],
