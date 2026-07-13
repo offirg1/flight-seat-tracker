@@ -1,0 +1,222 @@
+{
+  "history": [
+    {
+      "date": "2026-06-30",
+      "seats": 150,
+      "flights": 29,
+      "itineraries": 103,
+      "byOrigin": {
+        "LAX": {
+          "seats": 150,
+          "flights": 29,
+          "itineraries": 103
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-01",
+      "seats": 195,
+      "flights": 29,
+      "itineraries": 90,
+      "byOrigin": {
+        "LAX": {
+          "seats": 195,
+          "flights": 29,
+          "itineraries": 90
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-02",
+      "seats": 142,
+      "flights": 28,
+      "itineraries": 101,
+      "byOrigin": {
+        "LAX": {
+          "seats": 142,
+          "flights": 28,
+          "itineraries": 101
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-03",
+      "seats": 178,
+      "flights": 24,
+      "itineraries": 91,
+      "byOrigin": {
+        "LAX": {
+          "seats": 178,
+          "flights": 24,
+          "itineraries": 91
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-04",
+      "seats": 171,
+      "flights": 28,
+      "itineraries": 90,
+      "byOrigin": {
+        "LAX": {
+          "seats": 171,
+          "flights": 28,
+          "itineraries": 90
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-05",
+      "seats": 152,
+      "flights": 29,
+      "itineraries": 105,
+      "byOrigin": {
+        "LAX": {
+          "seats": 152,
+          "flights": 29,
+          "itineraries": 105
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-06",
+      "seats": 206,
+      "flights": 29,
+      "itineraries": 88,
+      "byOrigin": {
+        "LAX": {
+          "seats": 206,
+          "flights": 29,
+          "itineraries": 88
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-07",
+      "seats": 173,
+      "flights": 28,
+      "itineraries": 95,
+      "byOrigin": {
+        "LAX": {
+          "seats": 173,
+          "flights": 28,
+          "itineraries": 95
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-08",
+      "seats": 155,
+      "flights": 25,
+      "itineraries": 81,
+      "byOrigin": {
+        "LAX": {
+          "seats": 155,
+          "flights": 25,
+          "itineraries": 81
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-09",
+      "seats": 143,
+      "flights": 26,
+      "itineraries": 85,
+      "byOrigin": {
+        "LAX": {
+          "seats": 143,
+          "flights": 26,
+          "itineraries": 85
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-10",
+      "seats": 168,
+      "flights": 24,
+      "itineraries": 80,
+      "byOrigin": {
+        "LAX": {
+          "seats": 168,
+          "flights": 24,
+          "itineraries": 80
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-11",
+      "seats": 186,
+      "flights": 25,
+      "itineraries": 91,
+      "byOrigin": {
+        "LAX": {
+          "seats": 186,
+          "flights": 25,
+          "itineraries": 91
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-12",
+      "seats": 210,
+      "flights": 29,
+      "itineraries": 102,
+      "byOrigin": {
+        "LAX": {
+          "seats": 210,
+          "flights": 29,
+          "itineraries": 102
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-13",
+      "seats": 187,
+      "flights": 31,
+      "itineraries": 108,
+      "byOrigin": {
+        "LAX": {
+          "seats": 187,
+          "flights": 31,
+          "itineraries": 108
+        }
+      },
+      "mock": true
+    }
+  ],
+  "meta": {
+    "destination": "TLV",
+    "destinationLabel": "Tel Aviv (TLV)",
+    "origins": [
+      "LAX"
+    ],
+    "originLabels": {
+      "LAX": "Los Angeles Intl",
+      "BUR": "Hollywood Burbank",
+      "SNA": "Orange County (John Wayne)",
+      "ONT": "Ontario Intl",
+      "LGB": "Long Beach"
+    },
+    "departureWindow": {
+      "start": "2026-10-20",
+      "end": "2026-10-27"
+    },
+    "arriveBy": "2026-10-27T23:59",
+    "maxSeatsPerClass": 9,
+    "source": "mock",
+    "updatedAt": "2026-07-13T20:30:44.590Z"
+  }
+}

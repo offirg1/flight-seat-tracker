@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LA → TLV seat tracker</title>
+<style>
+  :root {
+    --page: #f9f9f7;
+    --surface-1: #fcfcfb;
+    --text-primary: #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted: #898781;
+    --grid: #e1e0d9;
+    --baseline: #c3c2b7;
+    --border: rgba(11, 11, 11, 0.10);
+    --series-1: #2a78d6;
+    --delta-up: #006300;
+    --delta-down: #d03b3b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --page: #0d0d0d;
+      --surface-1: #1a1a19;
+      --text-primary: #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted: #898781;
+      --grid: #2c2c2a;
+      --baseline: #383835;
+      --border: rgba(255, 255, 255, 0.10);
+      --series-1: #3987e5;
+      --delta-up: #0ca30c;
+      --delta-down: #e66767;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--page);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.45;
+  }
+  main { max-width: 860px; margin: 0 auto; padding: 40px 20px 64px; }
+  header h1 { font-size: 1.5rem; font-weight: 650; letter-spacing: -0.01em; }
+  header .sub { color: var(--text-secondary); margin-top: 4px; font-size: 0.95rem; }
+  .chip {
+    display: inline-block; font-size: 0.75rem; font-weight: 600;
+    color: var(--text-secondary); border: 1px solid var(--border);
+    border-radius: 999px; padding: 1px 10px; margin-left: 6px; vertical-align: 2px;
+  }
+  .tiles {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px; margin-top: 28px;
+  }
+  .tile {
+    background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 12px; padding: 16px 18px;
+  }
+  .tile .label { font-size: 0.85rem; color: var(--text-secondary); }
+  .tile .value { font-size: 1.6rem; font-weight: 600; margin-top: 2px; }
+  .tile.hero { grid-column: 1 / -1; padding: 22px 24px; }
+  .tile.hero .value { font-size: 3.4rem; font-weight: 650; line-height: 1.1; }
+  .tile.hero .delta { font-size: 0.95rem; font-weight: 600; margin-top: 4px; }
+  .delta.up { color: var(--delta-up); }
+  .delta.down { color: var(--delta-down); }
+  .delta.flat { color: var(--text-muted); font-weight: 500; }
+  .card {
+    background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px 24px; margin-top: 16px;
+  }
+  .card h2 { font-size: 1rem; font-weight: 650; margin-bottom: 2px; }
+  .card .cardsub { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 14px; }
+  #chartwrap { position: relative; }
+  #chartwrap svg { display: block; width: 100%; height: auto; }
+  #tooltip {
+    position: absolute; pointer-events: none; display: none;
+    background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 8px; padding: 6px 10px; font-size: 0.8rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12); white-space: nowrap; z-index: 2;
+  }
+  #tooltip .tt-date { color: var(--text-secondary); }
+  #tooltip .tt-val { font-weight: 650; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  th {
+    text-align: left; font-weight: 600; color: var(--text-secondary);
+    font-size: 0.8rem; padding: 6px 8px; border-bottom: 1px solid var(--grid);
+  }
+  td { padding: 8px; border-bottom: 1px solid var(--grid); }
+  tr:last-child td { border-bottom: none; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .method { margin-top: 20px; color: var(--text-secondary); font-size: 0.85rem; }
+  .method summary { cursor: pointer; font-weight: 600; color: var(--text-primary); }
+  .method p { margin-top: 8px; }
+  .empty { color: var(--text-muted); padding: 24px 0; text-align: center; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1 id="title">Available seats · LA → Tel Aviv</h1>
+    <p class="sub" id="subtitle">Loading…</p>
+  </header>
+
+  <section class="tiles">
+    <div class="tile hero">
+      <div class="label">Available seats today (floor estimate)</div>
+      <div class="value" id="heroSeats">—</div>
+      <div class="delta flat" id="heroDelta"></div>
+    </div>
+    <div class="tile">
+      <div class="label">TLV-bound flights</div>
+      <div class="value" id="statFlights">—</div>
+    </div>
+    <div class="tile">
+      <div class="label">Bookable itineraries</div>
+      <div class="value" id="statItins">—</div>
+    </div>
+    <div class="tile">
+      <div class="label">Last updated</div>
+      <div class="value" id="statUpdated" style="font-size:1.1rem; margin-top:8px;">—</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Seat availability trend</h2>
+    <p class="cardsub">One snapshot per day — total capped seat availability across all qualifying flights</p>
+    <div id="chartwrap"><div id="tooltip"></div></div>
+  </section>
+
+  <section class="card">
+    <h2>By origin airport</h2>
+    <p class="cardsub" id="originsub">Latest snapshot, broken down per departure airport</p>
+    <table>
+      <thead>
+        <tr><th>Airport</th><th class="num">Seats</th><th class="num">Flights</th><th class="num">Itineraries</th></tr>
+      </thead>
+      <tbody id="originRows"></tbody>
+    </table>
+  </section>
+
+  <details class="method">
+    <summary>How this number is computed</summary>
+    <p>Airlines never publish exact remaining-seat counts: availability systems cap what
+    they expose at <strong>9 seats per booking class per flight</strong>. This tracker queries the
+    Amadeus Flight Availabilities API once a day for every departure date in the window,
+    keeps itineraries that arrive at the destination by the deadline, and sums the capped
+    per-class availability on each unique destination-bound flight. The headline is therefore
+    a <strong>floor estimate</strong> — real availability is at least this, and the day-over-day
+    trend (flights filling up or opening) is the reliable signal. Flights reachable from more
+    than one origin airport are counted once in the total.</p>
+  </details>
+</main>
+
+<script>
+(async function () {
+  const $ = (id) => document.getElementById(id);
+  let db;
+  try {
+    db = await (await fetch("data.json?t=" + Date.now())).json();
+  } catch {
+    $("subtitle").textContent = "Could not load data.json — run the fetch script first.";
+    return;
+  }
+
+  const meta = db.meta ?? {};
+  const history = (db.history ?? []).slice().sort((a, b) => a.date.localeCompare(b.date));
+  if (!history.length) {
+    $("subtitle").textContent = "No snapshots yet — run the fetch script first.";
+    return;
+  }
+
+  const latest = history[history.length - 1];
+  const prev = history[history.length - 2];
+  const fmt = (n) => n.toLocaleString("en-US");
+  const fmtDate = (iso, opts) =>
+    new Date(iso + "T12:00:00").toLocaleDateString("en-US", opts ?? { month: "short", day: "numeric" });
+
+  // Header
+  const w = meta.departureWindow ?? {};
+  const dest = meta.destinationLabel ?? meta.destination ?? "";
+  $("title").textContent = `Available seats · ${(meta.origins ?? []).join(", ")} → ${meta.destination ?? ""}`;
+  $("subtitle").innerHTML =
+    `Flights to ${dest} departing ${fmtDate(w.start)} – ${fmtDate(w.end, { month: "short", day: "numeric", year: "numeric" })}, ` +
+    `arriving by ${fmtDate((meta.arriveBy ?? "").slice(0, 10))} · updated daily` +
+    (latest.mock ? ' <span class="chip">sample data</span>' : "");
+
+  // Tiles
+  $("heroSeats").textContent = fmt(latest.seats);
+  $("statFlights").textContent = fmt(latest.flights);
+  $("statItins").textContent = fmt(latest.itineraries);
+  $("statUpdated").textContent = meta.updatedAt
+    ? new Date(meta.updatedAt).toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })
+    : latest.date;
+
+  const deltaEl = $("heroDelta");
+  if (prev) {
+    const d = latest.seats - prev.seats;
+    deltaEl.className = "delta " + (d > 0 ? "up" : d < 0 ? "down" : "flat");
+    deltaEl.textContent = d === 0 ? "no change vs yesterday" : `${d > 0 ? "▲ +" : "▼ "}${fmt(d)} vs yesterday`;
+  } else {
+    deltaEl.textContent = "first snapshot — trend builds daily";
+  }
+
+  // Origin table
+  const labels = meta.originLabels ?? {};
+  $("originRows").innerHTML = Object.entries(latest.byOrigin ?? {})
+    .map(([code, o]) =>
+      `<tr><td><strong>${code}</strong> <span style="color:var(--text-secondary)">${labels[code] ?? ""}</span></td>` +
+      `<td class="num">${fmt(o.seats)}</td><td class="num">${fmt(o.flights)}</td><td class="num">${fmt(o.itineraries)}</td></tr>`)
+    .join("");
+
+  // ------------------------------------------------------------- trend chart
+  drawChart(history);
+
+  function drawChart(hist) {
+    const wrap = $("chartwrap");
+    const W = 780, H = 260;
+    const M = { top: 18, right: 64, bottom: 30, left: 46 };
+    const iw = W - M.left - M.right, ih = H - M.top - M.bottom;
+
+    const vals = hist.map((s) => s.seats);
+    const yMax = niceCeil(Math.max(...vals) * 1.12);
+    const x = (i) => M.left + (hist.length === 1 ? iw / 2 : (i / (hist.length - 1)) * iw);
+    const y = (v) => M.top + ih - (v / yMax) * ih;
+
+    const css = getComputedStyle(document.documentElement);
+    const c = (name) => css.getPropertyValue(name).trim();
+    const ns = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(ns, "svg");
+    svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+    const el = (tag, attrs, parent = svg) => {
+      const node = document.createElementNS(ns, tag);
+      for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, v);
+      parent.appendChild(node);
+      return node;
+    };
+
+    // gridlines + y ticks (clean numbers)
+    const ticks = 4;
+    for (let t = 0; t <= ticks; t++) {
+      const v = Math.round((yMax / ticks) * t);
+      const yy = y(v);
+      el("line", { x1: M.left, x2: W - M.right, y1: yy, y2: yy, stroke: t === 0 ? c("--baseline") : c("--grid"), "stroke-width": 1 });
+      el("text", { x: M.left - 8, y: yy + 4, "text-anchor": "end", "font-size": 11, fill: c("--text-muted"), "font-variant-numeric": "tabular-nums" }).textContent = v.toLocaleString("en-US");
+    }
+
+    // x labels: first, last, and a few in between
+    const xLabelIdx = new Set([0, hist.length - 1, Math.floor((hist.length - 1) / 2)]);
+    for (const i of xLabelIdx) {
+      el("text", { x: x(i), y: H - 8, "text-anchor": i === 0 ? "start" : i === hist.length - 1 ? "end" : "middle", "font-size": 11, fill: c("--text-muted") })
+        .textContent = fmtDate(hist[i].date);
+    }
+
+    const pts = hist.map((s, i) => [x(i), y(s.seats)]);
+    if (pts.length > 1) {
+      const line = pts.map((p, i) => `${i ? "L" : "M"}${p[0]},${p[1]}`).join(" ");
+      el("path", { d: `${line} L${pts[pts.length - 1][0]},${y(0)} L${pts[0][0]},${y(0)} Z`, fill: c("--series-1"), opacity: 0.1 });
+      el("path", { d: line, fill: "none", stroke: c("--series-1"), "stroke-width": 2, "stroke-linejoin": "round", "stroke-linecap": "round" });
+    }
+
+    // end marker with surface ring + direct end label (ink, not series color)
+    const [ex, ey] = pts[pts.length - 1];
+    el("circle", { cx: ex, cy: ey, r: 4.5, fill: c("--series-1"), stroke: c("--surface-1"), "stroke-width": 2 });
+    el("text", { x: ex + 10, y: ey + 4, "font-size": 12, "font-weight": 650, fill: c("--text-primary") })
+      .textContent = vals[vals.length - 1].toLocaleString("en-US");
+
+    // crosshair + tooltip
+    const cross = el("line", { y1: M.top, y2: M.top + ih, stroke: c("--baseline"), "stroke-width": 1, visibility: "hidden" });
+    const hoverDot = el("circle", { r: 4.5, fill: c("--series-1"), stroke: c("--surface-1"), "stroke-width": 2, visibility: "hidden" });
+    const tip = $("tooltip");
+
+    svg.addEventListener("pointermove", (ev) => {
+      const rect = svg.getBoundingClientRect();
+      const px = ((ev.clientX - rect.left) / rect.width) * W;
+      let best = 0;
+      for (let i = 1; i < pts.length; i++) if (Math.abs(pts[i][0] - px) < Math.abs(pts[best][0] - px)) best = i;
+      const [bx, by] = pts[best];
+      cross.setAttribute("x1", bx); cross.setAttribute("x2", bx); cross.setAttribute("visibility", "visible");
+      hoverDot.setAttribute("cx", bx); hoverDot.setAttribute("cy", by); hoverDot.setAttribute("visibility", "visible");
+      tip.innerHTML = `<div class="tt-date">${fmtDate(hist[best].date, { month: "short", day: "numeric", year: "numeric" })}</div>` +
+        `<div class="tt-val">${fmt(hist[best].seats)} seats</div>` +
+        `<div class="tt-date">${fmt(hist[best].flights)} flights · ${fmt(hist[best].itineraries)} itineraries</div>`;
+      tip.style.display = "block";
+      const wrapRect = wrap.getBoundingClientRect();
+      const left = (bx / W) * wrapRect.width;
+      tip.style.left = Math.min(left + 12, wrapRect.width - tip.offsetWidth - 4) + "px";
+      tip.style.top = Math.max((by / H) * wrapRect.height - tip.offsetHeight - 10, 0) + "px";
+    });
+    svg.addEventListener("pointerleave", () => {
+      cross.setAttribute("visibility", "hidden");
+      hoverDot.setAttribute("visibility", "hidden");
+      tip.style.display = "none";
+    });
+
+    wrap.appendChild(svg);
+  }
+
+  function niceCeil(v) {
+    const mag = Math.pow(10, Math.floor(Math.log10(Math.max(v, 1))));
+    for (const m of [1, 2, 2.5, 4, 5, 8, 10]) if (m * mag >= v) return Math.ceil(m * mag);
+    return Math.ceil(v);
+  }
+})();
+</script>
+</body>
+</html>

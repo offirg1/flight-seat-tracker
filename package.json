@@ -1,0 +1,11 @@
+{
+  "name": "flight-seat-tracker",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "fetch": "node scripts/fetch-seats.mjs",
+    "mock": "MOCK=1 node scripts/fetch-seats.mjs",
+    "mock:backfill": "MOCK=1 MOCK_BACKFILL=14 node scripts/fetch-seats.mjs"
+  }
+}

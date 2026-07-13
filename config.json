@@ -1,0 +1,15 @@
+{
+  "destination": "TLV",
+  "destinationLabel": "Tel Aviv (TLV)",
+  "origins": ["LAX"],
+  "originLabels": {
+    "LAX": "Los Angeles Intl",
+    "BUR": "Hollywood Burbank",
+    "SNA": "Orange County (John Wayne)",
+    "ONT": "Ontario Intl",
+    "LGB": "Long Beach"
+  },
+  "departureWindow": { "start": "2026-10-20", "end": "2026-10-27" },
+  "arriveBy": "2026-10-27T23:59",
+  "maxSeatsPerClass": 9
+}
