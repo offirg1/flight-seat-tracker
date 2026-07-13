@@ -219,7 +219,8 @@
     const iw = W - M.left - M.right, ih = H - M.top - M.bottom;
 
     const vals = hist.map((s) => s.seats);
-    const yMax = niceCeil(Math.max(...vals) * 1.12);
+    const yStep = niceStep((Math.max(...vals) * 1.12) / 4);
+    const yMax = yStep * Math.ceil((Math.max(...vals) * 1.12) / yStep);
     const x = (i) => M.left + (hist.length === 1 ? iw / 2 : (i / (hist.length - 1)) * iw);
     const y = (v) => M.top + ih - (v / yMax) * ih;
 
@@ -236,11 +237,9 @@
     };
 
     // gridlines + y ticks (clean numbers)
-    const ticks = 4;
-    for (let t = 0; t <= ticks; t++) {
-      const v = Math.round((yMax / ticks) * t);
+    for (let v = 0; v <= yMax; v += yStep) {
       const yy = y(v);
-      el("line", { x1: M.left, x2: W - M.right, y1: yy, y2: yy, stroke: t === 0 ? c("--baseline") : c("--grid"), "stroke-width": 1 });
+      el("line", { x1: M.left, x2: W - M.right, y1: yy, y2: yy, stroke: v === 0 ? c("--baseline") : c("--grid"), "stroke-width": 1 });
       el("text", { x: M.left - 8, y: yy + 4, "text-anchor": "end", "font-size": 11, fill: c("--text-muted"), "font-variant-numeric": "tabular-nums" }).textContent = v.toLocaleString("en-US");
     }
 
@@ -295,10 +294,10 @@
     wrap.appendChild(svg);
   }
 
-  function niceCeil(v) {
-    const mag = Math.pow(10, Math.floor(Math.log10(Math.max(v, 1))));
-    for (const m of [1, 2, 2.5, 4, 5, 8, 10]) if (m * mag >= v) return Math.ceil(m * mag);
-    return Math.ceil(v);
+  function niceStep(raw) {
+    const mag = Math.pow(10, Math.floor(Math.log10(Math.max(raw, 1))));
+    for (const m of [1, 2, 5, 10]) if (m * mag >= raw) return m * mag;
+    return 10 * mag;
   }
 })();
 </script>
