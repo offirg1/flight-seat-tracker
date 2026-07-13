@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LA → TLV seat tracker</title>
+<title>TLV arrivals — empty seat tracker</title>
 <style>
   :root {
     --page: #f9f9f7;
@@ -103,30 +103,29 @@
   .method { margin-top: 20px; color: var(--text-secondary); font-size: 0.85rem; }
   .method summary { cursor: pointer; font-weight: 600; color: var(--text-primary); }
   .method p { margin-top: 8px; }
-  .empty { color: var(--text-muted); padding: 24px 0; text-align: center; }
 </style>
 </head>
 <body>
 <main>
-  <div class="nav"><a href="arrivals.html">All TLV arrivals view →</a></div>
+  <div class="nav"><a href="index.html">← LA → TLV departures view</a></div>
   <header>
-    <h1 id="title">Available seats · LA → Tel Aviv</h1>
+    <h1 id="title">Empty seats · all arrivals into TLV</h1>
     <p class="sub" id="subtitle">Loading…</p>
   </header>
 
   <section class="tiles">
     <div class="tile hero">
-      <div class="label">Available seats today (floor estimate)</div>
+      <div class="label">Open seats on arriving flights (floor estimate)</div>
       <div class="value" id="heroSeats">—</div>
       <div class="delta flat" id="heroDelta"></div>
     </div>
     <div class="tile">
-      <div class="label">TLV-bound flights</div>
+      <div class="label">Flights landing in window</div>
       <div class="value" id="statFlights">—</div>
     </div>
     <div class="tile">
-      <div class="label">Bookable itineraries</div>
-      <div class="value" id="statItins">—</div>
+      <div class="label">Flights with seat data</div>
+      <div class="value" id="statMapped">—</div>
     </div>
     <div class="tile">
       <div class="label">Last updated</div>
@@ -135,22 +134,22 @@
   </section>
 
   <section class="card">
-    <h2>Seat availability trend</h2>
-    <p class="cardsub">One snapshot per day — total counted seat availability across all qualifying flights</p>
+    <h2>Open-seat trend</h2>
+    <p class="cardsub">One snapshot per day — total counted open seats across all arriving flights</p>
     <div id="chartwrap"><div id="tooltip"></div></div>
   </section>
 
   <section class="card" id="flightsCard" hidden>
-    <h2>Flights</h2>
-    <p class="cardsub" id="flightsub">Destination-bound flights in the latest snapshot</p>
+    <h2>Arriving flights</h2>
+    <p class="cardsub" id="flightsub"></p>
     <div class="filterrow">
-      <label for="dateFilter">Departure date</label>
+      <label for="dateFilter">Arrival date</label>
       <select id="dateFilter"></select>
     </div>
     <div class="tablescroll">
       <table>
         <thead>
-          <tr><th>Flight</th><th>Final leg</th><th>Date</th><th class="num">Stops</th><th class="num">Seats</th></tr>
+          <tr><th>Flight</th><th>From</th><th>Arrives</th><th class="num">Open seats</th></tr>
         </thead>
         <tbody id="flightRows"></tbody>
       </table>
@@ -158,27 +157,27 @@
   </section>
 
   <section class="card">
-    <h2>By origin airport</h2>
-    <p class="cardsub" id="originsub">Latest snapshot, broken down per departure airport</p>
+    <h2>By arrival day</h2>
+    <p class="cardsub">Latest snapshot totals per day of the window</p>
     <table>
       <thead>
-        <tr><th>Airport</th><th class="num">Seats</th><th class="num">Flights</th><th class="num">Itineraries</th></tr>
+        <tr><th>Day</th><th class="num">Flights</th><th class="num">With seat data</th><th class="num">Open seats</th></tr>
       </thead>
-      <tbody id="originRows"></tbody>
+      <tbody id="dayRows"></tbody>
     </table>
   </section>
 
   <details class="method">
     <summary>How this number is computed</summary>
-    <p>Airlines never publish exact remaining-seat counts. This tracker searches the Duffel
-    flight API once a day for every departure date in the window, keeps itineraries that
-    arrive at the destination by the deadline, and counts <strong>open seats on each unique
-    destination-bound flight's seat map</strong>. Not every airline publishes seat maps
-    (unmapped flights appear in the flight and itinerary counts but add no seats), and a
-    blocked seat isn't necessarily sold. The headline is therefore a <strong>floor
-    estimate</strong> — real availability is at least this, and the day-over-day trend
-    (flights filling up or opening) is the reliable signal. Flights reachable from more than
-    one origin airport are counted once in the total.</p>
+    <p>No public source lists every flight landing at an airport months ahead — full
+    schedules are commercial data. This page approximates it: once a day it searches
+    Tel Aviv-bound routes from <span id="originCount">~38</span> origin airports that
+    carry the bulk of TLV traffic, harvests every TLV-landing flight those searches
+    surface (including final legs of connecting itineraries), keeps the ones arriving
+    inside the window, and counts open seats on each flight's published seat map. Not
+    every airline publishes seat maps, and a blocked seat isn't necessarily sold — so
+    the headline is a <strong>floor estimate</strong>, and the day-over-day trend is
+    the reliable signal.</p>
   </details>
 </main>
 
@@ -187,9 +186,9 @@
   const $ = (id) => document.getElementById(id);
   let db;
   try {
-    db = await (await fetch("data.json?t=" + Date.now())).json();
+    db = await (await fetch("arrivals.json?t=" + Date.now())).json();
   } catch {
-    $("subtitle").textContent = "Could not load data.json — run the fetch script first.";
+    $("subtitle").textContent = "Could not load arrivals.json — run the fetch script first.";
     return;
   }
 
@@ -206,19 +205,16 @@
   const fmtDate = (iso, opts) =>
     new Date(iso + "T12:00:00").toLocaleDateString("en-US", opts ?? { month: "short", day: "numeric" });
 
-  // Header
-  const w = meta.departureWindow ?? {};
-  const dest = meta.destinationLabel ?? meta.destination ?? "";
-  $("title").textContent = `Available seats · ${(meta.origins ?? []).join(", ")} → ${meta.destination ?? ""}`;
+  const w = meta.window ?? {};
   $("subtitle").innerHTML =
-    `Flights to ${dest} departing ${fmtDate(w.start)} – ${fmtDate(w.end, { month: "short", day: "numeric", year: "numeric" })}, ` +
-    `arriving by ${fmtDate((meta.arriveBy ?? "").slice(0, 10))} · updated daily` +
+    `Flights landing at ${meta.destinationLabel ?? meta.destination} ${fmtDate(w.start)} – ` +
+    `${fmtDate(w.end, { month: "short", day: "numeric", year: "numeric" })} · updated daily` +
     (latest.mock ? ' <span class="chip">sample data</span>' : "");
+  $("originCount").textContent = (meta.origins ?? []).length;
 
-  // Tiles
   $("heroSeats").textContent = fmt(latest.seats);
   $("statFlights").textContent = fmt(latest.flights);
-  $("statItins").textContent = fmt(latest.itineraries);
+  $("statMapped").textContent = `${fmt(latest.mappedFlights)} / ${fmt(latest.flights)}`;
   $("statUpdated").textContent = meta.updatedAt
     ? new Date(meta.updatedAt).toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })
     : latest.date;
@@ -232,12 +228,20 @@
     deltaEl.textContent = "first snapshot — trend builds daily";
   }
 
-  // Flights list with date dropdown
+  // Per-day breakdown
+  $("dayRows").innerHTML = Object.entries(latest.byDay ?? {})
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([d, v]) =>
+      `<tr><td><strong>${fmtDate(d, { weekday: "short", month: "short", day: "numeric" })}</strong></td>` +
+      `<td class="num">${fmt(v.flights)}</td><td class="num">${fmt(v.mappedFlights)}</td><td class="num">${fmt(v.seats)}</td></tr>`)
+    .join("");
+
+  // Flight list with arrival-date dropdown
   const flightList = latest.flightList ?? [];
   if (flightList.length) {
     $("flightsCard").hidden = false;
     $("flightsub").textContent =
-      `${fmt(flightList.length)} destination-bound flights in the latest snapshot` +
+      `${fmt(flightList.length)} flights landing in the window` +
       (latest.mappedFlights < latest.flights ? ` — seat counts known for ${fmt(latest.mappedFlights)} of them` : "");
 
     const dates = [...new Set(flightList.map((f) => f.date))].sort();
@@ -254,9 +258,8 @@
         .map(
           (f) =>
             `<tr><td><strong>${f.flight}</strong></td>` +
-            `<td>${f.from} → ${meta.destination}</td>` +
-            `<td>${fmtDate(f.date, { weekday: "short", month: "short", day: "numeric" })}</td>` +
-            `<td class="num">${f.stops === 0 ? "nonstop" : f.stops === 1 ? "1 stop" : `${f.stops} stops`}</td>` +
+            `<td>${f.from}</td>` +
+            `<td>${fmtDate(f.date, { weekday: "short", month: "short", day: "numeric" })} ${f.time}</td>` +
             `<td class="num">${f.seats == null ? "—" : fmt(f.seats)}</td></tr>`
         )
         .join("");
@@ -265,15 +268,6 @@
     renderFlights();
   }
 
-  // Origin table
-  const labels = meta.originLabels ?? {};
-  $("originRows").innerHTML = Object.entries(latest.byOrigin ?? {})
-    .map(([code, o]) =>
-      `<tr><td><strong>${code}</strong> <span style="color:var(--text-secondary)">${labels[code] ?? ""}</span></td>` +
-      `<td class="num">${fmt(o.seats)}</td><td class="num">${fmt(o.flights)}</td><td class="num">${fmt(o.itineraries)}</td></tr>`)
-    .join("");
-
-  // ------------------------------------------------------------- trend chart
   drawChart(history);
 
   function drawChart(hist) {
@@ -300,14 +294,12 @@
       return node;
     };
 
-    // gridlines + y ticks (clean numbers)
     for (let v = 0; v <= yMax; v += yStep) {
       const yy = y(v);
       el("line", { x1: M.left, x2: W - M.right, y1: yy, y2: yy, stroke: v === 0 ? c("--baseline") : c("--grid"), "stroke-width": 1 });
       el("text", { x: M.left - 8, y: yy + 4, "text-anchor": "end", "font-size": 11, fill: c("--text-muted"), "font-variant-numeric": "tabular-nums" }).textContent = v.toLocaleString("en-US");
     }
 
-    // x labels: first, last, and a few in between
     const xLabelIdx = new Set([0, hist.length - 1, Math.floor((hist.length - 1) / 2)]);
     for (const i of xLabelIdx) {
       el("text", { x: x(i), y: H - 8, "text-anchor": i === 0 ? "start" : i === hist.length - 1 ? "end" : "middle", "font-size": 11, fill: c("--text-muted") })
@@ -321,13 +313,11 @@
       el("path", { d: line, fill: "none", stroke: c("--series-1"), "stroke-width": 2, "stroke-linejoin": "round", "stroke-linecap": "round" });
     }
 
-    // end marker with surface ring + direct end label (ink, not series color)
     const [ex, ey] = pts[pts.length - 1];
     el("circle", { cx: ex, cy: ey, r: 4.5, fill: c("--series-1"), stroke: c("--surface-1"), "stroke-width": 2 });
     el("text", { x: ex + 10, y: ey + 4, "font-size": 12, "font-weight": 650, fill: c("--text-primary") })
       .textContent = vals[vals.length - 1].toLocaleString("en-US");
 
-    // crosshair + tooltip
     const cross = el("line", { y1: M.top, y2: M.top + ih, stroke: c("--baseline"), "stroke-width": 1, visibility: "hidden" });
     const hoverDot = el("circle", { r: 4.5, fill: c("--series-1"), stroke: c("--surface-1"), "stroke-width": 2, visibility: "hidden" });
     const tip = $("tooltip");
@@ -341,8 +331,8 @@
       cross.setAttribute("x1", bx); cross.setAttribute("x2", bx); cross.setAttribute("visibility", "visible");
       hoverDot.setAttribute("cx", bx); hoverDot.setAttribute("cy", by); hoverDot.setAttribute("visibility", "visible");
       tip.innerHTML = `<div class="tt-date">${fmtDate(hist[best].date, { month: "short", day: "numeric", year: "numeric" })}</div>` +
-        `<div class="tt-val">${fmt(hist[best].seats)} seats</div>` +
-        `<div class="tt-date">${fmt(hist[best].flights)} flights · ${fmt(hist[best].itineraries)} itineraries</div>`;
+        `<div class="tt-val">${fmt(hist[best].seats)} open seats</div>` +
+        `<div class="tt-date">${fmt(hist[best].flights)} arriving flights</div>`;
       tip.style.display = "block";
       const wrapRect = wrap.getBoundingClientRect();
       const left = (bx / W) * wrapRect.width;

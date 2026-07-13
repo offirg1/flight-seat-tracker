@@ -1,0 +1,1372 @@
+{
+  "history": [
+    {
+      "date": "2026-06-30",
+      "seats": 3627,
+      "flights": 129,
+      "mappedFlights": 100,
+      "byDay": {
+        "2026-10-23": {
+          "seats": 694,
+          "flights": 33,
+          "mappedFlights": 20
+        },
+        "2026-10-24": {
+          "seats": 1245,
+          "flights": 34,
+          "mappedFlights": 32
+        },
+        "2026-10-25": {
+          "seats": 831,
+          "flights": 28,
+          "mappedFlights": 22
+        },
+        "2026-10-26": {
+          "seats": 857,
+          "flights": 34,
+          "mappedFlights": 26
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-01",
+      "seats": 3091,
+      "flights": 128,
+      "mappedFlights": 97,
+      "byDay": {
+        "2026-10-23": {
+          "seats": 645,
+          "flights": 34,
+          "mappedFlights": 20
+        },
+        "2026-10-24": {
+          "seats": 748,
+          "flights": 31,
+          "mappedFlights": 25
+        },
+        "2026-10-25": {
+          "seats": 715,
+          "flights": 31,
+          "mappedFlights": 25
+        },
+        "2026-10-26": {
+          "seats": 983,
+          "flights": 32,
+          "mappedFlights": 27
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-02",
+      "seats": 2622,
+      "flights": 120,
+      "mappedFlights": 83,
+      "byDay": {
+        "2026-10-23": {
+          "seats": 559,
+          "flights": 31,
+          "mappedFlights": 19
+        },
+        "2026-10-24": {
+          "seats": 677,
+          "flights": 32,
+          "mappedFlights": 21
+        },
+        "2026-10-25": {
+          "seats": 716,
+          "flights": 28,
+          "mappedFlights": 22
+        },
+        "2026-10-26": {
+          "seats": 670,
+          "flights": 29,
+          "mappedFlights": 21
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-03",
+      "seats": 2498,
+      "flights": 117,
+      "mappedFlights": 84,
+      "byDay": {
+        "2026-10-23": {
+          "seats": 487,
+          "flights": 27,
+          "mappedFlights": 18
+        },
+        "2026-10-24": {
+          "seats": 718,
+          "flights": 31,
+          "mappedFlights": 23
+        },
+        "2026-10-25": {
+          "seats": 432,
+          "flights": 26,
+          "mappedFlights": 17
+        },
+        "2026-10-26": {
+          "seats": 861,
+          "flights": 33,
+          "mappedFlights": 26
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-04",
+      "seats": 2505,
+      "flights": 123,
+      "mappedFlights": 81,
+      "byDay": {
+        "2026-10-23": {
+          "seats": 687,
+          "flights": 32,
+          "mappedFlights": 21
+        },
+        "2026-10-24": {
+          "seats": 555,
+          "flights": 26,
+          "mappedFlights": 17
+        },
+        "2026-10-25": {
+          "seats": 642,
+          "flights": 30,
+          "mappedFlights": 21
+        },
+        "2026-10-26": {
+          "seats": 621,
+          "flights": 35,
+          "mappedFlights": 22
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-05",
+      "seats": 3305,
+      "flights": 125,
+      "mappedFlights": 96,
+      "byDay": {
+        "2026-10-23": {
+          "seats": 699,
+          "flights": 28,
+          "mappedFlights": 20
+        },
+        "2026-10-24": {
+          "seats": 733,
+          "flights": 33,
+          "mappedFlights": 24
+        },
+        "2026-10-25": {
+          "seats": 1023,
+          "flights": 35,
+          "mappedFlights": 28
+        },
+        "2026-10-26": {
+          "seats": 850,
+          "flights": 29,
+          "mappedFlights": 24
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-06",
+      "seats": 2048,
+      "flights": 107,
+      "mappedFlights": 66,
+      "byDay": {
+        "2026-10-23": {
+          "seats": 485,
+          "flights": 26,
+          "mappedFlights": 14
+        },
+        "2026-10-24": {
+          "seats": 565,
+          "flights": 26,
+          "mappedFlights": 20
+        },
+        "2026-10-25": {
+          "seats": 473,
+          "flights": 27,
+          "mappedFlights": 16
+        },
+        "2026-10-26": {
+          "seats": 525,
+          "flights": 28,
+          "mappedFlights": 16
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-07",
+      "seats": 3041,
+      "flights": 120,
+      "mappedFlights": 88,
+      "byDay": {
+        "2026-10-23": {
+          "seats": 778,
+          "flights": 28,
+          "mappedFlights": 23
+        },
+        "2026-10-24": {
+          "seats": 820,
+          "flights": 33,
+          "mappedFlights": 24
+        },
+        "2026-10-25": {
+          "seats": 532,
+          "flights": 26,
+          "mappedFlights": 16
+        },
+        "2026-10-26": {
+          "seats": 911,
+          "flights": 33,
+          "mappedFlights": 25
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-08",
+      "seats": 2874,
+      "flights": 128,
+      "mappedFlights": 85,
+      "byDay": {
+        "2026-10-23": {
+          "seats": 691,
+          "flights": 32,
+          "mappedFlights": 22
+        },
+        "2026-10-24": {
+          "seats": 843,
+          "flights": 33,
+          "mappedFlights": 25
+        },
+        "2026-10-25": {
+          "seats": 793,
+          "flights": 34,
+          "mappedFlights": 21
+        },
+        "2026-10-26": {
+          "seats": 547,
+          "flights": 29,
+          "mappedFlights": 17
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-09",
+      "seats": 2819,
+      "flights": 120,
+      "mappedFlights": 92,
+      "byDay": {
+        "2026-10-23": {
+          "seats": 588,
+          "flights": 29,
+          "mappedFlights": 19
+        },
+        "2026-10-24": {
+          "seats": 919,
+          "flights": 32,
+          "mappedFlights": 30
+        },
+        "2026-10-25": {
+          "seats": 571,
+          "flights": 28,
+          "mappedFlights": 20
+        },
+        "2026-10-26": {
+          "seats": 741,
+          "flights": 31,
+          "mappedFlights": 23
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-10",
+      "seats": 2994,
+      "flights": 121,
+      "mappedFlights": 91,
+      "byDay": {
+        "2026-10-23": {
+          "seats": 710,
+          "flights": 30,
+          "mappedFlights": 22
+        },
+        "2026-10-24": {
+          "seats": 679,
+          "flights": 27,
+          "mappedFlights": 20
+        },
+        "2026-10-25": {
+          "seats": 769,
+          "flights": 31,
+          "mappedFlights": 22
+        },
+        "2026-10-26": {
+          "seats": 836,
+          "flights": 33,
+          "mappedFlights": 27
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-11",
+      "seats": 2681,
+      "flights": 118,
+      "mappedFlights": 87,
+      "byDay": {
+        "2026-10-23": {
+          "seats": 750,
+          "flights": 30,
+          "mappedFlights": 21
+        },
+        "2026-10-24": {
+          "seats": 469,
+          "flights": 31,
+          "mappedFlights": 20
+        },
+        "2026-10-25": {
+          "seats": 632,
+          "flights": 26,
+          "mappedFlights": 22
+        },
+        "2026-10-26": {
+          "seats": 830,
+          "flights": 31,
+          "mappedFlights": 24
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-12",
+      "seats": 2597,
+      "flights": 112,
+      "mappedFlights": 86,
+      "byDay": {
+        "2026-10-23": {
+          "seats": 557,
+          "flights": 27,
+          "mappedFlights": 20
+        },
+        "2026-10-24": {
+          "seats": 486,
+          "flights": 26,
+          "mappedFlights": 18
+        },
+        "2026-10-25": {
+          "seats": 871,
+          "flights": 33,
+          "mappedFlights": 26
+        },
+        "2026-10-26": {
+          "seats": 683,
+          "flights": 26,
+          "mappedFlights": 22
+        }
+      },
+      "mock": true
+    },
+    {
+      "date": "2026-07-13",
+      "seats": 3486,
+      "flights": 130,
+      "mappedFlights": 100,
+      "byDay": {
+        "2026-10-23": {
+          "seats": 833,
+          "flights": 35,
+          "mappedFlights": 27
+        },
+        "2026-10-24": {
+          "seats": 633,
+          "flights": 30,
+          "mappedFlights": 18
+        },
+        "2026-10-25": {
+          "seats": 1082,
+          "flights": 35,
+          "mappedFlights": 30
+        },
+        "2026-10-26": {
+          "seats": 938,
+          "flights": 30,
+          "mappedFlights": 25
+        }
+      },
+      "flightList": [
+        {
+          "flight": "OS 289",
+          "from": "DXB",
+          "date": "2026-10-23",
+          "time": "00:20",
+          "seats": null
+        },
+        {
+          "flight": "BA 411",
+          "from": "SAW",
+          "date": "2026-10-23",
+          "time": "00:25",
+          "seats": 40
+        },
+        {
+          "flight": "LY 474",
+          "from": "EWR",
+          "date": "2026-10-23",
+          "time": "01:35",
+          "seats": null
+        },
+        {
+          "flight": "TK 705",
+          "from": "PFO",
+          "date": "2026-10-23",
+          "time": "02:15",
+          "seats": null
+        },
+        {
+          "flight": "AC 993",
+          "from": "ORY",
+          "date": "2026-10-23",
+          "time": "03:40",
+          "seats": 5
+        },
+        {
+          "flight": "DL 704",
+          "from": "GYD",
+          "date": "2026-10-23",
+          "time": "04:05",
+          "seats": 8
+        },
+        {
+          "flight": "UA 369",
+          "from": "LHR",
+          "date": "2026-10-23",
+          "time": "04:15",
+          "seats": 17
+        },
+        {
+          "flight": "ET 204",
+          "from": "GYD",
+          "date": "2026-10-23",
+          "time": "05:25",
+          "seats": 35
+        },
+        {
+          "flight": "IZ 510",
+          "from": "BER",
+          "date": "2026-10-23",
+          "time": "05:30",
+          "seats": 14
+        },
+        {
+          "flight": "EK 471",
+          "from": "EVN",
+          "date": "2026-10-23",
+          "time": "05:35",
+          "seats": 19
+        },
+        {
+          "flight": "LH 576",
+          "from": "BRU",
+          "date": "2026-10-23",
+          "time": "06:10",
+          "seats": 10
+        },
+        {
+          "flight": "FR 222",
+          "from": "OTP",
+          "date": "2026-10-23",
+          "time": "08:00",
+          "seats": 25
+        },
+        {
+          "flight": "FZ 742",
+          "from": "EVN",
+          "date": "2026-10-23",
+          "time": "08:10",
+          "seats": 53
+        },
+        {
+          "flight": "AF 242",
+          "from": "GVA",
+          "date": "2026-10-23",
+          "time": "08:35",
+          "seats": 32
+        },
+        {
+          "flight": "6H 177",
+          "from": "SOF",
+          "date": "2026-10-23",
+          "time": "08:55",
+          "seats": 5
+        },
+        {
+          "flight": "W6 905",
+          "from": "VIE",
+          "date": "2026-10-23",
+          "time": "08:55",
+          "seats": null
+        },
+        {
+          "flight": "A3 938",
+          "from": "AMS",
+          "date": "2026-10-23",
+          "time": "11:45",
+          "seats": 60
+        },
+        {
+          "flight": "6H 838",
+          "from": "BER",
+          "date": "2026-10-23",
+          "time": "13:00",
+          "seats": 55
+        },
+        {
+          "flight": "W6 956",
+          "from": "LTN",
+          "date": "2026-10-23",
+          "time": "15:10",
+          "seats": 29
+        },
+        {
+          "flight": "ET 578",
+          "from": "MAD",
+          "date": "2026-10-23",
+          "time": "15:15",
+          "seats": 26
+        },
+        {
+          "flight": "LO 515",
+          "from": "PRG",
+          "date": "2026-10-23",
+          "time": "15:20",
+          "seats": 51
+        },
+        {
+          "flight": "W6 710",
+          "from": "BKK",
+          "date": "2026-10-23",
+          "time": "15:55",
+          "seats": 51
+        },
+        {
+          "flight": "BA 417",
+          "from": "LAX",
+          "date": "2026-10-23",
+          "time": "16:10",
+          "seats": 52
+        },
+        {
+          "flight": "OS 448",
+          "from": "AUH",
+          "date": "2026-10-23",
+          "time": "17:00",
+          "seats": 40
+        },
+        {
+          "flight": "PC 262",
+          "from": "CDG",
+          "date": "2026-10-23",
+          "time": "18:05",
+          "seats": 37
+        },
+        {
+          "flight": "IZ 166",
+          "from": "JFK",
+          "date": "2026-10-23",
+          "time": "18:25",
+          "seats": 17
+        },
+        {
+          "flight": "UA 449",
+          "from": "SOF",
+          "date": "2026-10-23",
+          "time": "18:30",
+          "seats": 33
+        },
+        {
+          "flight": "6H 341",
+          "from": "DXB",
+          "date": "2026-10-23",
+          "time": "19:00",
+          "seats": 33
+        },
+        {
+          "flight": "ET 904",
+          "from": "ATH",
+          "date": "2026-10-23",
+          "time": "19:25",
+          "seats": 6
+        },
+        {
+          "flight": "A3 536",
+          "from": "MIA",
+          "date": "2026-10-23",
+          "time": "19:55",
+          "seats": null
+        },
+        {
+          "flight": "FR 996",
+          "from": "LHR",
+          "date": "2026-10-23",
+          "time": "21:10",
+          "seats": 45
+        },
+        {
+          "flight": "FZ 620",
+          "from": "GVA",
+          "date": "2026-10-23",
+          "time": "21:35",
+          "seats": null
+        },
+        {
+          "flight": "DL 502",
+          "from": "ATH",
+          "date": "2026-10-23",
+          "time": "22:35",
+          "seats": 35
+        },
+        {
+          "flight": "LO 627",
+          "from": "DXB",
+          "date": "2026-10-23",
+          "time": "22:35",
+          "seats": null
+        },
+        {
+          "flight": "UA 361",
+          "from": "IST",
+          "date": "2026-10-23",
+          "time": "23:10",
+          "seats": null
+        },
+        {
+          "flight": "LY 119",
+          "from": "PFO",
+          "date": "2026-10-24",
+          "time": "00:00",
+          "seats": 29
+        },
+        {
+          "flight": "ET 601",
+          "from": "BUD",
+          "date": "2026-10-24",
+          "time": "02:20",
+          "seats": 28
+        },
+        {
+          "flight": "A3 197",
+          "from": "FCO",
+          "date": "2026-10-24",
+          "time": "03:35",
+          "seats": 30
+        },
+        {
+          "flight": "DL 326",
+          "from": "EWR",
+          "date": "2026-10-24",
+          "time": "03:45",
+          "seats": null
+        },
+        {
+          "flight": "LX 345",
+          "from": "ATH",
+          "date": "2026-10-24",
+          "time": "04:10",
+          "seats": null
+        },
+        {
+          "flight": "BA 699",
+          "from": "MUC",
+          "date": "2026-10-24",
+          "time": "04:20",
+          "seats": 47
+        },
+        {
+          "flight": "OS 144",
+          "from": "ADD",
+          "date": "2026-10-24",
+          "time": "04:55",
+          "seats": 28
+        },
+        {
+          "flight": "TK 951",
+          "from": "IST",
+          "date": "2026-10-24",
+          "time": "05:40",
+          "seats": null
+        },
+        {
+          "flight": "FZ 305",
+          "from": "LHR",
+          "date": "2026-10-24",
+          "time": "05:45",
+          "seats": null
+        },
+        {
+          "flight": "W6 413",
+          "from": "LCA",
+          "date": "2026-10-24",
+          "time": "08:50",
+          "seats": null
+        },
+        {
+          "flight": "LX 429",
+          "from": "SAW",
+          "date": "2026-10-24",
+          "time": "09:45",
+          "seats": 18
+        },
+        {
+          "flight": "EK 690",
+          "from": "EWR",
+          "date": "2026-10-24",
+          "time": "11:35",
+          "seats": 53
+        },
+        {
+          "flight": "TK 690",
+          "from": "DXB",
+          "date": "2026-10-24",
+          "time": "11:40",
+          "seats": 22
+        },
+        {
+          "flight": "ET 943",
+          "from": "GYD",
+          "date": "2026-10-24",
+          "time": "11:45",
+          "seats": 58
+        },
+        {
+          "flight": "AC 587",
+          "from": "WAW",
+          "date": "2026-10-24",
+          "time": "13:20",
+          "seats": null
+        },
+        {
+          "flight": "ET 287",
+          "from": "MUC",
+          "date": "2026-10-24",
+          "time": "13:40",
+          "seats": 40
+        },
+        {
+          "flight": "IZ 172",
+          "from": "ADD",
+          "date": "2026-10-24",
+          "time": "15:25",
+          "seats": 32
+        },
+        {
+          "flight": "TK 518",
+          "from": "SAW",
+          "date": "2026-10-24",
+          "time": "15:50",
+          "seats": 16
+        },
+        {
+          "flight": "AF 326",
+          "from": "OTP",
+          "date": "2026-10-24",
+          "time": "15:55",
+          "seats": 21
+        },
+        {
+          "flight": "W6 624",
+          "from": "MIA",
+          "date": "2026-10-24",
+          "time": "16:05",
+          "seats": 56
+        },
+        {
+          "flight": "6H 432",
+          "from": "TBS",
+          "date": "2026-10-24",
+          "time": "16:40",
+          "seats": 14
+        },
+        {
+          "flight": "UA 205",
+          "from": "FRA",
+          "date": "2026-10-24",
+          "time": "16:55",
+          "seats": null
+        },
+        {
+          "flight": "DL 766",
+          "from": "MUC",
+          "date": "2026-10-24",
+          "time": "17:25",
+          "seats": 51
+        },
+        {
+          "flight": "LY 593",
+          "from": "BUD",
+          "date": "2026-10-24",
+          "time": "18:30",
+          "seats": null
+        },
+        {
+          "flight": "LY 370",
+          "from": "DXB",
+          "date": "2026-10-24",
+          "time": "18:40",
+          "seats": 60
+        },
+        {
+          "flight": "LO 468",
+          "from": "DXB",
+          "date": "2026-10-24",
+          "time": "18:45",
+          "seats": null
+        },
+        {
+          "flight": "IZ 471",
+          "from": "MIA",
+          "date": "2026-10-24",
+          "time": "19:25",
+          "seats": 30
+        },
+        {
+          "flight": "6H 213",
+          "from": "WAW",
+          "date": "2026-10-24",
+          "time": "21:05",
+          "seats": null
+        },
+        {
+          "flight": "AF 686",
+          "from": "LTN",
+          "date": "2026-10-24",
+          "time": "23:25",
+          "seats": null
+        },
+        {
+          "flight": "PC 234",
+          "from": "VIE",
+          "date": "2026-10-24",
+          "time": "23:30",
+          "seats": null
+        },
+        {
+          "flight": "AC 175",
+          "from": "PRG",
+          "date": "2026-10-25",
+          "time": "00:10",
+          "seats": 60
+        },
+        {
+          "flight": "IZ 834",
+          "from": "ADD",
+          "date": "2026-10-25",
+          "time": "00:50",
+          "seats": 14
+        },
+        {
+          "flight": "DL 743",
+          "from": "PFO",
+          "date": "2026-10-25",
+          "time": "01:30",
+          "seats": 32
+        },
+        {
+          "flight": "LO 529",
+          "from": "SOF",
+          "date": "2026-10-25",
+          "time": "02:30",
+          "seats": 34
+        },
+        {
+          "flight": "OS 996",
+          "from": "FCO",
+          "date": "2026-10-25",
+          "time": "03:10",
+          "seats": 27
+        },
+        {
+          "flight": "IZ 219",
+          "from": "AMS",
+          "date": "2026-10-25",
+          "time": "05:35",
+          "seats": null
+        },
+        {
+          "flight": "FR 465",
+          "from": "MIA",
+          "date": "2026-10-25",
+          "time": "05:40",
+          "seats": 24
+        },
+        {
+          "flight": "A3 575",
+          "from": "AUH",
+          "date": "2026-10-25",
+          "time": "05:55",
+          "seats": 62
+        },
+        {
+          "flight": "6H 484",
+          "from": "GVA",
+          "date": "2026-10-25",
+          "time": "07:20",
+          "seats": 37
+        },
+        {
+          "flight": "OS 355",
+          "from": "FCO",
+          "date": "2026-10-25",
+          "time": "08:00",
+          "seats": 31
+        },
+        {
+          "flight": "DL 566",
+          "from": "BRU",
+          "date": "2026-10-25",
+          "time": "08:30",
+          "seats": 7
+        },
+        {
+          "flight": "DL 742",
+          "from": "YYZ",
+          "date": "2026-10-25",
+          "time": "08:35",
+          "seats": 59
+        },
+        {
+          "flight": "LY 459",
+          "from": "LTN",
+          "date": "2026-10-25",
+          "time": "10:35",
+          "seats": 53
+        },
+        {
+          "flight": "LO 930",
+          "from": "EVN",
+          "date": "2026-10-25",
+          "time": "10:50",
+          "seats": 53
+        },
+        {
+          "flight": "DL 144",
+          "from": "BUD",
+          "date": "2026-10-25",
+          "time": "11:00",
+          "seats": 36
+        },
+        {
+          "flight": "OS 747",
+          "from": "IST",
+          "date": "2026-10-25",
+          "time": "11:40",
+          "seats": 27
+        },
+        {
+          "flight": "LH 372",
+          "from": "GYD",
+          "date": "2026-10-25",
+          "time": "11:50",
+          "seats": 35
+        },
+        {
+          "flight": "FR 639",
+          "from": "JFK",
+          "date": "2026-10-25",
+          "time": "13:20",
+          "seats": null
+        },
+        {
+          "flight": "TK 267",
+          "from": "MUC",
+          "date": "2026-10-25",
+          "time": "14:45",
+          "seats": 15
+        },
+        {
+          "flight": "LH 216",
+          "from": "BUD",
+          "date": "2026-10-25",
+          "time": "15:45",
+          "seats": 28
+        },
+        {
+          "flight": "OS 438",
+          "from": "AMS",
+          "date": "2026-10-25",
+          "time": "15:55",
+          "seats": null
+        },
+        {
+          "flight": "LX 716",
+          "from": "FRA",
+          "date": "2026-10-25",
+          "time": "16:05",
+          "seats": 36
+        },
+        {
+          "flight": "W6 781",
+          "from": "YYZ",
+          "date": "2026-10-25",
+          "time": "16:25",
+          "seats": 49
+        },
+        {
+          "flight": "ET 278",
+          "from": "GYD",
+          "date": "2026-10-25",
+          "time": "18:10",
+          "seats": 43
+        },
+        {
+          "flight": "PC 511",
+          "from": "MUC",
+          "date": "2026-10-25",
+          "time": "18:15",
+          "seats": null
+        },
+        {
+          "flight": "LY 288",
+          "from": "MUC",
+          "date": "2026-10-25",
+          "time": "18:55",
+          "seats": 52
+        },
+        {
+          "flight": "LO 247",
+          "from": "MUC",
+          "date": "2026-10-25",
+          "time": "18:55",
+          "seats": 57
+        },
+        {
+          "flight": "PC 347",
+          "from": "BCN",
+          "date": "2026-10-25",
+          "time": "19:35",
+          "seats": 28
+        },
+        {
+          "flight": "PC 808",
+          "from": "TBS",
+          "date": "2026-10-25",
+          "time": "21:50",
+          "seats": 11
+        },
+        {
+          "flight": "A3 446",
+          "from": "BUD",
+          "date": "2026-10-25",
+          "time": "21:50",
+          "seats": 49
+        },
+        {
+          "flight": "LY 722",
+          "from": "DXB",
+          "date": "2026-10-25",
+          "time": "22:25",
+          "seats": null
+        },
+        {
+          "flight": "OS 272",
+          "from": "PRG",
+          "date": "2026-10-25",
+          "time": "22:30",
+          "seats": 12
+        },
+        {
+          "flight": "OS 679",
+          "from": "CDG",
+          "date": "2026-10-25",
+          "time": "22:45",
+          "seats": 9
+        },
+        {
+          "flight": "DL 184",
+          "from": "ZRH",
+          "date": "2026-10-25",
+          "time": "22:55",
+          "seats": 52
+        },
+        {
+          "flight": "LY 897",
+          "from": "YYZ",
+          "date": "2026-10-25",
+          "time": "23:10",
+          "seats": 50
+        },
+        {
+          "flight": "LO 883",
+          "from": "JFK",
+          "date": "2026-10-26",
+          "time": "01:50",
+          "seats": 50
+        },
+        {
+          "flight": "6H 337",
+          "from": "EVN",
+          "date": "2026-10-26",
+          "time": "01:50",
+          "seats": 61
+        },
+        {
+          "flight": "LH 972",
+          "from": "FCO",
+          "date": "2026-10-26",
+          "time": "03:50",
+          "seats": 30
+        },
+        {
+          "flight": "LX 752",
+          "from": "LTN",
+          "date": "2026-10-26",
+          "time": "06:20",
+          "seats": null
+        },
+        {
+          "flight": "AF 935",
+          "from": "YYZ",
+          "date": "2026-10-26",
+          "time": "07:30",
+          "seats": 57
+        },
+        {
+          "flight": "LH 778",
+          "from": "BUD",
+          "date": "2026-10-26",
+          "time": "08:45",
+          "seats": null
+        },
+        {
+          "flight": "UA 640",
+          "from": "GYD",
+          "date": "2026-10-26",
+          "time": "09:35",
+          "seats": 52
+        },
+        {
+          "flight": "BA 823",
+          "from": "ZRH",
+          "date": "2026-10-26",
+          "time": "10:05",
+          "seats": 41
+        },
+        {
+          "flight": "FR 115",
+          "from": "CDG",
+          "date": "2026-10-26",
+          "time": "10:45",
+          "seats": 53
+        },
+        {
+          "flight": "FZ 950",
+          "from": "JFK",
+          "date": "2026-10-26",
+          "time": "10:45",
+          "seats": null
+        },
+        {
+          "flight": "TK 894",
+          "from": "BUD",
+          "date": "2026-10-26",
+          "time": "10:50",
+          "seats": null
+        },
+        {
+          "flight": "OS 623",
+          "from": "CDG",
+          "date": "2026-10-26",
+          "time": "11:20",
+          "seats": 43
+        },
+        {
+          "flight": "IZ 153",
+          "from": "LAX",
+          "date": "2026-10-26",
+          "time": "11:55",
+          "seats": 44
+        },
+        {
+          "flight": "LY 224",
+          "from": "DXB",
+          "date": "2026-10-26",
+          "time": "12:35",
+          "seats": 22
+        },
+        {
+          "flight": "OS 415",
+          "from": "BRU",
+          "date": "2026-10-26",
+          "time": "12:45",
+          "seats": 47
+        },
+        {
+          "flight": "FZ 392",
+          "from": "WAW",
+          "date": "2026-10-26",
+          "time": "13:50",
+          "seats": 58
+        },
+        {
+          "flight": "FR 551",
+          "from": "OTP",
+          "date": "2026-10-26",
+          "time": "15:20",
+          "seats": 3
+        },
+        {
+          "flight": "OS 918",
+          "from": "VIE",
+          "date": "2026-10-26",
+          "time": "15:30",
+          "seats": 39
+        },
+        {
+          "flight": "A3 729",
+          "from": "VIE",
+          "date": "2026-10-26",
+          "time": "15:35",
+          "seats": 54
+        },
+        {
+          "flight": "AF 292",
+          "from": "SAW",
+          "date": "2026-10-26",
+          "time": "16:15",
+          "seats": 41
+        },
+        {
+          "flight": "BA 144",
+          "from": "WAW",
+          "date": "2026-10-26",
+          "time": "17:25",
+          "seats": 35
+        },
+        {
+          "flight": "AC 990",
+          "from": "LCA",
+          "date": "2026-10-26",
+          "time": "17:40",
+          "seats": 5
+        },
+        {
+          "flight": "AC 812",
+          "from": "ATH",
+          "date": "2026-10-26",
+          "time": "19:00",
+          "seats": 47
+        },
+        {
+          "flight": "FR 264",
+          "from": "ATH",
+          "date": "2026-10-26",
+          "time": "19:30",
+          "seats": null
+        },
+        {
+          "flight": "BA 260",
+          "from": "EWR",
+          "date": "2026-10-26",
+          "time": "19:50",
+          "seats": 8
+        },
+        {
+          "flight": "LO 525",
+          "from": "MXP",
+          "date": "2026-10-26",
+          "time": "20:20",
+          "seats": 32
+        },
+        {
+          "flight": "EK 270",
+          "from": "LCA",
+          "date": "2026-10-26",
+          "time": "20:25",
+          "seats": 29
+        },
+        {
+          "flight": "LH 742",
+          "from": "MAD",
+          "date": "2026-10-26",
+          "time": "22:00",
+          "seats": 16
+        },
+        {
+          "flight": "W6 664",
+          "from": "AMS",
+          "date": "2026-10-26",
+          "time": "23:35",
+          "seats": 61
+        },
+        {
+          "flight": "PC 123",
+          "from": "SAW",
+          "date": "2026-10-26",
+          "time": "23:40",
+          "seats": 10
+        }
+      ],
+      "mock": true
+    }
+  ],
+  "meta": {
+    "destination": "TLV",
+    "destinationLabel": "Tel Aviv (TLV)",
+    "window": {
+      "start": "2026-10-23",
+      "end": "2026-10-26"
+    },
+    "origins": [
+      "IST",
+      "SAW",
+      "ATH",
+      "LCA",
+      "PFO",
+      "CDG",
+      "ORY",
+      "LHR",
+      "LTN",
+      "FCO",
+      "MXP",
+      "FRA",
+      "MUC",
+      "BER",
+      "VIE",
+      "ZRH",
+      "GVA",
+      "AMS",
+      "BRU",
+      "MAD",
+      "BCN",
+      "WAW",
+      "BUD",
+      "PRG",
+      "OTP",
+      "SOF",
+      "TBS",
+      "EVN",
+      "GYD",
+      "DXB",
+      "AUH",
+      "JFK",
+      "EWR",
+      "MIA",
+      "LAX",
+      "YYZ",
+      "BKK",
+      "ADD"
+    ],
+    "source": "mock",
+    "updatedAt": "2026-07-13T23:21:29.391Z"
+  }
+}

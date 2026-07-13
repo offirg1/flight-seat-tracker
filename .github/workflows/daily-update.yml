@@ -23,8 +23,13 @@ jobs:
         with:
           node-version: 20
 
-      - name: Fetch seat availability
+      - name: Fetch seat availability (LA → TLV)
         run: node scripts/fetch-seats.mjs
+        env:
+          DUFFEL_API_TOKEN: ${{ secrets.DUFFEL_API_TOKEN }}
+
+      - name: Fetch TLV arrivals
+        run: node scripts/fetch-arrivals.mjs
         env:
           DUFFEL_API_TOKEN: ${{ secrets.DUFFEL_API_TOKEN }}
 
@@ -32,6 +37,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/data.json
+          git add docs/data.json docs/arrivals.json
           git commit -m "Seat snapshot $(date -u +%F)" || echo "No changes to commit"
           git push
