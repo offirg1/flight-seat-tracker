@@ -68,6 +68,11 @@ async function main() {
     updatedAt: new Date().toISOString(),
   };
   db.history.sort((a, b) => a.date.localeCompare(b.date));
+  // The per-flight list is only shown for the latest snapshot; drop it from
+  // older entries so the data file doesn't grow with every day of history.
+  db.history.forEach((s, i) => {
+    if (i < db.history.length - 1) delete s.flightList;
+  });
   writeFileSync(DATA_PATH, JSON.stringify(db, null, 2) + "\n");
 
   const latest = db.history[db.history.length - 1];
@@ -84,9 +89,11 @@ async function main() {
 // ------------------------------------------------------------- core pipeline
 
 // Each provider exposes: init() -> ctx, and legs(ctx, origin, depDate) ->
-// [{ key, seats, itineraries }] where `key` identifies a unique
-// destination-bound flight, `seats` is a count or null (unknown), and
-// `itineraries` is how many qualifying itineraries end on that flight.
+// [{ key, flight, date, from, stops, seats, itineraries }] where `key`
+// identifies a unique destination-bound flight, `from` is where that final
+// leg departs, `stops` is the fewest stops among qualifying itineraries
+// ending on it, `seats` is a count or null (unknown), and `itineraries` is
+// how many qualifying itineraries end on that flight.
 const PROVIDERS = {
   duffel: { init: duffelInit, legs: duffelLegs },
   amadeus: { init: amadeusInit, legs: amadeusLegs },
@@ -112,7 +119,7 @@ async function realSnapshot(date) {
         const legs = await provider.legs(ctx, origin, depDate);
         for (const leg of legs) {
           itineraries += leg.itineraries;
-          flights.set(leg.key, mergeSeats(flights.get(leg.key), leg.seats));
+          flights.set(leg.key, mergeLeg(flights.get(leg.key), leg));
         }
         console.log(`  ${origin} ${depDate}: ${legs.length} ${CONFIG.destination}-bound flights`);
       } catch (err) {
@@ -126,13 +133,14 @@ async function realSnapshot(date) {
     totalItineraries += itineraries;
     // The same destination-bound leg can be reachable from several origins;
     // the grand total counts each physical flight once.
-    for (const [k, v] of flights) globalFlights.set(k, mergeSeats(globalFlights.get(k), v));
+    for (const [k, v] of flights) globalFlights.set(k, mergeLeg(globalFlights.get(k), v));
   }
 
   return {
     date,
     ...summarize(globalFlights, totalItineraries),
     byOrigin,
+    flightList: flightList(globalFlights),
     ...(errors.length ? { errors } : {}),
   };
 }
@@ -141,18 +149,27 @@ function summarize(flights, itineraries) {
   let seats = 0;
   let mapped = 0;
   for (const v of flights.values()) {
-    if (v != null) {
-      seats += v;
+    if (v.seats != null) {
+      seats += v.seats;
       mapped += 1;
     }
   }
   return { seats, flights: flights.size, mappedFlights: mapped, itineraries };
 }
 
-function mergeSeats(a, b) {
-  if (a == null) return b ?? null;
-  if (b == null) return a;
-  return Math.max(a, b);
+function mergeLeg(a, b) {
+  if (!a) return { ...b };
+  return {
+    ...a,
+    seats: a.seats == null ? b.seats : b.seats == null ? a.seats : Math.max(a.seats, b.seats),
+    stops: Math.min(a.stops ?? 99, b.stops ?? 99),
+  };
+}
+
+function flightList(flights) {
+  return [...flights.values()]
+    .map((v) => ({ flight: v.flight, date: v.date, from: v.from, stops: v.stops, seats: v.seats }))
+    .sort((a, b) => a.date.localeCompare(b.date) || a.flight.localeCompare(b.flight));
 }
 
 // ----------------------------------------------------------------- Duffel
@@ -210,8 +227,17 @@ async function duffelLegs(ctx, origin, depDate) {
     const carrier = last.marketing_carrier?.iata_code ?? last.operating_carrier?.iata_code ?? "??";
     const number = last.marketing_carrier_flight_number ?? last.operating_carrier_flight_number ?? "?";
     const key = `${carrier}${number}@${(last.departing_at ?? "").slice(0, 10)}`;
-    const f = finals.get(key) ?? { offerId: offer.id, segmentId: last.id, itineraries: 0 };
+    const f = finals.get(key) ?? {
+      offerId: offer.id,
+      segmentId: last.id,
+      flight: `${carrier} ${number}`,
+      date: (last.departing_at ?? "").slice(0, 10),
+      from: last.origin?.iata_code ?? "?",
+      stops: 99,
+      itineraries: 0,
+    };
     f.itineraries += 1;
+    f.stops = Math.min(f.stops, segments.length - 1);
     finals.set(key, f);
   }
 
@@ -235,6 +261,10 @@ async function duffelLegs(ctx, origin, depDate) {
 
   return [...finals.entries()].map(([key, f]) => ({
     key,
+    flight: f.flight,
+    date: f.date,
+    from: f.from,
+    stops: f.stops,
     seats: ctx.seatCache.get(key) ?? null,
     itineraries: f.itineraries,
   }));
@@ -318,12 +348,20 @@ async function amadeusLegs(ctx, origin, depDate) {
       (sum, c) => sum + Math.min(c.numberOfBookableSeats ?? 0, SEAT_CAP),
       0
     );
-    const f = finals.get(key) ?? { seats: 0, itineraries: 0 };
+    const f = finals.get(key) ?? {
+      seats: 0,
+      itineraries: 0,
+      flight: `${last.carrierCode} ${last.number}`,
+      date: (last.departure?.at ?? "").slice(0, 10),
+      from: last.departure?.iataCode ?? "?",
+      stops: 99,
+    };
     f.seats = Math.max(f.seats, seats);
     f.itineraries += 1;
+    f.stops = Math.min(f.stops, segments.length - 1);
     finals.set(key, f);
   }
-  return [...finals].map(([key, f]) => ({ key, seats: f.seats, itineraries: f.itineraries }));
+  return [...finals].map(([key, f]) => ({ key, ...f }));
 }
 
 // ---------------------------------------------------------------- mock data
@@ -331,18 +369,38 @@ async function amadeusLegs(ctx, origin, depDate) {
 function mockSnapshot(date) {
   const byOrigin = {};
   const totals = { seats: 0, flights: 0, mappedFlights: 0, itineraries: 0 };
+  const carriers = ["LY", "UA", "LH", "AF", "TK", "LO", "AZ"];
+  const vias = ["LAX", "EWR", "FRA", "CDG", "IST", "WAW", "FCO"];
+  const depDates = dateRange(CONFIG.departureWindow.start, CONFIG.departureWindow.end).slice(0, -1);
+  const list = [];
+
   for (const origin of CONFIG.origins) {
     const rand = mulberry32(hash(origin + date));
-    const flights = 24 + Math.floor(rand() * 8);
-    const seats = Math.round(flights * (4.5 + rand() * 3.5));
-    const itineraries = flights * 3 + Math.floor(rand() * 20);
-    byOrigin[origin] = { seats, flights, mappedFlights: flights, itineraries };
+    const count = 24 + Math.floor(rand() * 8);
+    let seats = 0;
+    let itineraries = 0;
+    for (let i = 0; i < count; i++) {
+      const viaIdx = Math.floor(rand() * vias.length);
+      const s = 2 + Math.floor(rand() * 8);
+      const flight = {
+        flight: `${carriers[Math.floor(rand() * carriers.length)]} ${100 + Math.floor(rand() * 900)}`,
+        date: depDates[Math.floor(rand() * depDates.length)],
+        from: vias[viaIdx],
+        stops: viaIdx === 0 ? 0 : 1 + Math.floor(rand() * 2),
+        seats: s,
+      };
+      list.push(flight);
+      seats += s;
+      itineraries += 1 + flight.stops * 2 + Math.floor(rand() * 3);
+    }
+    byOrigin[origin] = { seats, flights: count, mappedFlights: count, itineraries };
     totals.seats += seats;
-    totals.flights += flights;
-    totals.mappedFlights += flights;
+    totals.flights += count;
+    totals.mappedFlights += count;
     totals.itineraries += itineraries;
   }
-  return { date, ...totals, byOrigin, mock: true };
+  list.sort((a, b) => a.date.localeCompare(b.date) || a.flight.localeCompare(b.flight));
+  return { date, ...totals, byOrigin, flightList: list, mock: true };
 }
 
 function hash(str) {

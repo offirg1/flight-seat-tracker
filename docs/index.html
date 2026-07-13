@@ -88,6 +88,15 @@
   td { padding: 8px; border-bottom: 1px solid var(--grid); }
   tr:last-child td { border-bottom: none; }
   td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .filterrow { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .filterrow label { font-size: 0.85rem; color: var(--text-secondary); }
+  select {
+    font: inherit; font-size: 0.9rem; color: var(--text-primary);
+    background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 8px; padding: 6px 10px;
+  }
+  .tablescroll { max-height: 420px; overflow-y: auto; }
+  .tablescroll thead th { position: sticky; top: 0; background: var(--surface-1); }
   .method { margin-top: 20px; color: var(--text-secondary); font-size: 0.85rem; }
   .method summary { cursor: pointer; font-weight: 600; color: var(--text-primary); }
   .method p { margin-top: 8px; }
@@ -125,6 +134,23 @@
     <h2>Seat availability trend</h2>
     <p class="cardsub">One snapshot per day — total counted seat availability across all qualifying flights</p>
     <div id="chartwrap"><div id="tooltip"></div></div>
+  </section>
+
+  <section class="card" id="flightsCard" hidden>
+    <h2>Flights</h2>
+    <p class="cardsub" id="flightsub">Destination-bound flights in the latest snapshot</p>
+    <div class="filterrow">
+      <label for="dateFilter">Departure date</label>
+      <select id="dateFilter"></select>
+    </div>
+    <div class="tablescroll">
+      <table>
+        <thead>
+          <tr><th>Flight</th><th>Final leg</th><th>Date</th><th class="num">Stops</th><th class="num">Seats</th></tr>
+        </thead>
+        <tbody id="flightRows"></tbody>
+      </table>
+    </div>
   </section>
 
   <section class="card">
@@ -200,6 +226,39 @@
     deltaEl.textContent = d === 0 ? "no change vs yesterday" : `${d > 0 ? "▲ +" : "▼ "}${fmt(d)} vs yesterday`;
   } else {
     deltaEl.textContent = "first snapshot — trend builds daily";
+  }
+
+  // Flights list with date dropdown
+  const flightList = latest.flightList ?? [];
+  if (flightList.length) {
+    $("flightsCard").hidden = false;
+    $("flightsub").textContent =
+      `${fmt(flightList.length)} destination-bound flights in the latest snapshot` +
+      (latest.mappedFlights < latest.flights ? ` — seat counts known for ${fmt(latest.mappedFlights)} of them` : "");
+
+    const dates = [...new Set(flightList.map((f) => f.date))].sort();
+    const sel = $("dateFilter");
+    sel.innerHTML =
+      `<option value="">All dates (${flightList.length})</option>` +
+      dates
+        .map((d) => `<option value="${d}">${fmtDate(d, { weekday: "short", month: "short", day: "numeric" })} (${flightList.filter((f) => f.date === d).length})</option>`)
+        .join("");
+
+    const renderFlights = () => {
+      const rows = flightList.filter((f) => !sel.value || f.date === sel.value);
+      $("flightRows").innerHTML = rows
+        .map(
+          (f) =>
+            `<tr><td><strong>${f.flight}</strong></td>` +
+            `<td>${f.from} → ${meta.destination}</td>` +
+            `<td>${fmtDate(f.date, { weekday: "short", month: "short", day: "numeric" })}</td>` +
+            `<td class="num">${f.stops === 0 ? "nonstop" : f.stops === 1 ? "1 stop" : `${f.stops} stops`}</td>` +
+            `<td class="num">${f.seats == null ? "—" : fmt(f.seats)}</td></tr>`
+        )
+        .join("");
+    };
+    sel.addEventListener("change", renderFlights);
+    renderFlights();
   }
 
   // Origin table
