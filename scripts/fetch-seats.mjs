@@ -48,7 +48,13 @@ async function main() {
       upsert(db, mockSnapshot(isoDate(new Date(Date.now() - i * 86_400_000))));
     }
   } else {
-    upsert(db, await realSnapshot(today));
+    const snapshot = await realSnapshot(today);
+    if (snapshot.flights === 0 && snapshot.errors?.length) {
+      throw new Error(
+        `Every query failed — snapshot not saved so existing data stays intact.\nFirst error: ${snapshot.errors[0]}`
+      );
+    }
+    upsert(db, snapshot);
   }
 
   db.meta = {

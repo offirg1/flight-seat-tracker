@@ -184,28 +184,19 @@
     },
     {
       "date": "2026-07-13",
-      "seats": 0,
-      "flights": 0,
-      "mappedFlights": 0,
-      "itineraries": 0,
+      "seats": 187,
+      "flights": 31,
+      "mappedFlights": 31,
+      "itineraries": 108,
       "byOrigin": {
         "LAX": {
-          "seats": 0,
-          "flights": 0,
-          "mappedFlights": 0,
-          "itineraries": 0
+          "seats": 187,
+          "flights": 31,
+          "mappedFlights": 31,
+          "itineraries": 108
         }
       },
-      "errors": [
-        "LAX 2026-10-20: This endpoint requires a token with 'air.offer_requests.create' permission.",
-        "LAX 2026-10-21: This endpoint requires a token with 'air.offer_requests.create' permission.",
-        "LAX 2026-10-22: This endpoint requires a token with 'air.offer_requests.create' permission.",
-        "LAX 2026-10-23: This endpoint requires a token with 'air.offer_requests.create' permission.",
-        "LAX 2026-10-24: This endpoint requires a token with 'air.offer_requests.create' permission.",
-        "LAX 2026-10-25: This endpoint requires a token with 'air.offer_requests.create' permission.",
-        "LAX 2026-10-26: This endpoint requires a token with 'air.offer_requests.create' permission.",
-        "LAX 2026-10-27: This endpoint requires a token with 'air.offer_requests.create' permission."
-      ]
+      "mock": true
     }
   ],
   "meta": {
@@ -226,7 +217,7 @@
       "end": "2026-10-27"
     },
     "arriveBy": "2026-10-27T23:59",
-    "source": "duffel",
-    "updatedAt": "2026-07-13T21:40:34.083Z"
+    "source": "mock",
+    "updatedAt": "2026-07-13T21:44:30.573Z"
   }
 }
