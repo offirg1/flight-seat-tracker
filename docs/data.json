@@ -240,6 +240,21 @@
           "mappedFlights": 35,
           "itineraries": 1177
         }
+      }
+    },
+    {
+      "date": "2026-07-17",
+      "seats": 3887,
+      "flights": 184,
+      "mappedFlights": 32,
+      "itineraries": 1206,
+      "byOrigin": {
+        "LAX": {
+          "seats": 3887,
+          "flights": 184,
+          "mappedFlights": 32,
+          "itineraries": 1206
+        }
       },
       "flightList": [
         {
@@ -310,6 +325,13 @@
           "date": "2026-10-21",
           "from": "FRA",
           "stops": 2,
+          "seats": null
+        },
+        {
+          "flight": "AZ 0812",
+          "date": "2026-10-21",
+          "from": "FCO",
+          "stops": 1,
           "seats": null
         },
         {
@@ -464,6 +486,13 @@
           "date": "2026-10-22",
           "from": "FRA",
           "stops": 2,
+          "seats": null
+        },
+        {
+          "flight": "AZ 0812",
+          "date": "2026-10-22",
+          "from": "FCO",
+          "stops": 1,
           "seats": null
         },
         {
@@ -712,6 +741,13 @@
           "seats": null
         },
         {
+          "flight": "AZ 0812",
+          "date": "2026-10-23",
+          "from": "FCO",
+          "stops": 1,
+          "seats": null
+        },
+        {
           "flight": "BA 0109",
           "date": "2026-10-23",
           "from": "LAX",
@@ -758,7 +794,7 @@
           "date": "2026-10-23",
           "from": "FRA",
           "stops": 1,
-          "seats": 137
+          "seats": null
         },
         {
           "flight": "LH 0694",
@@ -824,6 +860,13 @@
           "seats": null
         },
         {
+          "flight": "AZ 0812",
+          "date": "2026-10-24",
+          "from": "FCO",
+          "stops": 1,
+          "seats": null
+        },
+        {
           "flight": "BA 0109",
           "date": "2026-10-24",
           "from": "LAX",
@@ -884,7 +927,7 @@
           "date": "2026-10-24",
           "from": "FRA",
           "stops": 1,
-          "seats": 137
+          "seats": null
         },
         {
           "flight": "LH 0690",
@@ -1087,7 +1130,7 @@
           "date": "2026-10-25",
           "from": "ZRH",
           "stops": 1,
-          "seats": 161
+          "seats": null
         },
         {
           "flight": "LY 0006",
@@ -1227,6 +1270,13 @@
           "date": "2026-10-26",
           "from": "FRA",
           "stops": 2,
+          "seats": null
+        },
+        {
+          "flight": "AZ 0812",
+          "date": "2026-10-26",
+          "from": "FCO",
+          "stops": 1,
           "seats": null
         },
         {
@@ -1517,6 +1567,6 @@
     },
     "arriveBy": "2026-10-27T23:59",
     "source": "duffel",
-    "updatedAt": "2026-07-16T15:09:54.727Z"
+    "updatedAt": "2026-07-17T14:52:34.048Z"
   }
 }
