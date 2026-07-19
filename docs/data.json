@@ -270,6 +270,21 @@
           "mappedFlights": 34,
           "itineraries": 1198
         }
+      }
+    },
+    {
+      "date": "2026-07-19",
+      "seats": 4310,
+      "flights": 183,
+      "mappedFlights": 35,
+      "itineraries": 1193,
+      "byOrigin": {
+        "LAX": {
+          "seats": 4310,
+          "flights": 183,
+          "mappedFlights": 35,
+          "itineraries": 1193
+        }
       },
       "flightList": [
         {
@@ -382,7 +397,7 @@
           "date": "2026-10-21",
           "from": "FRA",
           "stops": 1,
-          "seats": 131
+          "seats": 137
         },
         {
           "flight": "LH 0694",
@@ -564,7 +579,7 @@
           "date": "2026-10-22",
           "from": "MUC",
           "stops": 1,
-          "seats": 135
+          "seats": 141
         },
         {
           "flight": "LH 0686",
@@ -704,13 +719,6 @@
           "date": "2026-10-22",
           "from": "JFK",
           "stops": 1,
-          "seats": 88
-        },
-        {
-          "flight": "VS 7494",
-          "date": "2026-10-22",
-          "from": "LHR",
-          "stops": 1,
           "seats": null
         },
         {
@@ -795,14 +803,14 @@
           "date": "2026-10-23",
           "from": "MUC",
           "stops": 1,
-          "seats": 125
+          "seats": 131
         },
         {
           "flight": "LH 0686",
           "date": "2026-10-23",
           "from": "FRA",
           "stops": 1,
-          "seats": 143
+          "seats": 137
         },
         {
           "flight": "LH 0690",
@@ -949,7 +957,7 @@
           "date": "2026-10-24",
           "from": "FRA",
           "stops": 1,
-          "seats": 137
+          "seats": 131
         },
         {
           "flight": "LH 0694",
@@ -1110,7 +1118,7 @@
           "date": "2026-10-25",
           "from": "FRA",
           "stops": 1,
-          "seats": null
+          "seats": 131
         },
         {
           "flight": "LH 0690",
@@ -1124,7 +1132,7 @@
           "date": "2026-10-25",
           "from": "FRA",
           "stops": 1,
-          "seats": null
+          "seats": 117
         },
         {
           "flight": "LH 5240",
@@ -1582,6 +1590,6 @@
     },
     "arriveBy": "2026-10-27T23:59",
     "source": "duffel",
-    "updatedAt": "2026-07-18T14:24:28.001Z"
+    "updatedAt": "2026-07-19T14:27:59.157Z"
   }
 }
