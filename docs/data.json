@@ -360,6 +360,21 @@
           "mappedFlights": 31,
           "itineraries": 1137
         }
+      }
+    },
+    {
+      "date": "2026-07-25",
+      "seats": 3866,
+      "flights": 183,
+      "mappedFlights": 32,
+      "itineraries": 1168,
+      "byOrigin": {
+        "LAX": {
+          "seats": 3866,
+          "flights": 183,
+          "mappedFlights": 32,
+          "itineraries": 1168
+        }
       },
       "flightList": [
         {
@@ -668,14 +683,14 @@
           "date": "2026-10-22",
           "from": "FRA",
           "stops": 1,
-          "seats": 137
+          "seats": 143
         },
         {
           "flight": "LH 0690",
           "date": "2026-10-22",
           "from": "FRA",
           "stops": 1,
-          "seats": 137
+          "seats": 143
         },
         {
           "flight": "LH 0694",
@@ -801,7 +816,7 @@
           "date": "2026-10-22",
           "from": "JFK",
           "stops": 1,
-          "seats": null
+          "seats": 88
         },
         {
           "flight": "VS 7496",
@@ -1032,7 +1047,7 @@
           "date": "2026-10-24",
           "from": "FRA",
           "stops": 1,
-          "seats": 137
+          "seats": 131
         },
         {
           "flight": "LH 0690",
@@ -1259,6 +1274,13 @@
           "seats": null
         },
         {
+          "flight": "LY 0026",
+          "date": "2026-10-25",
+          "from": "EWR",
+          "stops": 1,
+          "seats": null
+        },
+        {
           "flight": "LY 0316",
           "date": "2026-10-25",
           "from": "LHR",
@@ -1476,6 +1498,13 @@
           "seats": null
         },
         {
+          "flight": "LY 0318",
+          "date": "2026-10-26",
+          "from": "LHR",
+          "stops": 1,
+          "seats": null
+        },
+        {
           "flight": "LY 0358",
           "date": "2026-10-26",
           "from": "FRA",
@@ -1512,6 +1541,13 @@
         },
         {
           "flight": "VS 7494",
+          "date": "2026-10-26",
+          "from": "LHR",
+          "stops": 1,
+          "seats": null
+        },
+        {
+          "flight": "VS 7496",
           "date": "2026-10-26",
           "from": "LHR",
           "stops": 1,
@@ -1567,6 +1603,20 @@
           "seats": null
         },
         {
+          "flight": "LH 0690",
+          "date": "2026-10-27",
+          "from": "FRA",
+          "stops": 1,
+          "seats": null
+        },
+        {
+          "flight": "LH 0694",
+          "date": "2026-10-27",
+          "from": "FRA",
+          "stops": 1,
+          "seats": null
+        },
+        {
           "flight": "LX 0252",
           "date": "2026-10-27",
           "from": "ZRH",
@@ -1578,6 +1628,13 @@
           "date": "2026-10-27",
           "from": "LHR",
           "stops": 1,
+          "seats": null
+        },
+        {
+          "flight": "OS 0079",
+          "date": "2026-10-27",
+          "from": "VIE",
+          "stops": 2,
           "seats": null
         },
         {
@@ -1623,6 +1680,6 @@
     },
     "arriveBy": "2026-10-27T23:59",
     "source": "duffel",
-    "updatedAt": "2026-07-24T15:03:23.863Z"
+    "updatedAt": "2026-07-25T14:41:36.941Z"
   }
 }
