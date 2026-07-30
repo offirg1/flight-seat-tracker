@@ -435,6 +435,21 @@
           "mappedFlights": 31,
           "itineraries": 1192
         }
+      }
+    },
+    {
+      "date": "2026-07-30",
+      "seats": 3616,
+      "flights": 179,
+      "mappedFlights": 30,
+      "itineraries": 1147,
+      "byOrigin": {
+        "LAX": {
+          "seats": 3616,
+          "flights": 179,
+          "mappedFlights": 30,
+          "itineraries": 1147
+        }
       },
       "flightList": [
         {
@@ -484,10 +499,10 @@
           "date": "2026-10-20",
           "from": "JFK",
           "stops": 1,
-          "seats": null
+          "seats": 100
         },
         {
-          "flight": "ZZ 1897",
+          "flight": "ZZ 7513",
           "date": "2026-10-20",
           "from": "LAX",
           "stops": 0,
@@ -512,13 +527,6 @@
           "date": "2026-10-21",
           "from": "FRA",
           "stops": 2,
-          "seats": null
-        },
-        {
-          "flight": "AZ 0812",
-          "date": "2026-10-21",
-          "from": "FCO",
-          "stops": 1,
           "seats": null
         },
         {
@@ -624,7 +632,7 @@
           "date": "2026-10-21",
           "from": "JFK",
           "stops": 1,
-          "seats": null
+          "seats": 96
         },
         {
           "flight": "VS 7494",
@@ -641,7 +649,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 1897",
+          "flight": "ZZ 7513",
           "date": "2026-10-21",
           "from": "LAX",
           "stops": 0,
@@ -673,13 +681,6 @@
           "date": "2026-10-22",
           "from": "FRA",
           "stops": 2,
-          "seats": null
-        },
-        {
-          "flight": "AZ 0812",
-          "date": "2026-10-22",
-          "from": "FCO",
-          "stops": 1,
           "seats": null
         },
         {
@@ -876,7 +877,7 @@
           "date": "2026-10-22",
           "from": "JFK",
           "stops": 1,
-          "seats": 88
+          "seats": null
         },
         {
           "flight": "VS 7496",
@@ -886,7 +887,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 1897",
+          "flight": "ZZ 7513",
           "date": "2026-10-22",
           "from": "LAX",
           "stops": 0,
@@ -918,13 +919,6 @@
           "date": "2026-10-23",
           "from": "FRA",
           "stops": 2,
-          "seats": null
-        },
-        {
-          "flight": "AZ 0812",
-          "date": "2026-10-23",
-          "from": "FCO",
-          "stops": 1,
           "seats": null
         },
         {
@@ -1012,7 +1006,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 1897",
+          "flight": "ZZ 7513",
           "date": "2026-10-23",
           "from": "LAX",
           "stops": 0,
@@ -1037,13 +1031,6 @@
           "date": "2026-10-24",
           "from": "FRA",
           "stops": 2,
-          "seats": null
-        },
-        {
-          "flight": "AZ 0812",
-          "date": "2026-10-24",
-          "from": "FCO",
-          "stops": 1,
           "seats": null
         },
         {
@@ -1135,7 +1122,7 @@
           "date": "2026-10-24",
           "from": "ZRH",
           "stops": 1,
-          "seats": 105
+          "seats": null
         },
         {
           "flight": "LY 0008",
@@ -1180,7 +1167,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 1897",
+          "flight": "ZZ 7513",
           "date": "2026-10-24",
           "from": "LAX",
           "stops": 0,
@@ -1310,7 +1297,7 @@
           "date": "2026-10-25",
           "from": "ZRH",
           "stops": 1,
-          "seats": 161
+          "seats": null
         },
         {
           "flight": "LY 0006",
@@ -1411,13 +1398,6 @@
           "seats": null
         },
         {
-          "flight": "VS 7494",
-          "date": "2026-10-25",
-          "from": "LHR",
-          "stops": 1,
-          "seats": null
-        },
-        {
           "flight": "VS 7496",
           "date": "2026-10-25",
           "from": "LHR",
@@ -1425,7 +1405,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 1897",
+          "flight": "ZZ 7513",
           "date": "2026-10-25",
           "from": "LAX",
           "stops": 0,
@@ -1457,13 +1437,6 @@
           "date": "2026-10-26",
           "from": "FRA",
           "stops": 2,
-          "seats": null
-        },
-        {
-          "flight": "AZ 0812",
-          "date": "2026-10-26",
-          "from": "FCO",
-          "stops": 1,
           "seats": null
         },
         {
@@ -1628,7 +1601,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 1897",
+          "flight": "ZZ 7513",
           "date": "2026-10-26",
           "from": "LAX",
           "stops": 0,
@@ -1754,6 +1727,6 @@
     },
     "arriveBy": "2026-10-27T23:59",
     "source": "duffel",
-    "updatedAt": "2026-07-29T15:35:28.266Z"
+    "updatedAt": "2026-07-30T15:17:36.900Z"
   }
 }
