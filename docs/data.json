@@ -585,6 +585,21 @@
           "mappedFlights": 31,
           "itineraries": 1081
         }
+      }
+    },
+    {
+      "date": "2026-08-09",
+      "seats": 4228,
+      "flights": 169,
+      "mappedFlights": 34,
+      "itineraries": 1078,
+      "byOrigin": {
+        "LAX": {
+          "seats": 4228,
+          "flights": 169,
+          "mappedFlights": 34,
+          "itineraries": 1078
+        }
       },
       "flightList": [
         {
@@ -1201,7 +1216,7 @@
           "date": "2026-10-24",
           "from": "FRA",
           "stops": 1,
-          "seats": null
+          "seats": 137
         },
         {
           "flight": "LH 0694",
@@ -1316,6 +1331,13 @@
           "seats": null
         },
         {
+          "flight": "ET 0404",
+          "date": "2026-10-25",
+          "from": "ADD",
+          "stops": 2,
+          "seats": null
+        },
+        {
           "flight": "IB 3177",
           "date": "2026-10-25",
           "from": "LAX",
@@ -1327,7 +1349,7 @@
           "date": "2026-10-25",
           "from": "MUC",
           "stops": 1,
-          "seats": null
+          "seats": 108
         },
         {
           "flight": "LH 0682",
@@ -1341,7 +1363,7 @@
           "date": "2026-10-25",
           "from": "FRA",
           "stops": 1,
-          "seats": null
+          "seats": 131
         },
         {
           "flight": "LH 0690",
@@ -1785,6 +1807,6 @@
     },
     "arriveBy": "2026-10-27T23:59",
     "source": "duffel",
-    "updatedAt": "2026-08-08T13:51:57.507Z"
+    "updatedAt": "2026-08-09T13:55:15.767Z"
   }
 }
