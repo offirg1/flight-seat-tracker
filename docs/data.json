@@ -690,6 +690,21 @@
           "mappedFlights": 32,
           "itineraries": 1063
         }
+      }
+    },
+    {
+      "date": "2026-08-16",
+      "seats": 4147,
+      "flights": 166,
+      "mappedFlights": 34,
+      "itineraries": 1095,
+      "byOrigin": {
+        "LAX": {
+          "seats": 4147,
+          "flights": 166,
+          "mappedFlights": 34,
+          "itineraries": 1095
+        }
       },
       "flightList": [
         {
@@ -1096,7 +1111,7 @@
           "date": "2026-10-22",
           "from": "JFK",
           "stops": 1,
-          "seats": 50
+          "seats": 80
         },
         {
           "flight": "ZZ 5798",
@@ -1215,7 +1230,7 @@
           "date": "2026-10-23",
           "from": "JFK",
           "stops": 1,
-          "seats": 61
+          "seats": 84
         },
         {
           "flight": "ZZ 5798",
@@ -1285,7 +1300,7 @@
           "date": "2026-10-24",
           "from": "MUC",
           "stops": 1,
-          "seats": null
+          "seats": 149
         },
         {
           "flight": "LH 0686",
@@ -1299,7 +1314,7 @@
           "date": "2026-10-24",
           "from": "FRA",
           "stops": 1,
-          "seats": null
+          "seats": 137
         },
         {
           "flight": "LH 0694",
@@ -1876,6 +1891,6 @@
     },
     "arriveBy": "2026-10-27T23:59",
     "source": "duffel",
-    "updatedAt": "2026-08-15T13:36:21.473Z"
+    "updatedAt": "2026-08-16T13:38:06.237Z"
   }
 }
