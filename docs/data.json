@@ -825,24 +825,39 @@
           "mappedFlights": 14,
           "itineraries": 1110
         }
+      }
+    },
+    {
+      "date": "2026-08-25",
+      "seats": 1064,
+      "flights": 160,
+      "mappedFlights": 14,
+      "itineraries": 1106,
+      "byOrigin": {
+        "LAX": {
+          "seats": 1064,
+          "flights": 160,
+          "mappedFlights": 14,
+          "itineraries": 1106
+        }
       },
       "flightList": [
         {
-          "flight": "AA 107",
+          "flight": "AA 4",
           "date": "2026-10-20",
           "from": "LAX",
           "stops": 0,
           "seats": 76
         },
         {
-          "flight": "BA 0105",
+          "flight": "BA 1516",
           "date": "2026-10-20",
           "from": "LAX",
           "stops": 0,
           "seats": null
         },
         {
-          "flight": "IB 3167",
+          "flight": "IB 3179",
           "date": "2026-10-20",
           "from": "LAX",
           "stops": 0,
@@ -884,14 +899,14 @@
           "seats": null
         },
         {
-          "flight": "ZZ 8031",
+          "flight": "ZZ 0763",
           "date": "2026-10-20",
           "from": "LAX",
           "stops": 0,
           "seats": 76
         },
         {
-          "flight": "AA 107",
+          "flight": "AA 4",
           "date": "2026-10-21",
           "from": "LAX",
           "stops": 0,
@@ -926,21 +941,14 @@
           "seats": null
         },
         {
-          "flight": "AZ 0812",
-          "date": "2026-10-21",
-          "from": "FCO",
-          "stops": 1,
-          "seats": null
-        },
-        {
-          "flight": "BA 0105",
+          "flight": "BA 1516",
           "date": "2026-10-21",
           "from": "LAX",
           "stops": 0,
           "seats": null
         },
         {
-          "flight": "IB 3167",
+          "flight": "IB 3179",
           "date": "2026-10-21",
           "from": "LAX",
           "stops": 0,
@@ -1010,10 +1018,10 @@
           "seats": null
         },
         {
-          "flight": "SK 3158",
+          "flight": "SK 0771",
           "date": "2026-10-21",
-          "from": "CDG",
-          "stops": 2,
+          "from": "CPH",
+          "stops": 1,
           "seats": null
         },
         {
@@ -1038,14 +1046,14 @@
           "seats": null
         },
         {
-          "flight": "ZZ 8031",
+          "flight": "ZZ 0763",
           "date": "2026-10-21",
           "from": "LAX",
           "stops": 0,
           "seats": 76
         },
         {
-          "flight": "AA 107",
+          "flight": "AA 4",
           "date": "2026-10-22",
           "from": "LAX",
           "stops": 0,
@@ -1073,14 +1081,14 @@
           "seats": null
         },
         {
-          "flight": "BA 0105",
+          "flight": "BA 1516",
           "date": "2026-10-22",
           "from": "LAX",
           "stops": 0,
           "seats": null
         },
         {
-          "flight": "IB 3167",
+          "flight": "IB 3179",
           "date": "2026-10-22",
           "from": "LAX",
           "stops": 0,
@@ -1220,10 +1228,10 @@
           "seats": null
         },
         {
-          "flight": "SK 3158",
+          "flight": "SK 0771",
           "date": "2026-10-22",
-          "from": "CDG",
-          "stops": 2,
+          "from": "CPH",
+          "stops": 1,
           "seats": null
         },
         {
@@ -1234,14 +1242,14 @@
           "seats": null
         },
         {
-          "flight": "ZZ 8031",
+          "flight": "ZZ 0763",
           "date": "2026-10-22",
           "from": "LAX",
           "stops": 0,
           "seats": 76
         },
         {
-          "flight": "AA 107",
+          "flight": "AA 4",
           "date": "2026-10-23",
           "from": "LAX",
           "stops": 0,
@@ -1276,21 +1284,14 @@
           "seats": null
         },
         {
-          "flight": "AZ 0812",
-          "date": "2026-10-23",
-          "from": "FCO",
-          "stops": 1,
-          "seats": null
-        },
-        {
-          "flight": "BA 0105",
+          "flight": "BA 1516",
           "date": "2026-10-23",
           "from": "LAX",
           "stops": 0,
           "seats": null
         },
         {
-          "flight": "IB 3167",
+          "flight": "IB 3179",
           "date": "2026-10-23",
           "from": "LAX",
           "stops": 0,
@@ -1360,14 +1361,14 @@
           "seats": null
         },
         {
-          "flight": "ZZ 8031",
+          "flight": "ZZ 0763",
           "date": "2026-10-23",
           "from": "LAX",
           "stops": 0,
           "seats": 76
         },
         {
-          "flight": "AA 107",
+          "flight": "AA 4",
           "date": "2026-10-24",
           "from": "LAX",
           "stops": 0,
@@ -1402,21 +1403,14 @@
           "seats": null
         },
         {
-          "flight": "AZ 0812",
-          "date": "2026-10-24",
-          "from": "FCO",
-          "stops": 1,
-          "seats": null
-        },
-        {
-          "flight": "BA 0105",
+          "flight": "BA 1516",
           "date": "2026-10-24",
           "from": "LAX",
           "stops": 0,
           "seats": null
         },
         {
-          "flight": "IB 3167",
+          "flight": "IB 3179",
           "date": "2026-10-24",
           "from": "LAX",
           "stops": 0,
@@ -1528,14 +1522,14 @@
           "seats": null
         },
         {
-          "flight": "ZZ 8031",
+          "flight": "ZZ 0763",
           "date": "2026-10-24",
           "from": "LAX",
           "stops": 0,
           "seats": 76
         },
         {
-          "flight": "AA 107",
+          "flight": "AA 4",
           "date": "2026-10-25",
           "from": "LAX",
           "stops": 0,
@@ -1556,14 +1550,14 @@
           "seats": null
         },
         {
-          "flight": "BA 0105",
+          "flight": "BA 1516",
           "date": "2026-10-25",
           "from": "LAX",
           "stops": 0,
           "seats": null
         },
         {
-          "flight": "IB 3167",
+          "flight": "IB 3179",
           "date": "2026-10-25",
           "from": "LAX",
           "stops": 0,
@@ -1629,6 +1623,13 @@
           "flight": "LX 0252",
           "date": "2026-10-25",
           "from": "ZRH",
+          "stops": 1,
+          "seats": null
+        },
+        {
+          "flight": "LY 0002",
+          "date": "2026-10-25",
+          "from": "JFK",
           "stops": 1,
           "seats": null
         },
@@ -1703,6 +1704,13 @@
           "seats": null
         },
         {
+          "flight": "SK 3158",
+          "date": "2026-10-25",
+          "from": "CDG",
+          "stops": 2,
+          "seats": null
+        },
+        {
           "flight": "TP 1603",
           "date": "2026-10-25",
           "from": "LIS",
@@ -1724,14 +1732,14 @@
           "seats": null
         },
         {
-          "flight": "ZZ 8031",
+          "flight": "ZZ 0763",
           "date": "2026-10-25",
           "from": "LAX",
           "stops": 0,
           "seats": 76
         },
         {
-          "flight": "AA 107",
+          "flight": "AA 4",
           "date": "2026-10-26",
           "from": "LAX",
           "stops": 0,
@@ -1752,21 +1760,14 @@
           "seats": null
         },
         {
-          "flight": "AZ 0812",
-          "date": "2026-10-26",
-          "from": "FCO",
-          "stops": 1,
-          "seats": null
-        },
-        {
-          "flight": "BA 0105",
+          "flight": "BA 1516",
           "date": "2026-10-26",
           "from": "LAX",
           "stops": 0,
           "seats": null
         },
         {
-          "flight": "IB 3167",
+          "flight": "IB 3179",
           "date": "2026-10-26",
           "from": "LAX",
           "stops": 0,
@@ -1857,6 +1858,13 @@
           "seats": null
         },
         {
+          "flight": "SK 3158",
+          "date": "2026-10-26",
+          "from": "CDG",
+          "stops": 2,
+          "seats": null
+        },
+        {
           "flight": "VS 3954",
           "date": "2026-10-26",
           "from": "JFK",
@@ -1871,7 +1879,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 8031",
+          "flight": "ZZ 0763",
           "date": "2026-10-26",
           "from": "LAX",
           "stops": 0,
@@ -1976,6 +1984,6 @@
     },
     "arriveBy": "2026-10-27T23:59",
     "source": "duffel",
-    "updatedAt": "2026-08-24T13:59:21.071Z"
+    "updatedAt": "2026-08-25T13:57:41.950Z"
   }
 }
