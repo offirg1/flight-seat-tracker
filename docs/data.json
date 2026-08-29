@@ -885,6 +885,21 @@
           "mappedFlights": 14,
           "itineraries": 1098
         }
+      }
+    },
+    {
+      "date": "2026-08-29",
+      "seats": 1064,
+      "flights": 163,
+      "mappedFlights": 14,
+      "itineraries": 1090,
+      "byOrigin": {
+        "LAX": {
+          "seats": 1064,
+          "flights": 163,
+          "mappedFlights": 14,
+          "itineraries": 1090
+        }
       },
       "flightList": [
         {
@@ -1084,13 +1099,6 @@
           "seats": null
         },
         {
-          "flight": "VS 7494",
-          "date": "2026-10-21",
-          "from": "LHR",
-          "stops": 1,
-          "seats": null
-        },
-        {
           "flight": "VS 7496",
           "date": "2026-10-21",
           "from": "LHR",
@@ -1130,6 +1138,13 @@
           "date": "2026-10-22",
           "from": "FCO",
           "stops": 2,
+          "seats": null
+        },
+        {
+          "flight": "AZ 0812",
+          "date": "2026-10-22",
+          "from": "FCO",
+          "stops": 1,
           "seats": null
         },
         {
@@ -1462,6 +1477,13 @@
           "seats": null
         },
         {
+          "flight": "AZ 0812",
+          "date": "2026-10-24",
+          "from": "FCO",
+          "stops": 1,
+          "seats": null
+        },
+        {
           "flight": "BA 0105",
           "date": "2026-10-24",
           "from": "LAX",
@@ -1592,6 +1614,13 @@
           "date": "2026-10-25",
           "from": "VIE",
           "stops": 2,
+          "seats": null
+        },
+        {
+          "flight": "AZ 0812",
+          "date": "2026-10-25",
+          "from": "FCO",
+          "stops": 1,
           "seats": null
         },
         {
@@ -2036,6 +2065,6 @@
     },
     "arriveBy": "2026-10-27T23:59",
     "source": "duffel",
-    "updatedAt": "2026-08-28T23:00:40.202Z"
+    "updatedAt": "2026-08-29T17:05:44.848Z"
   }
 }
