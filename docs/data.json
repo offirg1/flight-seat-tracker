@@ -915,6 +915,21 @@
           "mappedFlights": 14,
           "itineraries": 1047
         }
+      }
+    },
+    {
+      "date": "2026-08-31",
+      "seats": 1064,
+      "flights": 154,
+      "mappedFlights": 14,
+      "itineraries": 1054,
+      "byOrigin": {
+        "LAX": {
+          "seats": 1064,
+          "flights": 154,
+          "mappedFlights": 14,
+          "itineraries": 1054
+        }
       },
       "flightList": [
         {
@@ -1135,13 +1150,6 @@
           "seats": null
         },
         {
-          "flight": "AC 9020",
-          "date": "2026-10-22",
-          "from": "FRA",
-          "stops": 2,
-          "seats": null
-        },
-        {
           "flight": "AC 9617",
           "date": "2026-10-22",
           "from": "FRA",
@@ -1278,6 +1286,13 @@
           "flight": "LY 0020",
           "date": "2026-10-22",
           "from": "JFK",
+          "stops": 1,
+          "seats": null
+        },
+        {
+          "flight": "LY 0316",
+          "date": "2026-10-22",
+          "from": "LHR",
           "stops": 1,
           "seats": null
         },
@@ -2017,6 +2032,6 @@
     },
     "arriveBy": "2026-10-27T23:59",
     "source": "duffel",
-    "updatedAt": "2026-08-30T17:19:26.623Z"
+    "updatedAt": "2026-08-31T19:30:27.492Z"
   }
 }
