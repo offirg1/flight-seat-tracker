@@ -930,17 +930,32 @@
           "mappedFlights": 14,
           "itineraries": 1054
         }
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "seats": 1064,
+      "flights": 144,
+      "mappedFlights": 14,
+      "itineraries": 985,
+      "byOrigin": {
+        "LAX": {
+          "seats": 1064,
+          "flights": 144,
+          "mappedFlights": 14,
+          "itineraries": 985
+        }
       },
       "flightList": [
         {
-          "flight": "AA 118",
+          "flight": "AA 1274",
           "date": "2026-10-20",
           "from": "LAX",
           "stops": 0,
           "seats": 76
         },
         {
-          "flight": "BA 0105",
+          "flight": "BA 0107",
           "date": "2026-10-20",
           "from": "LAX",
           "stops": 0,
@@ -989,14 +1004,14 @@
           "seats": null
         },
         {
-          "flight": "ZZ 3864",
+          "flight": "ZZ 2497",
           "date": "2026-10-20",
           "from": "LAX",
           "stops": 0,
           "seats": 76
         },
         {
-          "flight": "AA 118",
+          "flight": "AA 1274",
           "date": "2026-10-21",
           "from": "LAX",
           "stops": 0,
@@ -1010,28 +1025,14 @@
           "seats": null
         },
         {
-          "flight": "AC 9020",
-          "date": "2026-10-21",
-          "from": "FRA",
-          "stops": 2,
-          "seats": null
-        },
-        {
-          "flight": "AC 9617",
-          "date": "2026-10-21",
-          "from": "FRA",
-          "stops": 2,
-          "seats": null
-        },
-        {
-          "flight": "AZ 0812",
+          "flight": "AC 9904",
           "date": "2026-10-21",
           "from": "FCO",
-          "stops": 1,
+          "stops": 2,
           "seats": null
         },
         {
-          "flight": "BA 0105",
+          "flight": "BA 0107",
           "date": "2026-10-21",
           "from": "LAX",
           "stops": 0,
@@ -1129,14 +1130,14 @@
           "seats": null
         },
         {
-          "flight": "ZZ 3864",
+          "flight": "ZZ 2497",
           "date": "2026-10-21",
           "from": "LAX",
           "stops": 0,
           "seats": 76
         },
         {
-          "flight": "AA 118",
+          "flight": "AA 1274",
           "date": "2026-10-22",
           "from": "LAX",
           "stops": 0,
@@ -1150,13 +1151,6 @@
           "seats": null
         },
         {
-          "flight": "AC 9617",
-          "date": "2026-10-22",
-          "from": "FRA",
-          "stops": 2,
-          "seats": null
-        },
-        {
           "flight": "AC 9904",
           "date": "2026-10-22",
           "from": "FCO",
@@ -1164,14 +1158,7 @@
           "seats": null
         },
         {
-          "flight": "AZ 0812",
-          "date": "2026-10-22",
-          "from": "FCO",
-          "stops": 1,
-          "seats": null
-        },
-        {
-          "flight": "BA 0105",
+          "flight": "BA 0107",
           "date": "2026-10-22",
           "from": "LAX",
           "stops": 0,
@@ -1332,14 +1319,14 @@
           "seats": null
         },
         {
-          "flight": "ZZ 3864",
+          "flight": "ZZ 2497",
           "date": "2026-10-22",
           "from": "LAX",
           "stops": 0,
           "seats": 76
         },
         {
-          "flight": "AA 118",
+          "flight": "AA 1274",
           "date": "2026-10-23",
           "from": "LAX",
           "stops": 0,
@@ -1353,20 +1340,6 @@
           "seats": null
         },
         {
-          "flight": "AC 9020",
-          "date": "2026-10-23",
-          "from": "FRA",
-          "stops": 2,
-          "seats": null
-        },
-        {
-          "flight": "AC 9617",
-          "date": "2026-10-23",
-          "from": "FRA",
-          "stops": 2,
-          "seats": null
-        },
-        {
           "flight": "AC 9904",
           "date": "2026-10-23",
           "from": "FCO",
@@ -1374,14 +1347,7 @@
           "seats": null
         },
         {
-          "flight": "AZ 0812",
-          "date": "2026-10-23",
-          "from": "FCO",
-          "stops": 1,
-          "seats": null
-        },
-        {
-          "flight": "BA 0105",
+          "flight": "BA 0107",
           "date": "2026-10-23",
           "from": "LAX",
           "stops": 0,
@@ -1458,14 +1424,14 @@
           "seats": null
         },
         {
-          "flight": "ZZ 3864",
+          "flight": "ZZ 2497",
           "date": "2026-10-23",
           "from": "LAX",
           "stops": 0,
           "seats": 76
         },
         {
-          "flight": "AA 118",
+          "flight": "AA 1274",
           "date": "2026-10-24",
           "from": "LAX",
           "stops": 0,
@@ -1479,28 +1445,14 @@
           "seats": null
         },
         {
-          "flight": "AC 9020",
-          "date": "2026-10-24",
-          "from": "FRA",
-          "stops": 2,
-          "seats": null
-        },
-        {
-          "flight": "AC 9617",
-          "date": "2026-10-24",
-          "from": "FRA",
-          "stops": 2,
-          "seats": null
-        },
-        {
-          "flight": "AZ 0812",
+          "flight": "AC 9904",
           "date": "2026-10-24",
           "from": "FCO",
-          "stops": 1,
+          "stops": 2,
           "seats": null
         },
         {
-          "flight": "BA 0105",
+          "flight": "BA 0107",
           "date": "2026-10-24",
           "from": "LAX",
           "stops": 0,
@@ -1598,14 +1550,14 @@
           "seats": null
         },
         {
-          "flight": "ZZ 3864",
+          "flight": "ZZ 2497",
           "date": "2026-10-24",
           "from": "LAX",
           "stops": 0,
           "seats": 76
         },
         {
-          "flight": "AA 118",
+          "flight": "AA 1274",
           "date": "2026-10-25",
           "from": "LAX",
           "stops": 0,
@@ -1619,21 +1571,7 @@
           "seats": null
         },
         {
-          "flight": "AC 9617",
-          "date": "2026-10-25",
-          "from": "FRA",
-          "stops": 2,
-          "seats": null
-        },
-        {
-          "flight": "AZ 0812",
-          "date": "2026-10-25",
-          "from": "FCO",
-          "stops": 1,
-          "seats": null
-        },
-        {
-          "flight": "BA 0105",
+          "flight": "BA 0107",
           "date": "2026-10-25",
           "from": "LAX",
           "stops": 0,
@@ -1717,6 +1655,13 @@
           "seats": null
         },
         {
+          "flight": "LY 0010",
+          "date": "2026-10-25",
+          "from": "JFK",
+          "stops": 1,
+          "seats": null
+        },
+        {
           "flight": "LY 0014",
           "date": "2026-10-25",
           "from": "JFK",
@@ -1787,14 +1732,14 @@
           "seats": null
         },
         {
-          "flight": "ZZ 3864",
+          "flight": "ZZ 2497",
           "date": "2026-10-25",
           "from": "LAX",
           "stops": 0,
           "seats": 76
         },
         {
-          "flight": "AA 118",
+          "flight": "AA 1274",
           "date": "2026-10-26",
           "from": "LAX",
           "stops": 0,
@@ -1815,14 +1760,7 @@
           "seats": null
         },
         {
-          "flight": "AZ 0812",
-          "date": "2026-10-26",
-          "from": "FCO",
-          "stops": 1,
-          "seats": null
-        },
-        {
-          "flight": "BA 0105",
+          "flight": "BA 0107",
           "date": "2026-10-26",
           "from": "LAX",
           "stops": 0,
@@ -1906,6 +1844,13 @@
           "seats": null
         },
         {
+          "flight": "LY 0318",
+          "date": "2026-10-26",
+          "from": "LHR",
+          "stops": 1,
+          "seats": null
+        },
+        {
           "flight": "LY 0358",
           "date": "2026-10-26",
           "from": "FRA",
@@ -1934,7 +1879,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 3864",
+          "flight": "ZZ 2497",
           "date": "2026-10-26",
           "from": "LAX",
           "stops": 0,
@@ -2032,6 +1977,6 @@
     },
     "arriveBy": "2026-10-27T23:59",
     "source": "duffel",
-    "updatedAt": "2026-08-31T19:30:27.492Z"
+    "updatedAt": "2026-09-01T17:18:40.179Z"
   }
 }
