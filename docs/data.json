@@ -1020,6 +1020,21 @@
           "mappedFlights": 14,
           "itineraries": 1092
         }
+      }
+    },
+    {
+      "date": "2026-09-07",
+      "seats": 1064,
+      "flights": 157,
+      "mappedFlights": 14,
+      "itineraries": 1199,
+      "byOrigin": {
+        "LAX": {
+          "seats": 1064,
+          "flights": 157,
+          "mappedFlights": 14,
+          "itineraries": 1199
+        }
       },
       "flightList": [
         {
@@ -1037,7 +1052,7 @@
           "seats": null
         },
         {
-          "flight": "IB 3179",
+          "flight": "IB 3177",
           "date": "2026-10-20",
           "from": "LAX",
           "stops": 0,
@@ -1079,7 +1094,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 3924",
+          "flight": "ZZ 7320",
           "date": "2026-10-20",
           "from": "LAX",
           "stops": 0,
@@ -1128,7 +1143,7 @@
           "seats": null
         },
         {
-          "flight": "IB 3179",
+          "flight": "IB 3177",
           "date": "2026-10-21",
           "from": "LAX",
           "stops": 0,
@@ -1219,7 +1234,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 3924",
+          "flight": "ZZ 7320",
           "date": "2026-10-21",
           "from": "LAX",
           "stops": 0,
@@ -1268,7 +1283,7 @@
           "seats": null
         },
         {
-          "flight": "IB 3179",
+          "flight": "IB 3177",
           "date": "2026-10-22",
           "from": "LAX",
           "stops": 0,
@@ -1422,7 +1437,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 3924",
+          "flight": "ZZ 7320",
           "date": "2026-10-22",
           "from": "LAX",
           "stops": 0,
@@ -1471,7 +1486,7 @@
           "seats": null
         },
         {
-          "flight": "IB 3179",
+          "flight": "IB 3177",
           "date": "2026-10-23",
           "from": "LAX",
           "stops": 0,
@@ -1541,7 +1556,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 3924",
+          "flight": "ZZ 7320",
           "date": "2026-10-23",
           "from": "LAX",
           "stops": 0,
@@ -1590,7 +1605,7 @@
           "seats": null
         },
         {
-          "flight": "IB 3179",
+          "flight": "IB 3177",
           "date": "2026-10-24",
           "from": "LAX",
           "stops": 0,
@@ -1681,7 +1696,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 3924",
+          "flight": "ZZ 7320",
           "date": "2026-10-24",
           "from": "LAX",
           "stops": 0,
@@ -1730,7 +1745,7 @@
           "seats": null
         },
         {
-          "flight": "IB 3179",
+          "flight": "IB 3177",
           "date": "2026-10-25",
           "from": "LAX",
           "stops": 0,
@@ -1744,6 +1759,13 @@
           "seats": null
         },
         {
+          "flight": "LH 0682",
+          "date": "2026-10-25",
+          "from": "MUC",
+          "stops": 1,
+          "seats": null
+        },
+        {
           "flight": "LH 0686",
           "date": "2026-10-25",
           "from": "FRA",
@@ -1751,10 +1773,24 @@
           "seats": null
         },
         {
+          "flight": "LH 0690",
+          "date": "2026-10-25",
+          "from": "FRA",
+          "stops": 2,
+          "seats": null
+        },
+        {
           "flight": "LH 0694",
           "date": "2026-10-25",
           "from": "FRA",
           "stops": 1,
+          "seats": null
+        },
+        {
+          "flight": "LH 5240",
+          "date": "2026-10-25",
+          "from": "FCO",
+          "stops": 2,
           "seats": null
         },
         {
@@ -1835,6 +1871,20 @@
           "seats": null
         },
         {
+          "flight": "OS 0079",
+          "date": "2026-10-25",
+          "from": "VIE",
+          "stops": 2,
+          "seats": null
+        },
+        {
+          "flight": "OS 0083",
+          "date": "2026-10-25",
+          "from": "VIE",
+          "stops": 2,
+          "seats": null
+        },
+        {
           "flight": "SK 3158",
           "date": "2026-10-25",
           "from": "CDG",
@@ -1856,7 +1906,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 3924",
+          "flight": "ZZ 7320",
           "date": "2026-10-25",
           "from": "LAX",
           "stops": 0,
@@ -1898,7 +1948,7 @@
           "seats": null
         },
         {
-          "flight": "IB 3179",
+          "flight": "IB 3177",
           "date": "2026-10-26",
           "from": "LAX",
           "stops": 0,
@@ -2010,7 +2060,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 3924",
+          "flight": "ZZ 7320",
           "date": "2026-10-26",
           "from": "LAX",
           "stops": 0,
@@ -2108,6 +2158,6 @@
     },
     "arriveBy": "2026-10-27T23:59",
     "source": "duffel",
-    "updatedAt": "2026-09-06T16:09:53.172Z"
+    "updatedAt": "2026-09-07T18:14:30.609Z"
   }
 }
