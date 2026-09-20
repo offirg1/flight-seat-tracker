@@ -1215,6 +1215,21 @@
           "mappedFlights": 14,
           "itineraries": 1171
         }
+      }
+    },
+    {
+      "date": "2026-09-20",
+      "seats": 1064,
+      "flights": 179,
+      "mappedFlights": 14,
+      "itineraries": 1171,
+      "byOrigin": {
+        "LAX": {
+          "seats": 1064,
+          "flights": 179,
+          "mappedFlights": 14,
+          "itineraries": 1171
+        }
       },
       "flightList": [
         {
@@ -2492,6 +2507,6 @@
     },
     "arriveBy": "2026-10-27T23:59",
     "source": "duffel",
-    "updatedAt": "2026-09-19T16:23:37.292Z"
+    "updatedAt": "2026-09-20T16:48:02.977Z"
   }
 }
