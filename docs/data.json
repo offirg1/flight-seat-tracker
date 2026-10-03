@@ -1395,6 +1395,21 @@
           "mappedFlights": 29,
           "itineraries": 1133
         }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "seats": 3312,
+      "flights": 157,
+      "mappedFlights": 28,
+      "itineraries": 1125,
+      "byOrigin": {
+        "LAX": {
+          "seats": 3312,
+          "flights": 157,
+          "mappedFlights": 28,
+          "itineraries": 1125
+        }
       },
       "flightList": [
         {
@@ -1514,14 +1529,14 @@
           "date": "2026-10-21",
           "from": "MUC",
           "stops": 1,
-          "seats": 149
+          "seats": 155
         },
         {
           "flight": "LH 0690",
           "date": "2026-10-21",
           "from": "FRA",
           "stops": 1,
-          "seats": 143
+          "seats": 149
         },
         {
           "flight": "LH 0694",
@@ -1710,7 +1725,7 @@
           "date": "2026-10-22",
           "from": "ZRH",
           "stops": 1,
-          "seats": 105
+          "seats": 100
         },
         {
           "flight": "LY 0002",
@@ -1850,7 +1865,7 @@
           "date": "2026-10-23",
           "from": "MUC",
           "stops": 1,
-          "seats": 125
+          "seats": 143
         },
         {
           "flight": "LH 0682",
@@ -1864,14 +1879,14 @@
           "date": "2026-10-23",
           "from": "FRA",
           "stops": 1,
-          "seats": 131
+          "seats": 137
         },
         {
           "flight": "LH 0690",
           "date": "2026-10-23",
           "from": "FRA",
           "stops": 1,
-          "seats": 119
+          "seats": 137
         },
         {
           "flight": "LH 0694",
@@ -2049,13 +2064,6 @@
           "seats": null
         },
         {
-          "flight": "VS 7496",
-          "date": "2026-10-24",
-          "from": "LHR",
-          "stops": 1,
-          "seats": null
-        },
-        {
           "flight": "ZZ 3551",
           "date": "2026-10-24",
           "from": "LAX",
@@ -2151,7 +2159,7 @@
           "date": "2026-10-25",
           "from": "ZRH",
           "stops": 1,
-          "seats": 161
+          "seats": null
         },
         {
           "flight": "LY 0006",
@@ -2525,6 +2533,6 @@
     },
     "arriveBy": "2026-10-27T23:59",
     "source": "duffel",
-    "updatedAt": "2026-10-02T18:19:19.567Z"
+    "updatedAt": "2026-10-03T17:09:57.259Z"
   }
 }
