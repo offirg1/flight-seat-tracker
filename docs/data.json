@@ -1485,6 +1485,21 @@
           "mappedFlights": 56,
           "itineraries": 612
         }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "seats": 6704,
+      "flights": 77,
+      "mappedFlights": 56,
+      "itineraries": 612,
+      "byOrigin": {
+        "LAX": {
+          "seats": 6704,
+          "flights": 77,
+          "mappedFlights": 56,
+          "itineraries": 612
+        }
       },
       "flightList": [
         {
@@ -1555,7 +1570,7 @@
           "date": "2026-10-21",
           "from": "FRA",
           "stops": 1,
-          "seats": 143
+          "seats": 137
         },
         {
           "flight": "LH 0694",
@@ -1569,7 +1584,7 @@
           "date": "2026-10-21",
           "from": "ZRH",
           "stops": 1,
-          "seats": 115
+          "seats": 110
         },
         {
           "flight": "LY 0006",
@@ -1618,14 +1633,14 @@
           "date": "2026-10-22",
           "from": "MUC",
           "stops": 1,
-          "seats": 137
+          "seats": 131
         },
         {
           "flight": "LH 0682",
           "date": "2026-10-22",
           "from": "MUC",
           "stops": 1,
-          "seats": 129
+          "seats": 125
         },
         {
           "flight": "LH 0686",
@@ -1660,7 +1675,7 @@
           "date": "2026-10-22",
           "from": "ZRH",
           "stops": 1,
-          "seats": 95
+          "seats": 90
         },
         {
           "flight": "LY 0006",
@@ -1772,28 +1787,28 @@
           "date": "2026-10-24",
           "from": "MUC",
           "stops": 1,
-          "seats": 143
+          "seats": 119
         },
         {
           "flight": "LH 0682",
           "date": "2026-10-24",
           "from": "MUC",
           "stops": 1,
-          "seats": 143
+          "seats": 137
         },
         {
           "flight": "LH 0686",
           "date": "2026-10-24",
           "from": "FRA",
           "stops": 1,
-          "seats": 125
+          "seats": 119
         },
         {
           "flight": "LH 0690",
           "date": "2026-10-24",
           "from": "FRA",
           "stops": 1,
-          "seats": 131
+          "seats": 119
         },
         {
           "flight": "LH 0694",
@@ -2003,14 +2018,14 @@
           "date": "2026-10-27",
           "from": "FRA",
           "stops": 1,
-          "seats": 137
+          "seats": 143
         },
         {
           "flight": "LH 0694",
           "date": "2026-10-27",
           "from": "FRA",
           "stops": 1,
-          "seats": 125
+          "seats": 131
         },
         {
           "flight": "LX 0252",
@@ -2048,6 +2063,6 @@
     },
     "arriveBy": "2026-10-27T23:59",
     "source": "duffel",
-    "updatedAt": "2026-10-09T18:45:01.980Z"
+    "updatedAt": "2026-10-10T17:45:14.545Z"
   }
 }
