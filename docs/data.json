@@ -1515,6 +1515,21 @@
           "mappedFlights": 56,
           "itineraries": 612
         }
+      }
+    },
+    {
+      "date": "2026-10-12",
+      "seats": 6732,
+      "flights": 77,
+      "mappedFlights": 56,
+      "itineraries": 612,
+      "byOrigin": {
+        "LAX": {
+          "seats": 6732,
+          "flights": 77,
+          "mappedFlights": 56,
+          "itineraries": 612
+        }
       },
       "flightList": [
         {
@@ -1525,14 +1540,14 @@
           "seats": 76
         },
         {
-          "flight": "BA 0107",
+          "flight": "BA 0109",
           "date": "2026-10-20",
           "from": "LAX",
           "stops": 0,
           "seats": null
         },
         {
-          "flight": "IB 3177",
+          "flight": "IB 3179",
           "date": "2026-10-20",
           "from": "LAX",
           "stops": 0,
@@ -1546,7 +1561,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 9060",
+          "flight": "ZZ 4029",
           "date": "2026-10-20",
           "from": "LAX",
           "stops": 0,
@@ -1560,14 +1575,14 @@
           "seats": 76
         },
         {
-          "flight": "BA 0107",
+          "flight": "BA 0109",
           "date": "2026-10-21",
           "from": "LAX",
           "stops": 0,
           "seats": null
         },
         {
-          "flight": "IB 3177",
+          "flight": "IB 3179",
           "date": "2026-10-21",
           "from": "LAX",
           "stops": 0,
@@ -1585,7 +1600,7 @@
           "date": "2026-10-21",
           "from": "FRA",
           "stops": 1,
-          "seats": 137
+          "seats": 155
         },
         {
           "flight": "LH 0694",
@@ -1599,7 +1614,7 @@
           "date": "2026-10-21",
           "from": "ZRH",
           "stops": 1,
-          "seats": 110
+          "seats": 115
         },
         {
           "flight": "LY 0006",
@@ -1616,7 +1631,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 9060",
+          "flight": "ZZ 4029",
           "date": "2026-10-21",
           "from": "LAX",
           "stops": 0,
@@ -1630,14 +1645,14 @@
           "seats": 76
         },
         {
-          "flight": "BA 0107",
+          "flight": "BA 0109",
           "date": "2026-10-22",
           "from": "LAX",
           "stops": 0,
           "seats": null
         },
         {
-          "flight": "IB 3177",
+          "flight": "IB 3179",
           "date": "2026-10-22",
           "from": "LAX",
           "stops": 0,
@@ -1648,7 +1663,7 @@
           "date": "2026-10-22",
           "from": "MUC",
           "stops": 1,
-          "seats": 131
+          "seats": 137
         },
         {
           "flight": "LH 0682",
@@ -1690,7 +1705,7 @@
           "date": "2026-10-22",
           "from": "ZRH",
           "stops": 1,
-          "seats": 90
+          "seats": 95
         },
         {
           "flight": "LY 0006",
@@ -1700,7 +1715,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 9060",
+          "flight": "ZZ 4029",
           "date": "2026-10-22",
           "from": "LAX",
           "stops": 0,
@@ -1714,14 +1729,14 @@
           "seats": 76
         },
         {
-          "flight": "BA 0107",
+          "flight": "BA 0109",
           "date": "2026-10-23",
           "from": "LAX",
           "stops": 0,
           "seats": null
         },
         {
-          "flight": "IB 3177",
+          "flight": "IB 3179",
           "date": "2026-10-23",
           "from": "LAX",
           "stops": 0,
@@ -1732,28 +1747,28 @@
           "date": "2026-10-23",
           "from": "MUC",
           "stops": 1,
-          "seats": 149
+          "seats": 143
         },
         {
           "flight": "LH 0682",
           "date": "2026-10-23",
           "from": "MUC",
           "stops": 1,
-          "seats": 137
+          "seats": 131
         },
         {
           "flight": "LH 0686",
           "date": "2026-10-23",
           "from": "FRA",
           "stops": 1,
-          "seats": 137
+          "seats": 131
         },
         {
           "flight": "LH 0690",
           "date": "2026-10-23",
           "from": "FRA",
           "stops": 1,
-          "seats": 137
+          "seats": 131
         },
         {
           "flight": "LH 0694",
@@ -1770,7 +1785,7 @@
           "seats": 183
         },
         {
-          "flight": "ZZ 9060",
+          "flight": "ZZ 4029",
           "date": "2026-10-23",
           "from": "LAX",
           "stops": 0,
@@ -1784,14 +1799,14 @@
           "seats": 76
         },
         {
-          "flight": "BA 0107",
+          "flight": "BA 0109",
           "date": "2026-10-24",
           "from": "LAX",
           "stops": 0,
           "seats": null
         },
         {
-          "flight": "IB 3177",
+          "flight": "IB 3179",
           "date": "2026-10-24",
           "from": "LAX",
           "stops": 0,
@@ -1802,28 +1817,28 @@
           "date": "2026-10-24",
           "from": "MUC",
           "stops": 1,
-          "seats": 119
+          "seats": 143
         },
         {
           "flight": "LH 0682",
           "date": "2026-10-24",
           "from": "MUC",
           "stops": 1,
-          "seats": 137
+          "seats": 143
         },
         {
           "flight": "LH 0686",
           "date": "2026-10-24",
           "from": "FRA",
           "stops": 1,
-          "seats": 119
+          "seats": 131
         },
         {
           "flight": "LH 0690",
           "date": "2026-10-24",
           "from": "FRA",
           "stops": 1,
-          "seats": 119
+          "seats": 125
         },
         {
           "flight": "LH 0694",
@@ -1847,7 +1862,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 9060",
+          "flight": "ZZ 4029",
           "date": "2026-10-24",
           "from": "LAX",
           "stops": 0,
@@ -1861,14 +1876,14 @@
           "seats": 76
         },
         {
-          "flight": "BA 0107",
+          "flight": "BA 0109",
           "date": "2026-10-25",
           "from": "LAX",
           "stops": 0,
           "seats": null
         },
         {
-          "flight": "IB 3177",
+          "flight": "IB 3179",
           "date": "2026-10-25",
           "from": "LAX",
           "stops": 0,
@@ -1893,14 +1908,14 @@
           "date": "2026-10-25",
           "from": "FRA",
           "stops": 1,
-          "seats": 125
+          "seats": 119
         },
         {
           "flight": "LH 0690",
           "date": "2026-10-25",
           "from": "FRA",
           "stops": 2,
-          "seats": 143
+          "seats": 119
         },
         {
           "flight": "LH 0694",
@@ -1921,7 +1936,7 @@
           "date": "2026-10-25",
           "from": "ZRH",
           "stops": 1,
-          "seats": 173
+          "seats": 185
         },
         {
           "flight": "LY 0006",
@@ -1945,7 +1960,7 @@
           "seats": 172
         },
         {
-          "flight": "ZZ 9060",
+          "flight": "ZZ 4029",
           "date": "2026-10-25",
           "from": "LAX",
           "stops": 0,
@@ -1959,14 +1974,14 @@
           "seats": 76
         },
         {
-          "flight": "BA 0107",
+          "flight": "BA 0109",
           "date": "2026-10-26",
           "from": "LAX",
           "stops": 0,
           "seats": null
         },
         {
-          "flight": "IB 3177",
+          "flight": "IB 3179",
           "date": "2026-10-26",
           "from": "LAX",
           "stops": 0,
@@ -1991,7 +2006,7 @@
           "date": "2026-10-26",
           "from": "FRA",
           "stops": 1,
-          "seats": 137
+          "seats": 131
         },
         {
           "flight": "LX 0256",
@@ -2008,7 +2023,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 9060",
+          "flight": "ZZ 4029",
           "date": "2026-10-26",
           "from": "LAX",
           "stops": 0,
@@ -2026,7 +2041,7 @@
           "date": "2026-10-27",
           "from": "FRA",
           "stops": 1,
-          "seats": 137
+          "seats": 131
         },
         {
           "flight": "LH 0690",
@@ -2078,6 +2093,6 @@
     },
     "arriveBy": "2026-10-27T23:59",
     "source": "duffel",
-    "updatedAt": "2026-10-11T17:59:17.273Z"
+    "updatedAt": "2026-10-12T21:42:36.915Z"
   }
 }
