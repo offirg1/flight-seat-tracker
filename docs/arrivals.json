@@ -6709,629 +6709,85 @@
           "mappedFlights": 0
         }
       },
+      "errors": [
+        "CDG 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ORY 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ORY 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ORY 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ORY 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ORY 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "LHR 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "LHR 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BER 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BER 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BER 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "VIE 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "VIE 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "VIE 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "VIE 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "VIE 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ZRH 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ZRH 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ZRH 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "WAW 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "WAW 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BUD 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BUD 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BUD 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BUD 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BUD 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "PRG 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "PRG 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "DXB 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "DXB 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "DXB 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "AUH 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "AUH 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "AUH 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "JFK 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "AUH 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "AUH 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "JFK 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "JFK 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "JFK 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BKK 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "ADD 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header."
+      ]
+    },
+    {
+      "date": "2026-10-23",
+      "seats": 152,
+      "flights": 291,
+      "mappedFlights": 2,
+      "byDay": {
+        "2026-10-23": {
+          "seats": 76,
+          "flights": 5,
+          "mappedFlights": 1
+        },
+        "2026-10-24": {
+          "seats": 76,
+          "flights": 48,
+          "mappedFlights": 1
+        },
+        "2026-10-25": {
+          "seats": 0,
+          "flights": 119,
+          "mappedFlights": 0
+        },
+        "2026-10-26": {
+          "seats": 0,
+          "flights": 119,
+          "mappedFlights": 0
+        }
+      },
       "flightList": [
         {
-          "flight": "6H 0996",
-          "from": "LCA",
-          "date": "2026-10-23",
-          "time": "00:25",
-          "seats": null
-        },
-        {
-          "flight": "LY 0352",
-          "from": "MUC",
-          "date": "2026-10-23",
-          "time": "00:45",
-          "seats": null
-        },
-        {
-          "flight": "LY 0544",
-          "from": "ATH",
-          "date": "2026-10-23",
-          "time": "00:50",
-          "seats": null
-        },
-        {
-          "flight": "LY 0572",
-          "from": "OTP",
-          "date": "2026-10-23",
-          "time": "00:50",
-          "seats": null
-        },
-        {
-          "flight": "RO 9101",
-          "from": "OTP",
-          "date": "2026-10-23",
-          "time": "00:50",
-          "seats": null
-        },
-        {
-          "flight": "IZ 0162",
-          "from": "LCA",
-          "date": "2026-10-23",
-          "time": "00:55",
-          "seats": null
-        },
-        {
-          "flight": "LY 0384",
-          "from": "FCO",
-          "date": "2026-10-23",
-          "time": "02:10",
-          "seats": null
-        },
-        {
-          "flight": "A3 0528",
-          "from": "LCA",
-          "date": "2026-10-23",
-          "time": "02:30",
-          "seats": null
-        },
-        {
-          "flight": "IZ 1418",
-          "from": "TBS",
-          "date": "2026-10-23",
-          "time": "02:30",
-          "seats": null
-        },
-        {
-          "flight": "LY 8856",
-          "from": "AMS",
-          "date": "2026-10-23",
-          "time": "02:55",
-          "seats": null
-        },
-        {
-          "flight": "LY 0326",
-          "from": "CDG",
-          "date": "2026-10-23",
-          "time": "03:05",
-          "seats": null
-        },
-        {
-          "flight": "LY 0336",
-          "from": "AMS",
-          "date": "2026-10-23",
-          "time": "03:05",
-          "seats": null
-        },
-        {
-          "flight": "AZ 0810",
-          "from": "FCO",
-          "date": "2026-10-23",
-          "time": "03:10",
-          "seats": null
-        },
-        {
-          "flight": "IZ 0272",
-          "from": "BCN",
-          "date": "2026-10-23",
-          "time": "03:20",
-          "seats": null
-        },
-        {
-          "flight": "LY 5110",
-          "from": "TBS",
-          "date": "2026-10-23",
-          "time": "03:20",
-          "seats": null
-        },
-        {
-          "flight": "LX 0256",
-          "from": "ZRH",
-          "date": "2026-10-23",
-          "time": "03:35",
-          "seats": null
-        },
-        {
-          "flight": "LY 0388",
-          "from": "MXP",
-          "date": "2026-10-23",
-          "time": "03:40",
-          "seats": null
-        },
-        {
-          "flight": "LY 0314",
-          "from": "LTN",
-          "date": "2026-10-23",
-          "time": "03:45",
-          "seats": null
-        },
-        {
-          "flight": "LY 0392",
-          "from": "BCN",
-          "date": "2026-10-23",
-          "time": "03:45",
-          "seats": null
-        },
-        {
-          "flight": "6H 0896",
-          "from": "TBS",
-          "date": "2026-10-23",
-          "time": "03:45",
-          "seats": null
-        },
-        {
-          "flight": "LO 0151",
-          "from": "WAW",
-          "date": "2026-10-23",
-          "time": "03:50",
-          "seats": null
-        },
-        {
-          "flight": "LY 9256",
-          "from": "WAW",
-          "date": "2026-10-23",
-          "time": "03:50",
-          "seats": null
-        },
-        {
-          "flight": "ET 0404",
-          "from": "ADD",
-          "date": "2026-10-23",
-          "time": "04:00",
-          "seats": null
-        },
-        {
-          "flight": "6H 0382",
-          "from": "FCO",
-          "date": "2026-10-23",
-          "time": "04:15",
-          "seats": null
-        },
-        {
-          "flight": "LY 0398",
-          "from": "MAD",
-          "date": "2026-10-23",
-          "time": "04:25",
-          "seats": null
-        },
-        {
-          "flight": "BT 0771",
-          "from": "RIX",
-          "date": "2026-10-23",
-          "time": "04:55",
-          "seats": null
-        },
-        {
-          "flight": "LY 8072",
-          "from": "RIX",
-          "date": "2026-10-23",
-          "time": "04:55",
-          "seats": null
-        },
-        {
-          "flight": "6H 0892",
-          "from": "TBS",
-          "date": "2026-10-23",
-          "time": "05:00",
-          "seats": null
-        },
-        {
-          "flight": "GQ 0720",
-          "from": "ATH",
-          "date": "2026-10-23",
-          "time": "05:30",
-          "seats": null
-        },
-        {
-          "flight": "LY 9950",
-          "from": "GYD",
-          "date": "2026-10-23",
-          "time": "10:35",
-          "seats": null
-        },
-        {
-          "flight": "IZ 0164",
-          "from": "LCA",
-          "date": "2026-10-23",
-          "time": "11:00",
-          "seats": null
-        },
-        {
-          "flight": "EY 0593",
-          "from": "AUH",
-          "date": "2026-10-23",
-          "time": "11:10",
-          "seats": null
-        },
-        {
-          "flight": "EY 0607",
-          "from": "AUH",
-          "date": "2026-10-23",
-          "time": "11:20",
-          "seats": null
-        },
-        {
-          "flight": "LY 5442",
-          "from": "LCA",
-          "date": "2026-10-23",
-          "time": "11:50",
-          "seats": null
-        },
-        {
-          "flight": "LY 5108",
-          "from": "TBS",
-          "date": "2026-10-23",
-          "time": "11:50",
-          "seats": null
-        },
-        {
-          "flight": "RO 9103",
-          "from": "OTP",
-          "date": "2026-10-23",
-          "time": "12:20",
-          "seats": null
-        },
-        {
-          "flight": "LY 0574",
-          "from": "OTP",
-          "date": "2026-10-23",
-          "time": "12:20",
-          "seats": null
-        },
-        {
-          "flight": "6H 0594",
-          "from": "PFO",
-          "date": "2026-10-23",
-          "time": "12:20",
-          "seats": null
-        },
-        {
-          "flight": "LY 0542",
-          "from": "ATH",
-          "date": "2026-10-23",
-          "time": "12:30",
-          "seats": null
-        },
-        {
-          "flight": "LY 0552",
-          "from": "SOF",
-          "date": "2026-10-23",
-          "time": "12:30",
-          "seats": null
-        },
-        {
-          "flight": "IZ 0212",
-          "from": "ATH",
-          "date": "2026-10-23",
-          "time": "12:40",
-          "seats": null
-        },
-        {
-          "flight": "A3 0924",
-          "from": "ATH",
-          "date": "2026-10-23",
-          "time": "12:50",
-          "seats": null
-        },
-        {
-          "flight": "6H 0584",
-          "from": "LCA",
-          "date": "2026-10-23",
-          "time": "13:05",
-          "seats": null
-        },
-        {
-          "flight": "LY 5410",
-          "from": "TBS",
-          "date": "2026-10-23",
-          "time": "13:10",
-          "seats": null
-        },
-        {
-          "flight": "6H 0882",
-          "from": "GYD",
-          "date": "2026-10-23",
-          "time": "13:20",
-          "seats": null
-        },
-        {
-          "flight": "LY 0006",
-          "from": "LAX",
-          "date": "2026-10-23",
-          "time": "13:20",
-          "seats": null
-        },
-        {
-          "flight": "AZ 0806",
-          "from": "FCO",
-          "date": "2026-10-23",
-          "time": "13:30",
-          "seats": null
-        },
-        {
-          "flight": "J2 0121",
-          "from": "GYD",
-          "date": "2026-10-23",
-          "time": "13:40",
-          "seats": null
-        },
-        {
-          "flight": "LY 9958",
-          "from": "GYD",
-          "date": "2026-10-23",
-          "time": "13:40",
-          "seats": null
-        },
-        {
-          "flight": "UX 1301",
-          "from": "MAD",
-          "date": "2026-10-23",
-          "time": "14:10",
-          "seats": null
-        },
-        {
-          "flight": "6H 0562",
-          "from": "ATH",
-          "date": "2026-10-23",
-          "time": "14:15",
-          "seats": null
-        },
-        {
-          "flight": "LY 0386",
-          "from": "FCO",
-          "date": "2026-10-23",
-          "time": "14:20",
-          "seats": null
-        },
-        {
-          "flight": "LY 5120",
-          "from": "KRK",
-          "date": "2026-10-23",
-          "time": "14:20",
-          "seats": null
-        },
-        {
-          "flight": "LY 0026",
-          "from": "EWR",
-          "date": "2026-10-23",
-          "time": "14:25",
-          "seats": null
-        },
-        {
-          "flight": "OS 0079",
-          "from": "VIE",
-          "date": "2026-10-23",
-          "time": "14:35",
-          "seats": null
-        },
-        {
-          "flight": "ET 0418",
-          "from": "ADD",
-          "date": "2026-10-23",
-          "time": "14:35",
-          "seats": null
-        },
-        {
-          "flight": "LY 9842",
-          "from": "CDG",
-          "date": "2026-10-23",
-          "time": "14:55",
-          "seats": null
-        },
-        {
-          "flight": "LY 0354",
-          "from": "MUC",
-          "date": "2026-10-23",
-          "time": "15:05",
-          "seats": null
-        },
-        {
-          "flight": "LH 0686",
-          "from": "FRA",
-          "date": "2026-10-23",
-          "time": "15:25",
-          "seats": null
-        },
-        {
-          "flight": "LY 0362",
-          "from": "VIE",
-          "date": "2026-10-23",
-          "time": "15:45",
-          "seats": null
-        },
-        {
-          "flight": "LY 0382",
-          "from": "MXP",
-          "date": "2026-10-23",
-          "time": "15:50",
-          "seats": null
-        },
-        {
-          "flight": "LY 0358",
-          "from": "FRA",
-          "date": "2026-10-23",
-          "time": "15:50",
-          "seats": null
-        },
-        {
-          "flight": "LY 0394",
-          "from": "BCN",
-          "date": "2026-10-23",
-          "time": "15:50",
-          "seats": null
-        },
-        {
-          "flight": "LY 0348",
-          "from": "ZRH",
-          "date": "2026-10-23",
-          "time": "15:50",
-          "seats": null
-        },
-        {
-          "flight": "LY 0320",
-          "from": "CDG",
-          "date": "2026-10-23",
-          "time": "15:55",
-          "seats": null
-        },
-        {
-          "flight": "LY 0312",
-          "from": "LTN",
-          "date": "2026-10-23",
-          "time": "15:55",
-          "seats": null
-        },
-        {
-          "flight": "LY 0338",
-          "from": "AMS",
-          "date": "2026-10-23",
-          "time": "15:55",
-          "seats": null
-        },
-        {
-          "flight": "LY 0396",
-          "from": "MAD",
-          "date": "2026-10-23",
-          "time": "15:55",
-          "seats": null
-        },
-        {
-          "flight": "LH 0680",
-          "from": "MUC",
-          "date": "2026-10-23",
-          "time": "16:00",
-          "seats": null
-        },
-        {
-          "flight": "SN 7171",
-          "from": "MUC",
-          "date": "2026-10-23",
-          "time": "16:00",
-          "seats": null
-        },
-        {
-          "flight": "IZ 0322",
-          "from": "GYD",
-          "date": "2026-10-23",
-          "time": "16:20",
-          "seats": null
-        },
-        {
-          "flight": "EY 0597",
-          "from": "AUH",
-          "date": "2026-10-23",
-          "time": "16:50",
-          "seats": null
-        },
-        {
-          "flight": "LX 0252",
-          "from": "ZRH",
-          "date": "2026-10-23",
-          "time": "17:00",
-          "seats": null
-        },
-        {
-          "flight": "IZ 0152",
-          "from": "PFO",
-          "date": "2026-10-23",
-          "time": "17:25",
-          "seats": null
-        },
-        {
-          "flight": "6H 0588",
-          "from": "LCA",
-          "date": "2026-10-23",
-          "time": "18:55",
-          "seats": null
-        },
-        {
-          "flight": "ZZ 7028",
+          "flight": "ZZ 1079",
           "from": "IST",
           "date": "2026-10-23",
           "time": "19:09",
           "seats": 76
-        },
-        {
-          "flight": "LH 0694",
-          "from": "FRA",
-          "date": "2026-10-23",
-          "time": "19:15",
-          "seats": null
-        },
-        {
-          "flight": "SN 7167",
-          "from": "FRA",
-          "date": "2026-10-23",
-          "time": "19:15",
-          "seats": null
-        },
-        {
-          "flight": "IZ 0214",
-          "from": "ATH",
-          "date": "2026-10-23",
-          "time": "19:25",
-          "seats": null
-        },
-        {
-          "flight": "LO 0155",
-          "from": "WAW",
-          "date": "2026-10-23",
-          "time": "19:50",
-          "seats": null
-        },
-        {
-          "flight": "LY 9252",
-          "from": "WAW",
-          "date": "2026-10-23",
-          "time": "19:50",
-          "seats": null
-        },
-        {
-          "flight": "DE 4309",
-          "from": "FRA",
-          "date": "2026-10-23",
-          "time": "19:55",
-          "seats": null
-        },
-        {
-          "flight": "U2 1313",
-          "from": "LTN",
-          "date": "2026-10-23",
-          "time": "20:00",
-          "seats": null
-        },
-        {
-          "flight": "AZ 0812",
-          "from": "FCO",
-          "date": "2026-10-23",
-          "time": "20:20",
-          "seats": null
-        },
-        {
-          "flight": "LH 5240",
-          "from": "FCO",
-          "date": "2026-10-23",
-          "time": "20:20",
-          "seats": null
-        },
-        {
-          "flight": "IZ 1162",
-          "from": "LCA",
-          "date": "2026-10-23",
-          "time": "21:00",
-          "seats": null
-        },
-        {
-          "flight": "ET 0414",
-          "from": "ADD",
-          "date": "2026-10-23",
-          "time": "21:10",
-          "seats": null
-        },
-        {
-          "flight": "6H 0590",
-          "from": "LCA",
-          "date": "2026-10-23",
-          "time": "21:50",
-          "seats": null
-        },
-        {
-          "flight": "BA 1516",
-          "from": "CDG",
-          "date": "2026-10-23",
-          "time": "22:58",
-          "seats": null
         },
         {
           "flight": "IB 3179",
@@ -7341,45 +6797,17 @@
           "seats": null
         },
         {
-          "flight": "EY 0599",
-          "from": "AUH",
+          "flight": "BA 0109",
+          "from": "CDG",
           "date": "2026-10-23",
-          "time": "23:05",
+          "time": "22:58",
           "seats": null
         },
         {
-          "flight": "LH 0690",
-          "from": "FRA",
-          "date": "2026-10-23",
-          "time": "23:15",
-          "seats": null
-        },
-        {
-          "flight": "SN 7169",
-          "from": "FRA",
-          "date": "2026-10-23",
-          "time": "23:15",
-          "seats": null
-        },
-        {
-          "flight": "AA 1274",
+          "flight": "AA 118",
           "from": "MAD",
           "date": "2026-10-23",
           "time": "23:19",
-          "seats": null
-        },
-        {
-          "flight": "RO 0155",
-          "from": "OTP",
-          "date": "2026-10-23",
-          "time": "23:20",
-          "seats": null
-        },
-        {
-          "flight": "LY 9490",
-          "from": "OTP",
-          "date": "2026-10-23",
-          "time": "23:20",
           "seats": null
         },
         {
@@ -7390,52 +6818,24 @@
           "seats": null
         },
         {
-          "flight": "LY 9956",
-          "from": "GYD",
-          "date": "2026-10-23",
-          "time": "23:50",
-          "seats": null
-        },
-        {
-          "flight": "J2 0321",
-          "from": "GYD",
-          "date": "2026-10-23",
-          "time": "23:50",
-          "seats": null
-        },
-        {
-          "flight": "6H 0116",
-          "from": "LTN",
+          "flight": "BA 0109",
+          "from": "LHR",
           "date": "2026-10-24",
-          "time": "00:05",
+          "time": "00:23",
           "seats": null
         },
         {
-          "flight": "IZ 0514",
-          "from": "AMS",
+          "flight": "AA 118",
+          "from": "LHR",
           "date": "2026-10-24",
-          "time": "00:30",
+          "time": "00:23",
           "seats": null
         },
         {
-          "flight": "LH 0682",
-          "from": "MUC",
+          "flight": "IB 3179",
+          "from": "LHR",
           "date": "2026-10-24",
-          "time": "00:35",
-          "seats": null
-        },
-        {
-          "flight": "SN 7165",
-          "from": "MUC",
-          "date": "2026-10-24",
-          "time": "00:35",
-          "seats": null
-        },
-        {
-          "flight": "OS 0083",
-          "from": "VIE",
-          "date": "2026-10-24",
-          "time": "00:45",
+          "time": "00:23",
           "seats": null
         },
         {
@@ -7443,13 +6843,6 @@
           "from": "TBS",
           "date": "2026-10-24",
           "time": "00:50",
-          "seats": null
-        },
-        {
-          "flight": "A3 0928",
-          "from": "ATH",
-          "date": "2026-10-24",
-          "time": "02:00",
           "seats": null
         },
         {
@@ -7488,13 +6881,6 @@
           "seats": null
         },
         {
-          "flight": "ET 0404",
-          "from": "ADD",
-          "date": "2026-10-24",
-          "time": "04:00",
-          "seats": null
-        },
-        {
           "flight": "EW 3010",
           "from": "PRG",
           "date": "2026-10-24",
@@ -7502,17 +6888,17 @@
           "seats": null
         },
         {
-          "flight": "EY 0609",
-          "from": "AUH",
+          "flight": "VS 3954",
+          "from": "JFK",
           "date": "2026-10-24",
-          "time": "05:10",
+          "time": "09:25",
           "seats": null
         },
         {
-          "flight": "EY 0595",
-          "from": "AUH",
+          "flight": "LY 4000",
+          "from": "JFK",
           "date": "2026-10-24",
-          "time": "05:50",
+          "time": "09:25",
           "seats": null
         },
         {
@@ -7534,13 +6920,6 @@
           "from": "GYD",
           "date": "2026-10-24",
           "time": "11:30",
-          "seats": null
-        },
-        {
-          "flight": "AA 1274",
-          "from": "EWR",
-          "date": "2026-10-24",
-          "time": "12:47",
           "seats": null
         },
         {
@@ -7590,13 +6969,6 @@
           "from": "ADD",
           "date": "2026-10-24",
           "time": "14:35",
-          "seats": null
-        },
-        {
-          "flight": "LY 9842",
-          "from": "CDG",
-          "date": "2026-10-24",
-          "time": "14:45",
           "seats": null
         },
         {
@@ -7663,11 +7035,18 @@
           "seats": null
         },
         {
-          "flight": "ZZ 7028",
+          "flight": "SN 7167",
+          "from": "FRA",
+          "date": "2026-10-24",
+          "time": "19:15",
+          "seats": null
+        },
+        {
+          "flight": "ZZ 1079",
           "from": "IST",
           "date": "2026-10-24",
           "time": "19:56",
-          "seats": null
+          "seats": 76
         },
         {
           "flight": "LO 0155",
@@ -7754,6 +7133,13 @@
           "seats": null
         },
         {
+          "flight": "SN 7169",
+          "from": "FRA",
+          "date": "2026-10-24",
+          "time": "23:15",
+          "seats": null
+        },
+        {
           "flight": "RO 0155",
           "from": "OTP",
           "date": "2026-10-24",
@@ -7765,20 +7151,6 @@
           "from": "OTP",
           "date": "2026-10-24",
           "time": "23:20",
-          "seats": null
-        },
-        {
-          "flight": "BA 1516",
-          "from": "CDG",
-          "date": "2026-10-24",
-          "time": "23:45",
-          "seats": null
-        },
-        {
-          "flight": "IB 3179",
-          "from": "CDG",
-          "date": "2026-10-24",
-          "time": "23:45",
           "seats": null
         },
         {
@@ -7831,21 +7203,21 @@
           "seats": null
         },
         {
-          "flight": "BA 1516",
-          "from": "LHR",
-          "date": "2026-10-25",
-          "time": "01:10",
-          "seats": null
-        },
-        {
-          "flight": "AA 1274",
-          "from": "LHR",
-          "date": "2026-10-25",
-          "time": "01:10",
-          "seats": null
-        },
-        {
           "flight": "IB 3179",
+          "from": "LHR",
+          "date": "2026-10-25",
+          "time": "01:10",
+          "seats": null
+        },
+        {
+          "flight": "AA 118",
+          "from": "LHR",
+          "date": "2026-10-25",
+          "time": "01:10",
+          "seats": null
+        },
+        {
+          "flight": "BA 0109",
           "from": "LHR",
           "date": "2026-10-25",
           "time": "01:10",
@@ -7940,13 +7312,6 @@
           "from": "ZRH",
           "date": "2026-10-25",
           "time": "02:35",
-          "seats": null
-        },
-        {
-          "flight": "LY 0220",
-          "from": "CDG",
-          "date": "2026-10-25",
-          "time": "02:45",
           "seats": null
         },
         {
@@ -8069,13 +7434,6 @@
           "seats": null
         },
         {
-          "flight": "A3 0922",
-          "from": "ATH",
-          "date": "2026-10-25",
-          "time": "08:30",
-          "seats": null
-        },
-        {
           "flight": "LY 5132",
           "from": "LCA",
           "date": "2026-10-25",
@@ -8101,13 +7459,6 @@
           "from": "AUH",
           "date": "2026-10-25",
           "time": "10:35",
-          "seats": null
-        },
-        {
-          "flight": "A3 0924",
-          "from": "ATH",
-          "date": "2026-10-25",
-          "time": "11:20",
           "seats": null
         },
         {
@@ -8188,10 +7539,31 @@
           "seats": null
         },
         {
+          "flight": "LY 0008",
+          "from": "JFK",
+          "date": "2026-10-25",
+          "time": "14:10",
+          "seats": null
+        },
+        {
+          "flight": "LY 9842",
+          "from": "CDG",
+          "date": "2026-10-25",
+          "time": "14:15",
+          "seats": null
+        },
+        {
           "flight": "UX 1301",
           "from": "MAD",
           "date": "2026-10-25",
           "time": "14:20",
+          "seats": null
+        },
+        {
+          "flight": "TO 3456",
+          "from": "ORY",
+          "date": "2026-10-25",
+          "time": "14:25",
           "seats": null
         },
         {
@@ -8328,6 +7700,27 @@
           "seats": null
         },
         {
+          "flight": "LY 0320",
+          "from": "CDG",
+          "date": "2026-10-25",
+          "time": "16:30",
+          "seats": null
+        },
+        {
+          "flight": "VS 3954",
+          "from": "JFK",
+          "date": "2026-10-25",
+          "time": "16:30",
+          "seats": null
+        },
+        {
+          "flight": "LY 4000",
+          "from": "JFK",
+          "date": "2026-10-25",
+          "time": "16:30",
+          "seats": null
+        },
+        {
           "flight": "LX 0252",
           "from": "ZRH",
           "date": "2026-10-25",
@@ -8363,6 +7756,13 @@
           "seats": null
         },
         {
+          "flight": "TO 3458",
+          "from": "ORY",
+          "date": "2026-10-25",
+          "time": "17:20",
+          "seats": null
+        },
+        {
           "flight": "EW 3204",
           "from": "PRG",
           "date": "2026-10-25",
@@ -8384,10 +7784,24 @@
           "seats": null
         },
         {
+          "flight": "IZ 0994",
+          "from": "JFK",
+          "date": "2026-10-25",
+          "time": "17:55",
+          "seats": null
+        },
+        {
           "flight": "LY 0118",
           "from": "MIA",
           "date": "2026-10-25",
           "time": "17:55",
+          "seats": null
+        },
+        {
+          "flight": "LY 0014",
+          "from": "JFK",
+          "date": "2026-10-25",
+          "time": "18:10",
           "seats": null
         },
         {
@@ -8426,7 +7840,7 @@
           "seats": null
         },
         {
-          "flight": "ZZ 7028",
+          "flight": "ZZ 1079",
           "from": "IST",
           "date": "2026-10-25",
           "time": "19:42",
@@ -8451,6 +7865,13 @@
           "from": "MIA",
           "date": "2026-10-25",
           "time": "19:55",
+          "seats": null
+        },
+        {
+          "flight": "LY 0324",
+          "from": "CDG",
+          "date": "2026-10-25",
+          "time": "20:10",
           "seats": null
         },
         {
@@ -8484,6 +7905,13 @@
         {
           "flight": "6H 0566",
           "from": "ATH",
+          "date": "2026-10-25",
+          "time": "22:00",
+          "seats": null
+        },
+        {
+          "flight": "LY 0222",
+          "from": "CDG",
           "date": "2026-10-25",
           "time": "22:00",
           "seats": null
@@ -8580,6 +8008,20 @@
           "seats": null
         },
         {
+          "flight": "IB 3179",
+          "from": "CDG",
+          "date": "2026-10-26",
+          "time": "00:31",
+          "seats": null
+        },
+        {
+          "flight": "BA 0109",
+          "from": "CDG",
+          "date": "2026-10-26",
+          "time": "00:31",
+          "seats": null
+        },
+        {
           "flight": "LH 0682",
           "from": "MUC",
           "date": "2026-10-26",
@@ -8601,10 +8043,10 @@
           "seats": null
         },
         {
-          "flight": "LY 0092",
-          "from": "NRT",
+          "flight": "LY 0328",
+          "from": "CDG",
           "date": "2026-10-26",
-          "time": "00:40",
+          "time": "00:45",
           "seats": null
         },
         {
@@ -8615,24 +8057,17 @@
           "seats": null
         },
         {
-          "flight": "AA 1274",
+          "flight": "AA 118",
           "from": "LHR",
           "date": "2026-10-26",
           "time": "01:56",
           "seats": null
         },
         {
-          "flight": "BA 1516",
-          "from": "LHR",
+          "flight": "IZ 0744",
+          "from": "CDG",
           "date": "2026-10-26",
-          "time": "01:56",
-          "seats": null
-        },
-        {
-          "flight": "IB 3179",
-          "from": "LHR",
-          "date": "2026-10-26",
-          "time": "01:56",
+          "time": "02:05",
           "seats": null
         },
         {
@@ -8659,13 +8094,6 @@
         {
           "flight": "LY 0288",
           "from": "MXP",
-          "date": "2026-10-26",
-          "time": "02:20",
-          "seats": null
-        },
-        {
-          "flight": "LY 0352",
-          "from": "MUC",
           "date": "2026-10-26",
           "time": "02:20",
           "seats": null
@@ -8703,13 +8131,6 @@
           "from": "FCO",
           "date": "2026-10-26",
           "time": "02:50",
-          "seats": null
-        },
-        {
-          "flight": "A3 0928",
-          "from": "ATH",
-          "date": "2026-10-26",
-          "time": "02:55",
           "seats": null
         },
         {
@@ -8752,6 +8173,13 @@
           "from": "WAW",
           "date": "2026-10-26",
           "time": "03:45",
+          "seats": null
+        },
+        {
+          "flight": "LY 0326",
+          "from": "CDG",
+          "date": "2026-10-26",
+          "time": "03:55",
           "seats": null
         },
         {
@@ -8804,6 +8232,13 @@
           "seats": null
         },
         {
+          "flight": "LY 0010",
+          "from": "JFK",
+          "date": "2026-10-26",
+          "time": "05:45",
+          "seats": null
+        },
+        {
           "flight": "LY 0082",
           "from": "BKK",
           "date": "2026-10-26",
@@ -8839,6 +8274,13 @@
           "seats": null
         },
         {
+          "flight": "LY 0002",
+          "from": "JFK",
+          "date": "2026-10-26",
+          "time": "10:15",
+          "seats": null
+        },
+        {
           "flight": "EY 0593",
           "from": "AUH",
           "date": "2026-10-26",
@@ -8867,17 +8309,17 @@
           "seats": null
         },
         {
-          "flight": "A3 0924",
-          "from": "ATH",
-          "date": "2026-10-26",
-          "time": "11:20",
-          "seats": null
-        },
-        {
           "flight": "LY 5108",
           "from": "TBS",
           "date": "2026-10-26",
           "time": "11:35",
+          "seats": null
+        },
+        {
+          "flight": "IZ 0992",
+          "from": "JFK",
+          "date": "2026-10-26",
+          "time": "11:50",
           "seats": null
         },
         {
@@ -8923,6 +8365,13 @@
           "seats": null
         },
         {
+          "flight": "TO 3452",
+          "from": "ORY",
+          "date": "2026-10-26",
+          "time": "13:15",
+          "seats": null
+        },
+        {
           "flight": "AZ 0806",
           "from": "FCO",
           "date": "2026-10-26",
@@ -8958,13 +8407,6 @@
           "seats": null
         },
         {
-          "flight": "LY 9842",
-          "from": "CDG",
-          "date": "2026-10-26",
-          "time": "14:15",
-          "seats": null
-        },
-        {
           "flight": "LY 0026",
           "from": "EWR",
           "date": "2026-10-26",
@@ -8993,6 +8435,13 @@
           "seats": null
         },
         {
+          "flight": "LY 2366",
+          "from": "BUD",
+          "date": "2026-10-26",
+          "time": "14:45",
+          "seats": null
+        },
+        {
           "flight": "LY 5402",
           "from": "WAW",
           "date": "2026-10-26",
@@ -9004,6 +8453,13 @@
           "from": "PRG",
           "date": "2026-10-26",
           "time": "14:55",
+          "seats": null
+        },
+        {
+          "flight": "6H 0726",
+          "from": "BUD",
+          "date": "2026-10-26",
+          "time": "15:00",
           "seats": null
         },
         {
@@ -9030,20 +8486,6 @@
         {
           "flight": "IZ 0162",
           "from": "LCA",
-          "date": "2026-10-26",
-          "time": "15:40",
-          "seats": null
-        },
-        {
-          "flight": "LY 0354",
-          "from": "MUC",
-          "date": "2026-10-26",
-          "time": "15:40",
-          "seats": null
-        },
-        {
-          "flight": "6H 0882",
-          "from": "GYD",
           "date": "2026-10-26",
           "time": "15:40",
           "seats": null
@@ -9098,10 +8540,24 @@
           "seats": null
         },
         {
-          "flight": "LY 0320",
-          "from": "CDG",
+          "flight": "VS 3954",
+          "from": "JFK",
           "date": "2026-10-26",
           "time": "16:30",
+          "seats": null
+        },
+        {
+          "flight": "LY 4000",
+          "from": "JFK",
+          "date": "2026-10-26",
+          "time": "16:30",
+          "seats": null
+        },
+        {
+          "flight": "IZ 0292",
+          "from": "BUD",
+          "date": "2026-10-26",
+          "time": "16:40",
           "seats": null
         },
         {
@@ -9116,6 +8572,13 @@
           "from": "ZRH",
           "date": "2026-10-26",
           "time": "16:55",
+          "seats": null
+        },
+        {
+          "flight": "TO 3450",
+          "from": "ORY",
+          "date": "2026-10-26",
+          "time": "17:00",
           "seats": null
         },
         {
@@ -9196,22 +8659,8 @@
           "seats": null
         },
         {
-          "flight": "LY 0324",
-          "from": "CDG",
-          "date": "2026-10-26",
-          "time": "20:00",
-          "seats": null
-        },
-        {
           "flight": "U2 1313",
           "from": "LTN",
-          "date": "2026-10-26",
-          "time": "20:00",
-          "seats": null
-        },
-        {
-          "flight": "IZ 0322",
-          "from": "GYD",
           "date": "2026-10-26",
           "time": "20:00",
           "seats": null
@@ -9238,10 +8687,17 @@
           "seats": null
         },
         {
-          "flight": "ZZ 7028",
+          "flight": "ZZ 1079",
           "from": "IST",
           "date": "2026-10-26",
           "time": "20:29",
+          "seats": null
+        },
+        {
+          "flight": "6H 0730",
+          "from": "BUD",
+          "date": "2026-10-26",
+          "time": "20:40",
           "seats": null
         },
         {
@@ -9277,20 +8733,6 @@
           "from": "JFK",
           "date": "2026-10-26",
           "time": "21:35",
-          "seats": null
-        },
-        {
-          "flight": "IZ 0742",
-          "from": "CDG",
-          "date": "2026-10-26",
-          "time": "21:45",
-          "seats": null
-        },
-        {
-          "flight": "LY 0222",
-          "from": "CDG",
-          "date": "2026-10-26",
-          "time": "22:00",
           "seats": null
         },
         {
@@ -9379,47 +8821,78 @@
         }
       ],
       "errors": [
-        "CDG 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "ORY 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "ORY 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "IST 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "SAW 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "ATH 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "LCA 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "PFO 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "CDG 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "CDG 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "CDG 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "ORY 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "ORY 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "ORY 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "LHR 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "LHR 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ORY 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ORY 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "LHR 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "LTN 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "FCO 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "MXP 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "FRA 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "MUC 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "BER 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "MUC 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "MUC 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "BER 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BER 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "BER 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "BER 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "VIE 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BER 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "VIE 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "VIE 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "VIE 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "VIE 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "ZRH 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "ZRH 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "ZRH 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "WAW 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "VIE 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ZRH 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "GVA 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "AMS 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "BRU 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "MAD 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "BCN 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "WAW 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "WAW 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "WAW 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "WAW 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "WAW 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "BUD 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "BUD 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "BUD 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "BUD 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "BUD 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "PRG 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "PRG 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BUD 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "PRG 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "OTP 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "SOF 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "TBS 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "EVN 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "GYD 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "DXB 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "DXB 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "GYD 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "DXB 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "DXB 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "DXB 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "DXB 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "AUH 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "AUH 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "AUH 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "AUH 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "JFK 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "AUH 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "AUH 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "JFK 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "JFK 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "JFK 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "BKK 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "EWR 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "MIA 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "LAX 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "YYZ 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "BKK 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "BKK 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "ADD 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "ADD 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ADD 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ADD 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "ADD 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header."
       ]
     }
@@ -9472,6 +8945,6 @@
       "ADD"
     ],
     "source": "duffel",
-    "updatedAt": "2026-10-22T17:59:38.575Z"
+    "updatedAt": "2026-10-23T17:53:55.573Z"
   }
 }
