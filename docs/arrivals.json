@@ -6781,266 +6781,105 @@
           "mappedFlights": 0
         }
       },
+      "errors": [
+        "IST 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "SAW 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "ATH 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "LCA 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "PFO 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "CDG 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "CDG 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "CDG 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ORY 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ORY 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ORY 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "LHR 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "LTN 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "FCO 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "MXP 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "FRA 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "MUC 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "BER 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "MUC 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "MUC 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BER 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BER 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BER 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "VIE 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BER 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "VIE 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "VIE 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "VIE 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "VIE 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ZRH 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "GVA 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "AMS 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "BRU 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "MAD 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "BCN 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "WAW 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "WAW 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "WAW 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "WAW 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "WAW 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BUD 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BUD 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BUD 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BUD 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "PRG 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "OTP 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "SOF 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "TBS 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "EVN 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "GYD 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "DXB 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "DXB 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "GYD 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "DXB 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "DXB 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "DXB 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "AUH 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "AUH 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "AUH 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "AUH 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "JFK 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "AUH 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "EWR 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "MIA 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "LAX 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "YYZ 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "BKK 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "BKK 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "ADD 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "ADD 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ADD 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ADD 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ADD 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header."
+      ]
+    },
+    {
+      "date": "2026-10-24",
+      "seats": 76,
+      "flights": 232,
+      "mappedFlights": 1,
+      "byDay": {
+        "2026-10-24": {
+          "seats": 76,
+          "flights": 6,
+          "mappedFlights": 1
+        },
+        "2026-10-25": {
+          "seats": 0,
+          "flights": 109,
+          "mappedFlights": 0
+        },
+        "2026-10-26": {
+          "seats": 0,
+          "flights": 117,
+          "mappedFlights": 0
+        }
+      },
       "flightList": [
-        {
-          "flight": "ZZ 1079",
-          "from": "IST",
-          "date": "2026-10-23",
-          "time": "19:09",
-          "seats": 76
-        },
-        {
-          "flight": "IB 3179",
-          "from": "CDG",
-          "date": "2026-10-23",
-          "time": "22:58",
-          "seats": null
-        },
-        {
-          "flight": "BA 0109",
-          "from": "CDG",
-          "date": "2026-10-23",
-          "time": "22:58",
-          "seats": null
-        },
-        {
-          "flight": "AA 118",
-          "from": "MAD",
-          "date": "2026-10-23",
-          "time": "23:19",
-          "seats": null
-        },
-        {
-          "flight": "6H 0954",
-          "from": "ATH",
-          "date": "2026-10-23",
-          "time": "23:45",
-          "seats": null
-        },
-        {
-          "flight": "BA 0109",
-          "from": "LHR",
-          "date": "2026-10-24",
-          "time": "00:23",
-          "seats": null
-        },
-        {
-          "flight": "AA 118",
-          "from": "LHR",
-          "date": "2026-10-24",
-          "time": "00:23",
-          "seats": null
-        },
-        {
-          "flight": "IB 3179",
-          "from": "LHR",
-          "date": "2026-10-24",
-          "time": "00:23",
-          "seats": null
-        },
-        {
-          "flight": "IZ 0418",
-          "from": "TBS",
-          "date": "2026-10-24",
-          "time": "00:50",
-          "seats": null
-        },
-        {
-          "flight": "AZ 0810",
-          "from": "FCO",
-          "date": "2026-10-24",
-          "time": "03:10",
-          "seats": null
-        },
-        {
-          "flight": "LY 8854",
-          "from": "AMS",
-          "date": "2026-10-24",
-          "time": "03:30",
-          "seats": null
-        },
-        {
-          "flight": "LX 0256",
-          "from": "ZRH",
-          "date": "2026-10-24",
-          "time": "03:35",
-          "seats": null
-        },
-        {
-          "flight": "LO 0151",
-          "from": "WAW",
-          "date": "2026-10-24",
-          "time": "03:50",
-          "seats": null
-        },
-        {
-          "flight": "LY 9256",
-          "from": "WAW",
-          "date": "2026-10-24",
-          "time": "03:50",
-          "seats": null
-        },
-        {
-          "flight": "EW 3010",
-          "from": "PRG",
-          "date": "2026-10-24",
-          "time": "04:35",
-          "seats": null
-        },
-        {
-          "flight": "VS 3954",
-          "from": "JFK",
-          "date": "2026-10-24",
-          "time": "09:25",
-          "seats": null
-        },
-        {
-          "flight": "LY 4000",
-          "from": "JFK",
-          "date": "2026-10-24",
-          "time": "09:25",
-          "seats": null
-        },
-        {
-          "flight": "EY 0593",
-          "from": "AUH",
-          "date": "2026-10-24",
-          "time": "11:10",
-          "seats": null
-        },
-        {
-          "flight": "EY 0607",
-          "from": "AUH",
-          "date": "2026-10-24",
-          "time": "11:20",
-          "seats": null
-        },
-        {
-          "flight": "LY 9950",
-          "from": "GYD",
-          "date": "2026-10-24",
-          "time": "11:30",
-          "seats": null
-        },
-        {
-          "flight": "IZ 0164",
-          "from": "LCA",
-          "date": "2026-10-24",
-          "time": "13:00",
-          "seats": null
-        },
-        {
-          "flight": "IZ 0152",
-          "from": "PFO",
-          "date": "2026-10-24",
-          "time": "13:25",
-          "seats": null
-        },
-        {
-          "flight": "AZ 0806",
-          "from": "FCO",
-          "date": "2026-10-24",
-          "time": "13:30",
-          "seats": null
-        },
-        {
-          "flight": "J2 0121",
-          "from": "GYD",
-          "date": "2026-10-24",
-          "time": "13:40",
-          "seats": null
-        },
-        {
-          "flight": "LY 9958",
-          "from": "GYD",
-          "date": "2026-10-24",
-          "time": "13:40",
-          "seats": null
-        },
-        {
-          "flight": "OS 0079",
-          "from": "VIE",
-          "date": "2026-10-24",
-          "time": "14:35",
-          "seats": null
-        },
-        {
-          "flight": "ET 0418",
-          "from": "ADD",
-          "date": "2026-10-24",
-          "time": "14:35",
-          "seats": null
-        },
-        {
-          "flight": "LH 0686",
-          "from": "FRA",
-          "date": "2026-10-24",
-          "time": "15:25",
-          "seats": null
-        },
-        {
-          "flight": "SN 7173",
-          "from": "FRA",
-          "date": "2026-10-24",
-          "time": "15:25",
-          "seats": null
-        },
-        {
-          "flight": "LH 0680",
-          "from": "MUC",
-          "date": "2026-10-24",
-          "time": "16:00",
-          "seats": null
-        },
-        {
-          "flight": "SN 7171",
-          "from": "MUC",
-          "date": "2026-10-24",
-          "time": "16:00",
-          "seats": null
-        },
-        {
-          "flight": "LX 0252",
-          "from": "ZRH",
-          "date": "2026-10-24",
-          "time": "16:05",
-          "seats": null
-        },
-        {
-          "flight": "EY 0597",
-          "from": "AUH",
-          "date": "2026-10-24",
-          "time": "16:50",
-          "seats": null
-        },
-        {
-          "flight": "EW 3204",
-          "from": "PRG",
-          "date": "2026-10-24",
-          "time": "17:35",
-          "seats": null
-        },
-        {
-          "flight": "IZ 0214",
-          "from": "ATH",
-          "date": "2026-10-24",
-          "time": "19:15",
-          "seats": null
-        },
-        {
-          "flight": "LH 0694",
-          "from": "FRA",
-          "date": "2026-10-24",
-          "time": "19:15",
-          "seats": null
-        },
-        {
-          "flight": "SN 7167",
-          "from": "FRA",
-          "date": "2026-10-24",
-          "time": "19:15",
-          "seats": null
-        },
         {
           "flight": "ZZ 1079",
           "from": "IST",
@@ -7049,59 +6888,17 @@
           "seats": 76
         },
         {
-          "flight": "LO 0155",
-          "from": "WAW",
-          "date": "2026-10-24",
-          "time": "20:00",
-          "seats": null
-        },
-        {
-          "flight": "LY 9252",
-          "from": "WAW",
-          "date": "2026-10-24",
-          "time": "20:00",
-          "seats": null
-        },
-        {
-          "flight": "DE 4309",
-          "from": "FRA",
-          "date": "2026-10-24",
-          "time": "20:05",
-          "seats": null
-        },
-        {
-          "flight": "AZ 0812",
+          "flight": "IB 3179",
           "from": "FCO",
           "date": "2026-10-24",
-          "time": "20:20",
+          "time": "22:25",
           "seats": null
         },
         {
-          "flight": "LH 5240",
+          "flight": "BA 0109",
           "from": "FCO",
           "date": "2026-10-24",
-          "time": "20:20",
-          "seats": null
-        },
-        {
-          "flight": "ET 0414",
-          "from": "ADD",
-          "date": "2026-10-24",
-          "time": "21:10",
-          "seats": null
-        },
-        {
-          "flight": "6H 0770",
-          "from": "PRG",
-          "date": "2026-10-24",
-          "time": "22:00",
-          "seats": null
-        },
-        {
-          "flight": "EY 0599",
-          "from": "AUH",
-          "date": "2026-10-24",
-          "time": "22:05",
+          "time": "22:25",
           "seats": null
         },
         {
@@ -7109,34 +6906,6 @@
           "from": "ATH",
           "date": "2026-10-24",
           "time": "22:30",
-          "seats": null
-        },
-        {
-          "flight": "LY 9952",
-          "from": "GYD",
-          "date": "2026-10-24",
-          "time": "22:55",
-          "seats": null
-        },
-        {
-          "flight": "J2 0331",
-          "from": "GYD",
-          "date": "2026-10-24",
-          "time": "22:55",
-          "seats": null
-        },
-        {
-          "flight": "LH 0690",
-          "from": "FRA",
-          "date": "2026-10-24",
-          "time": "23:15",
-          "seats": null
-        },
-        {
-          "flight": "SN 7169",
-          "from": "FRA",
-          "date": "2026-10-24",
-          "time": "23:15",
           "seats": null
         },
         {
@@ -7168,13 +6937,6 @@
           "seats": null
         },
         {
-          "flight": "OS 0083",
-          "from": "VIE",
-          "date": "2026-10-25",
-          "time": "00:45",
-          "seats": null
-        },
-        {
           "flight": "LY 5134",
           "from": "LCA",
           "date": "2026-10-25",
@@ -7203,6 +6965,13 @@
           "seats": null
         },
         {
+          "flight": "BA 0109",
+          "from": "LHR",
+          "date": "2026-10-25",
+          "time": "01:10",
+          "seats": null
+        },
+        {
           "flight": "IB 3179",
           "from": "LHR",
           "date": "2026-10-25",
@@ -7211,13 +6980,6 @@
         },
         {
           "flight": "AA 118",
-          "from": "LHR",
-          "date": "2026-10-25",
-          "time": "01:10",
-          "seats": null
-        },
-        {
-          "flight": "BA 0109",
           "from": "LHR",
           "date": "2026-10-25",
           "time": "01:10",
@@ -7252,6 +7014,13 @@
           "seats": null
         },
         {
+          "flight": "LY 0578",
+          "from": "OTP",
+          "date": "2026-10-25",
+          "time": "01:50",
+          "seats": null
+        },
+        {
           "flight": "RO 9106",
           "from": "OTP",
           "date": "2026-10-25",
@@ -7259,10 +7028,10 @@
           "seats": null
         },
         {
-          "flight": "LY 0578",
-          "from": "OTP",
+          "flight": "A3 0928",
+          "from": "ATH",
           "date": "2026-10-25",
-          "time": "01:50",
+          "time": "01:55",
           "seats": null
         },
         {
@@ -7336,13 +7105,6 @@
           "seats": null
         },
         {
-          "flight": "LO 2111",
-          "from": "KRK",
-          "date": "2026-10-25",
-          "time": "03:25",
-          "seats": null
-        },
-        {
           "flight": "EW 3010",
           "from": "PRG",
           "date": "2026-10-25",
@@ -7357,59 +7119,10 @@
           "seats": null
         },
         {
-          "flight": "LY 0086",
-          "from": "BKK",
-          "date": "2026-10-25",
-          "time": "04:15",
-          "seats": null
-        },
-        {
-          "flight": "TG 4587",
-          "from": "BKK",
-          "date": "2026-10-25",
-          "time": "04:15",
-          "seats": null
-        },
-        {
-          "flight": "IZ 0592",
-          "from": "BKK",
-          "date": "2026-10-25",
-          "time": "04:20",
-          "seats": null
-        },
-        {
-          "flight": "LY 0088",
-          "from": "HKT",
-          "date": "2026-10-25",
-          "time": "04:25",
-          "seats": null
-        },
-        {
-          "flight": "TG 4582",
-          "from": "HKT",
-          "date": "2026-10-25",
-          "time": "04:25",
-          "seats": null
-        },
-        {
-          "flight": "EY 0609",
-          "from": "AUH",
-          "date": "2026-10-25",
-          "time": "04:30",
-          "seats": null
-        },
-        {
           "flight": "LY 0292",
           "from": "BCN",
           "date": "2026-10-25",
           "time": "04:45",
-          "seats": null
-        },
-        {
-          "flight": "EY 0595",
-          "from": "AUH",
-          "date": "2026-10-25",
-          "time": "05:05",
           "seats": null
         },
         {
@@ -7431,6 +7144,13 @@
           "from": "BKK",
           "date": "2026-10-25",
           "time": "05:45",
+          "seats": null
+        },
+        {
+          "flight": "A3 0922",
+          "from": "ATH",
+          "date": "2026-10-25",
+          "time": "08:30",
           "seats": null
         },
         {
@@ -7462,6 +7182,13 @@
           "seats": null
         },
         {
+          "flight": "A3 0924",
+          "from": "ATH",
+          "date": "2026-10-25",
+          "time": "11:20",
+          "seats": null
+        },
+        {
           "flight": "LY 5108",
           "from": "TBS",
           "date": "2026-10-25",
@@ -7476,14 +7203,14 @@
           "seats": null
         },
         {
-          "flight": "LY 0574",
+          "flight": "RO 9103",
           "from": "OTP",
           "date": "2026-10-25",
           "time": "12:25",
           "seats": null
         },
         {
-          "flight": "RO 9103",
+          "flight": "LY 0574",
           "from": "OTP",
           "date": "2026-10-25",
           "time": "12:25",
@@ -7536,13 +7263,6 @@
           "from": "SOF",
           "date": "2026-10-25",
           "time": "13:45",
-          "seats": null
-        },
-        {
-          "flight": "LY 0008",
-          "from": "JFK",
-          "date": "2026-10-25",
-          "time": "14:10",
           "seats": null
         },
         {
@@ -7616,14 +7336,14 @@
           "seats": null
         },
         {
-          "flight": "LY 0576",
+          "flight": "RO 9105",
           "from": "OTP",
           "date": "2026-10-25",
           "time": "15:25",
           "seats": null
         },
         {
-          "flight": "RO 9105",
+          "flight": "LY 0576",
           "from": "OTP",
           "date": "2026-10-25",
           "time": "15:25",
@@ -7707,20 +7427,6 @@
           "seats": null
         },
         {
-          "flight": "VS 3954",
-          "from": "JFK",
-          "date": "2026-10-25",
-          "time": "16:30",
-          "seats": null
-        },
-        {
-          "flight": "LY 4000",
-          "from": "JFK",
-          "date": "2026-10-25",
-          "time": "16:30",
-          "seats": null
-        },
-        {
           "flight": "LX 0252",
           "from": "ZRH",
           "date": "2026-10-25",
@@ -7784,13 +7490,6 @@
           "seats": null
         },
         {
-          "flight": "IZ 0994",
-          "from": "JFK",
-          "date": "2026-10-25",
-          "time": "17:55",
-          "seats": null
-        },
-        {
           "flight": "LY 0118",
           "from": "MIA",
           "date": "2026-10-25",
@@ -7798,8 +7497,8 @@
           "seats": null
         },
         {
-          "flight": "LY 0014",
-          "from": "JFK",
+          "flight": "A3 0926",
+          "from": "ATH",
           "date": "2026-10-25",
           "time": "18:10",
           "seats": null
@@ -8043,6 +7742,13 @@
           "seats": null
         },
         {
+          "flight": "LY 0092",
+          "from": "NRT",
+          "date": "2026-10-26",
+          "time": "00:40",
+          "seats": null
+        },
+        {
           "flight": "LY 0328",
           "from": "CDG",
           "date": "2026-10-26",
@@ -8113,6 +7819,13 @@
           "seats": null
         },
         {
+          "flight": "LO 5258",
+          "from": "WAW",
+          "date": "2026-10-26",
+          "time": "02:25",
+          "seats": null
+        },
+        {
           "flight": "LY 0384",
           "from": "FCO",
           "date": "2026-10-26",
@@ -8131,6 +7844,13 @@
           "from": "FCO",
           "date": "2026-10-26",
           "time": "02:50",
+          "seats": null
+        },
+        {
+          "flight": "A3 0928",
+          "from": "ATH",
+          "date": "2026-10-26",
+          "time": "02:55",
           "seats": null
         },
         {
@@ -8232,13 +7952,6 @@
           "seats": null
         },
         {
-          "flight": "LY 0010",
-          "from": "JFK",
-          "date": "2026-10-26",
-          "time": "05:45",
-          "seats": null
-        },
-        {
           "flight": "LY 0082",
           "from": "BKK",
           "date": "2026-10-26",
@@ -8274,13 +7987,6 @@
           "seats": null
         },
         {
-          "flight": "LY 0002",
-          "from": "JFK",
-          "date": "2026-10-26",
-          "time": "10:15",
-          "seats": null
-        },
-        {
           "flight": "EY 0593",
           "from": "AUH",
           "date": "2026-10-26",
@@ -8309,17 +8015,17 @@
           "seats": null
         },
         {
+          "flight": "A3 0924",
+          "from": "ATH",
+          "date": "2026-10-26",
+          "time": "11:20",
+          "seats": null
+        },
+        {
           "flight": "LY 5108",
           "from": "TBS",
           "date": "2026-10-26",
           "time": "11:35",
-          "seats": null
-        },
-        {
-          "flight": "IZ 0992",
-          "from": "JFK",
-          "date": "2026-10-26",
-          "time": "11:50",
           "seats": null
         },
         {
@@ -8435,13 +8141,6 @@
           "seats": null
         },
         {
-          "flight": "LY 2366",
-          "from": "BUD",
-          "date": "2026-10-26",
-          "time": "14:45",
-          "seats": null
-        },
-        {
           "flight": "LY 5402",
           "from": "WAW",
           "date": "2026-10-26",
@@ -8453,13 +8152,6 @@
           "from": "PRG",
           "date": "2026-10-26",
           "time": "14:55",
-          "seats": null
-        },
-        {
-          "flight": "6H 0726",
-          "from": "BUD",
-          "date": "2026-10-26",
-          "time": "15:00",
           "seats": null
         },
         {
@@ -8486,6 +8178,13 @@
         {
           "flight": "IZ 0162",
           "from": "LCA",
+          "date": "2026-10-26",
+          "time": "15:40",
+          "seats": null
+        },
+        {
+          "flight": "6H 0882",
+          "from": "GYD",
           "date": "2026-10-26",
           "time": "15:40",
           "seats": null
@@ -8537,27 +8236,6 @@
           "from": "PRG",
           "date": "2026-10-26",
           "time": "16:25",
-          "seats": null
-        },
-        {
-          "flight": "VS 3954",
-          "from": "JFK",
-          "date": "2026-10-26",
-          "time": "16:30",
-          "seats": null
-        },
-        {
-          "flight": "LY 4000",
-          "from": "JFK",
-          "date": "2026-10-26",
-          "time": "16:30",
-          "seats": null
-        },
-        {
-          "flight": "IZ 0292",
-          "from": "BUD",
-          "date": "2026-10-26",
-          "time": "16:40",
           "seats": null
         },
         {
@@ -8666,6 +8344,13 @@
           "seats": null
         },
         {
+          "flight": "IZ 0322",
+          "from": "GYD",
+          "date": "2026-10-26",
+          "time": "20:00",
+          "seats": null
+        },
+        {
           "flight": "ET 0414",
           "from": "ADD",
           "date": "2026-10-26",
@@ -8691,13 +8376,6 @@
           "from": "IST",
           "date": "2026-10-26",
           "time": "20:29",
-          "seats": null
-        },
-        {
-          "flight": "6H 0730",
-          "from": "BUD",
-          "date": "2026-10-26",
-          "time": "20:40",
           "seats": null
         },
         {
@@ -8806,6 +8484,13 @@
           "seats": null
         },
         {
+          "flight": "LY 5422",
+          "from": "KRK",
+          "date": "2026-10-26",
+          "time": "23:20",
+          "seats": null
+        },
+        {
           "flight": "EY 0599",
           "from": "AUH",
           "date": "2026-10-26",
@@ -8821,78 +8506,107 @@
         }
       ],
       "errors": [
-        "IST 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "SAW 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "ATH 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "LCA 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "PFO 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "CDG 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "CDG 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "IST 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "IST 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "SAW 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "SAW 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "ATH 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "ATH 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "LCA 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "LCA 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "PFO 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "PFO 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "CDG 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "CDG 2026-10-23: Field 'departure_date' must be after 2026-10-23",
         "CDG 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "ORY 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "CDG 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "ORY 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ORY 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "ORY 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "LHR 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "LTN 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "FCO 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "MXP 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "FRA 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "MUC 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "BER 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "LHR 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "LHR 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "LTN 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "LTN 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "FCO 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "FCO 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "MXP 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "MXP 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "FRA 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "FRA 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "MUC 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "MUC 2026-10-22: Field 'departure_date' must be after 2026-10-23",
         "MUC 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BER 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "MUC 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "BER 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "BER 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "BER 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "VIE 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "BER 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "VIE 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "VIE 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "VIE 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "VIE 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "VIE 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "ZRH 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "GVA 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "AMS 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "BRU 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "MAD 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "BCN 2026-10-22: Field 'departure_date' must be after 2026-10-22",
+        "VIE 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "ZRH 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "ZRH 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "GVA 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "GVA 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "AMS 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "AMS 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "BRU 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "BRU 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "MAD 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "MAD 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "BCN 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "BCN 2026-10-22: Field 'departure_date' must be after 2026-10-23",
         "WAW 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "WAW 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "WAW 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "WAW 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "WAW 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "WAW 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "BUD 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "BUD 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "WAW 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "WAW 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "BUD 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "BUD 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "PRG 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "OTP 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "SOF 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "TBS 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "EVN 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "GYD 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "DXB 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "DXB 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "GYD 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BUD 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BUD 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "PRG 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "PRG 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "OTP 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "OTP 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "SOF 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "SOF 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "TBS 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "TBS 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "EVN 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "EVN 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "GYD 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "GYD 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "DXB 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "DXB 2026-10-23: Field 'departure_date' must be after 2026-10-23",
         "DXB 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "DXB 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "DXB 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "DXB 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "AUH 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "AUH 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "AUH 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "AUH 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "AUH 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "AUH 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
         "JFK 2026-10-22: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "AUH 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "EWR 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "MIA 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "LAX 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "YYZ 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "BKK 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "JFK 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "JFK 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "JFK 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "EWR 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "EWR 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "MIA 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "MIA 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "LAX 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "LAX 2026-10-23: Field 'departure_date' must be after 2026-10-23",
+        "YYZ 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "YYZ 2026-10-23: Field 'departure_date' must be after 2026-10-23",
         "BKK 2026-10-23: Field 'departure_date' must be after 2026-10-23",
-        "ADD 2026-10-22: Field 'departure_date' must be after 2026-10-22",
-        "ADD 2026-10-24: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "ADD 2026-10-25: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
-        "ADD 2026-10-23: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header.",
+        "BKK 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "ADD 2026-10-22: Field 'departure_date' must be after 2026-10-23",
+        "ADD 2026-10-23: Field 'departure_date' must be after 2026-10-23",
         "ADD 2026-10-26: Too many requests hit the API too quickly. Please retry your request after the time specified in the `ratelimit-reset` header."
       ]
     }
@@ -8945,6 +8659,6 @@
       "ADD"
     ],
     "source": "duffel",
-    "updatedAt": "2026-10-23T17:53:55.573Z"
+    "updatedAt": "2026-10-24T16:34:39.328Z"
   }
 }
