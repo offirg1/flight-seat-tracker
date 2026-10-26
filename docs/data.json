@@ -1714,90 +1714,49 @@
           "itineraries": 136
         }
       },
+      "errors": [
+        "LAX 2026-10-20: Field 'departure_date' must be after 2026-10-24",
+        "LAX 2026-10-21: Field 'departure_date' must be after 2026-10-24",
+        "LAX 2026-10-22: Field 'departure_date' must be after 2026-10-24",
+        "LAX 2026-10-23: Field 'departure_date' must be after 2026-10-24",
+        "LAX 2026-10-24: Field 'departure_date' must be after 2026-10-24"
+      ]
+    },
+    {
+      "date": "2026-10-26",
+      "seats": 386,
+      "flights": 7,
+      "mappedFlights": 4,
+      "itineraries": 45,
+      "byOrigin": {
+        "LAX": {
+          "seats": 386,
+          "flights": 7,
+          "mappedFlights": 4,
+          "itineraries": 45
+        }
+      },
       "flightList": [
         {
-          "flight": "AA 118",
-          "date": "2026-10-25",
-          "from": "LAX",
-          "stops": 0,
-          "seats": 76
-        },
-        {
-          "flight": "BA 0109",
-          "date": "2026-10-25",
-          "from": "LAX",
-          "stops": 0,
-          "seats": null
-        },
-        {
-          "flight": "IB 3179",
-          "date": "2026-10-25",
-          "from": "LAX",
-          "stops": 0,
-          "seats": null
-        },
-        {
-          "flight": "LY 0006",
-          "date": "2026-10-25",
-          "from": "LAX",
-          "stops": 0,
-          "seats": null
-        },
-        {
-          "flight": "ZZ 1079",
-          "date": "2026-10-25",
-          "from": "LAX",
-          "stops": 0,
-          "seats": 76
-        },
-        {
-          "flight": "AA 118",
+          "flight": "AA 1274",
           "date": "2026-10-26",
           "from": "LAX",
           "stops": 0,
           "seats": 76
         },
         {
-          "flight": "BA 0109",
+          "flight": "BA 0107",
           "date": "2026-10-26",
           "from": "LAX",
           "stops": 0,
           "seats": null
         },
         {
-          "flight": "IB 3179",
+          "flight": "IB 3167",
           "date": "2026-10-26",
           "from": "LAX",
           "stops": 0,
           "seats": null
-        },
-        {
-          "flight": "LH 0682",
-          "date": "2026-10-26",
-          "from": "MUC",
-          "stops": 1,
-          "seats": 142
-        },
-        {
-          "flight": "LH 0690",
-          "date": "2026-10-26",
-          "from": "FRA",
-          "stops": 1,
-          "seats": 105
-        },
-        {
-          "flight": "LH 0694",
-          "date": "2026-10-26",
-          "from": "FRA",
-          "stops": 1,
-          "seats": 116
-        },
-        {
-          "flight": "LX 0256",
-          "date": "2026-10-26",
-          "from": "ZRH",
-          "stops": 1,
-          "seats": 152
         },
         {
           "flight": "LY 0006",
@@ -1807,25 +1766,11 @@
           "seats": null
         },
         {
-          "flight": "ZZ 1079",
+          "flight": "ZZ 9368",
           "date": "2026-10-26",
           "from": "LAX",
           "stops": 0,
           "seats": 76
-        },
-        {
-          "flight": "LH 0680",
-          "date": "2026-10-27",
-          "from": "MUC",
-          "stops": 1,
-          "seats": 140
-        },
-        {
-          "flight": "LH 0686",
-          "date": "2026-10-27",
-          "from": "FRA",
-          "stops": 1,
-          "seats": 116
         },
         {
           "flight": "LH 0690",
@@ -1840,28 +1785,15 @@
           "from": "FRA",
           "stops": 1,
           "seats": 118
-        },
-        {
-          "flight": "LX 0252",
-          "date": "2026-10-27",
-          "from": "ZRH",
-          "stops": 1,
-          "seats": 172
-        },
-        {
-          "flight": "OS 0079",
-          "date": "2026-10-27",
-          "from": "VIE",
-          "stops": 2,
-          "seats": null
         }
       ],
       "errors": [
-        "LAX 2026-10-20: Field 'departure_date' must be after 2026-10-24",
-        "LAX 2026-10-21: Field 'departure_date' must be after 2026-10-24",
-        "LAX 2026-10-22: Field 'departure_date' must be after 2026-10-24",
-        "LAX 2026-10-23: Field 'departure_date' must be after 2026-10-24",
-        "LAX 2026-10-24: Field 'departure_date' must be after 2026-10-24"
+        "LAX 2026-10-20: Field 'departure_date' must be after 2026-10-25",
+        "LAX 2026-10-21: Field 'departure_date' must be after 2026-10-25",
+        "LAX 2026-10-22: Field 'departure_date' must be after 2026-10-25",
+        "LAX 2026-10-23: Field 'departure_date' must be after 2026-10-25",
+        "LAX 2026-10-24: Field 'departure_date' must be after 2026-10-25",
+        "LAX 2026-10-25: Field 'departure_date' must be after 2026-10-25"
       ]
     }
   ],
@@ -1884,6 +1816,6 @@
     },
     "arriveBy": "2026-10-27T23:59",
     "source": "duffel",
-    "updatedAt": "2026-10-25T17:00:47.151Z"
+    "updatedAt": "2026-10-26T19:06:10.975Z"
   }
 }
